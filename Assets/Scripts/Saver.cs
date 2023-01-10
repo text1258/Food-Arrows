@@ -49,6 +49,7 @@ public class Saver : MonoBehaviour
             savingData = JsonUtility.FromJson<SavingData>(data);
         }
         catch { }
+        player.gameObject.SetActive(true);
         player.SetPlayerInfo(savingData);
     }
 
