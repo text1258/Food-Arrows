@@ -189,7 +189,7 @@ public class Player : MonoBehaviour
         SavingData savingData = null;
         try
         {
-            savingData = JsonUtility.FromJson<SavingData>(File.ReadAllText("SavingData.json"));
+            savingData = JsonUtility.FromJson<SavingData>(File.ReadAllText("Assets/SavingData.json"));
             //savingData = JsonUtility.FromJson<SavingData>(data);
         }
         catch { }

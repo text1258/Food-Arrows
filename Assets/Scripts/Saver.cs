@@ -40,7 +40,7 @@ public class Saver : MonoBehaviour
                 GetItemsIDes(new List<Item>(player.InventoryFoods)), GetItemsIDes(new List<Item>(player.InventoryProducts)),
                 GetItemsIDes(new List<Item>(player.InventoryWeapons)), player.CurrentOrder.ID, player.CurrentVisitorIndex);
         }
-        File.WriteAllText("SavingData.json", JsonUtility.ToJson(savingData));
+        File.WriteAllText("Assets/SavingData.json", JsonUtility.ToJson(savingData));
         //SaveExtern(JsonUtility.ToJson(savingData));
     }
 
