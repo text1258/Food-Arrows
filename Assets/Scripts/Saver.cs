@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.IO;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
@@ -16,7 +15,6 @@ public class Saver : MonoBehaviour
 
     private void Awake()
     {
-        //player.Load();
         LoadExtern();
     }
     
@@ -40,8 +38,18 @@ public class Saver : MonoBehaviour
                 GetItemsIDes(new List<Item>(player.InventoryFoods)), GetItemsIDes(new List<Item>(player.InventoryProducts)),
                 GetItemsIDes(new List<Item>(player.InventoryWeapons)), player.CurrentOrder.ID, player.CurrentVisitorIndex);
         }
-        //File.WriteAllText("Assets/SavingData.json", JsonUtility.ToJson(savingData));
         SaveExtern(JsonUtility.ToJson(savingData));
+    }
+
+    public void Load(string data)
+    {
+        SavingData savingData = null;
+        try
+        {
+            savingData = JsonUtility.FromJson<SavingData>(data);
+        }
+        catch { }
+        player.SetPlayerInfo(savingData);
     }
 
     private static List<string> GetItemsIDes(List<Item> items)

@@ -11,7 +11,7 @@ mergeInto(LibraryManager.library, {
     player.getData().then(_date => {
       const myJSON = JSON.stringify(_date);
       console.log('Loaded date:', myJSON);
-      myGameInstance.SendMessage('Player', 'Load', myJSON);
+      myGameInstance.SendMessage('Saver', 'Load', myJSON);
     });
   },
 

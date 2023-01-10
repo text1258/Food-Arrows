@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -182,15 +181,8 @@ public class Player : MonoBehaviour
         }
     }
     
-    public void Load(string data)
+    public void SetPlayerInfo(SavingData savingData)
     {
-        SavingData savingData = null;
-        try
-        {
-            //savingData = JsonUtility.FromJson<SavingData>(File.ReadAllText("Assets/SavingData.json"));
-            savingData = JsonUtility.FromJson<SavingData>(data);
-        }
-        catch { }
         if (savingData != null)
         {
             currentLevel = allLevels.Levels[(int)(savingData.levelNumber - 1)];
