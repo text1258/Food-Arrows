@@ -1,22 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class Saver : MonoBehaviour
 {
-    [DllImport("__Internal")]
-    private static extern void SaveExtern(string data);
-    
-
-    [DllImport("__Internal")]
-    private static extern void LoadExtern();
     
     [SerializeField] private Player player;
 
     private void Awake()
     {
-        //LoadExtern();
         Load();
     }
     
@@ -41,18 +33,14 @@ public class Saver : MonoBehaviour
                 GetItemsIDes(new List<Item>(player.InventoryWeapons)), player.CurrentOrder.ID, player.CurrentVisitorIndex);
         }
         File.WriteAllText("Assets/SavingData.json", JsonUtility.ToJson(savingData));
-        //SaveExtern(JsonUtility.ToJson(savingData));
     }
 
-    public void Load(
-        //string data
-        )
+    public void Load()
     {
         SavingData savingData = null;
         try
         {
             savingData = JsonUtility.FromJson<SavingData>(File.ReadAllText("Assets/SavingData.json"));
-            //savingData = JsonUtility.FromJson<SavingData>(data);
         }
         catch { }
         player.SetPlayerInfo(savingData);
