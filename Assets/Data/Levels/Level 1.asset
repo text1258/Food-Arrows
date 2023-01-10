@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d68c6df7cb00564fb448f8250bb7571, type: 3}
+  m_Name: Level 1
+  m_EditorClassIdentifier: 
+  number: 1
+  openInThisLevelFoods:
+  - {fileID: 11400000, guid: bc1368d60932c974fbf357a4b78e3c53, type: 2}
+  openInThisLevelProducts:
+  - {fileID: 11400000, guid: 1002d7fadfe96d343b1de51f92601d61, type: 2}
+  - {fileID: 11400000, guid: 2b883c2d45d55a6429a2038000844785, type: 2}
+  - {fileID: 11400000, guid: bc6076b7ff36ef3448b92c16c1bf7fdf, type: 2}
+  openInThisLevelWeapons:
+  - {fileID: 11400000, guid: d77faf1fd47455a4d81dc06b395cfdff, type: 2}
+  spawnAtThisLevelTargets:
+  - {fileID: 1858410179838401945, guid: 74d2c4c45d28b794a9705dc062ce8067, type: 3}
+  moneyForAdvertisingCount: 100
+  experienceToNextLevel: 1
