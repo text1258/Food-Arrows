@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
@@ -15,7 +16,8 @@ public class Saver : MonoBehaviour
 
     private void Awake()
     {
-        LoadExtern();
+        //LoadExtern();
+        Load();
     }
     
     private void OnApplicationQuit()
@@ -41,15 +43,17 @@ public class Saver : MonoBehaviour
         SaveExtern(JsonUtility.ToJson(savingData));
     }
 
-    public void Load(string data)
+    public void Load(
+        //string data
+        )
     {
         SavingData savingData = null;
         try
         {
-            savingData = JsonUtility.FromJson<SavingData>(data);
+            savingData = JsonUtility.FromJson<SavingData>(File.ReadAllText("Assets/SavingData.json"));
+            //savingData = JsonUtility.FromJson<SavingData>(data);
         }
         catch { }
-        player.gameObject.SetActive(true);
         player.SetPlayerInfo(savingData);
     }
 
