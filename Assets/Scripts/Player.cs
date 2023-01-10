@@ -182,15 +182,13 @@ public class Player : MonoBehaviour
         }
     }
     
-    public void Load(
-        //string data
-        )
+    public void Load(string data)
     {
         SavingData savingData = null;
         try
         {
-            savingData = JsonUtility.FromJson<SavingData>(File.ReadAllText("Assets/SavingData.json"));
-            //savingData = JsonUtility.FromJson<SavingData>(data);
+            //savingData = JsonUtility.FromJson<SavingData>(File.ReadAllText("Assets/SavingData.json"));
+            savingData = JsonUtility.FromJson<SavingData>(data);
         }
         catch { }
         if (savingData != null)
