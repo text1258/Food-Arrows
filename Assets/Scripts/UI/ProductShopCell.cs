@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UI;
+using UnityEngine;
 
 public class ProductShopCell : ItemsPannelCell
 {
@@ -7,10 +8,10 @@ public class ProductShopCell : ItemsPannelCell
     
     public override void OnItemCellClick()
     {
-        confirmMealPanel.confirmPanelGameObject.gameObject.SetActive(true);
-        confirmMealPanel.confirmPanelImage.sprite = cellProduct.Picture;
+        confirmMealPanel.ConfirmPanelGameObject.gameObject.SetActive(true);
+        confirmMealPanel.ConfirmPanelImage.sprite = cellProduct.Picture;
         confirmMealPanel.CommentText.text = $"{confirmMealPanel.CommentTextTitle}{cellProduct.Price}";
-        confirmMealPanel.purchasedProduct = cellProduct;
-        confirmMealPanel.agreeButton.onClick.AddListener(confirmMealPanel.Confirm);
+        confirmMealPanel.PurchasedProduct = cellProduct;
+        confirmMealPanel.AgreeButton.onClick.AddListener(confirmMealPanel.Confirm);
     }
 }

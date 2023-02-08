@@ -1,27 +1,30 @@
 ﻿using UnityEngine;
 
-public class ConfirmPurchaseMealPanel : ConfirmPanel
+namespace UI
 {
-    [SerializeField] private ProductShop productShop;
-    [SerializeField] private MessageText messageText;
-    [SerializeField] private string phraseIfNotMoney;
-    [HideInInspector] public Product purchasedProduct;
-    private Coroutine currentShowMessage;
-    
-    public override void Confirm()
+    public class ConfirmPurchaseMealPanel : ConfirmPanel
     {
-        if (player.Money >= purchasedProduct.Price)
+        [SerializeField] private ProductShop productShop;
+        [SerializeField] private MessageText messageText;
+        [SerializeField] private string phraseIfNotMoney;
+        public Product PurchasedProduct { get; set; }
+        private Coroutine currentShowMessage;
+
+        public override void Confirm()
         {
-            productShop.BuyProduct(purchasedProduct, player);
-        }
-        else
-        {
-            if (currentShowMessage != null)
+            if (Player.Instance.Money >= PurchasedProduct.Price)
             {
-                StopCoroutine(currentShowMessage);
+                productShop.BuyProduct(PurchasedProduct);
             }
-            currentShowMessage = StartCoroutine(messageText.ShowMessage(phraseIfNotMoney, 2f));
+            else
+            {
+                if (currentShowMessage != null)
+                {
+                    StopCoroutine(currentShowMessage);
+                }
+                currentShowMessage = StartCoroutine(messageText.ShowMessage(phraseIfNotMoney, 2f));
+            }
+            AgreeButton.onClick.RemoveListener(Confirm);
         }
-        agreeButton.onClick.RemoveListener(Confirm);
     }
 }

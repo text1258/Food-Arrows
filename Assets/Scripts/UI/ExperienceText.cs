@@ -1,17 +1,16 @@
 ﻿using UnityEngine;
 
 public class ExperienceText : ResourceText
-{ 
-    [SerializeField] private Player player;
+{
     public override void ShowText()
     {
-        if (player.CurrentLevel is not LastLevel)
+        if (Player.Instance.CurrentLevel is not LastLevel)
         {
-            text.text = $"{phrase}{player.Experience}/{((NormalLevel)player.CurrentLevel).ExperienceToNextLevel}";
+            text.text = $"{phrase}{Player.Instance.Experience}/{((NormalLevel)Player.Instance.CurrentLevel).ExperienceToNextLevel}";
         }
         else
         {
-            text.text = $"{phrase}{player.Experience}";
+            text.text = $"{phrase}{Player.Instance.Experience}";
         }
     }
 }

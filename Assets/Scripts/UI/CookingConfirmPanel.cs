@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UI;
+using UnityEngine;
 
 public class CookingConfirmPanel : ConfirmPanel
 {
@@ -8,9 +9,9 @@ public class CookingConfirmPanel : ConfirmPanel
     
     public override void Confirm()
     {
-        player.CookFood(cookingFood);
+        Player.Instance.CookFood(cookingFood);
         cookingPanel.UpdateItemsPanel();
-        agreeButton.onClick.RemoveListener(Confirm);
+        AgreeButton.onClick.RemoveListener(Confirm);
         cookingFoodAnimation.cookingFood = cookingFood;
         cookingFoodAnimation.cookingFood = cookingFood;
         StartCoroutine(cookingFoodAnimation.CookingAnimate());

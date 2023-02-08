@@ -6,11 +6,11 @@ public class Weapon3DButtonNotPurchased : Weapon3DButton
     
     public override void OnItemCellClick()
     {
-        confirmPanel.confirmPanelGameObject.SetActive(true);
-        confirmPanel.confirmPanelImage.sprite = cellWeapon.Picture;
+        confirmPanel.ConfirmPanelGameObject.SetActive(true);
+        confirmPanel.ConfirmPanelImage.sprite = cellWeapon.Picture;
         confirmPanel.CommentText.text = $"{confirmPanel.CommentTextTitle}{cellWeapon.Price}";
         confirmPanel.cellWeapon = cellWeapon;
         confirmPanel.pressedWeapon = this;
-        confirmPanel.agreeButton.onClick.AddListener(confirmPanel.Confirm);
+        confirmPanel.AgreeButton.onClick.AddListener(confirmPanel.Confirm);
     }
 }

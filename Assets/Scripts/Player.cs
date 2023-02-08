@@ -1,9 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UI;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
+    public static Player Instance;
+    [HideInInspector] public List<Food> PossibleToCookDishes;
+    
     [Header("States")]
     [SerializeField] private uint money;
     [SerializeField] private uint experience;
@@ -16,29 +22,21 @@ public class Player : MonoBehaviour
     [SerializeField] private AllProducts allProducts;
     [SerializeField] private AllWeapons allWeapons;
     [SerializeField] private AllLevels allLevels;
-    [Header("StatesViewers")]
-    [SerializeField] private MoneyText moneyText;
-    [SerializeField] private ExperienceText experienceText;
-    [SerializeField] private LevelText levelText;
-    [SerializeField] private AddMoneyForAdvertisingButton addMoneyForAdvertisingButton;
     [Header("Save")]
-    [SerializeField] private Saver saver;
-    [SerializeField] private UnityEvent onLoadData;
-
-    [HideInInspector] public List<Food> possibleToCookDishes;
-    [HideInInspector] private Food currentOrder;
-    [HideInInspector] private string currentVisitorIndex;
-    [HideInInspector] public List<Food> AvailableFood { get; private set; } = new List<Food>();
-    [HideInInspector] public List<Weapon> AvailableWeapons { get; private set; }
+    [SerializeField] private UnityEvent onLoad;
     
+    private Food currentOrder;
+    private string currentVisitorIndex;
+    public List<Food> AvailableFood { get; private set; }
+    public List<Weapon> AvailableWeapons { get; private set; }
     public uint Money
     {
         get => money;
         set
         {
             money = value;
-            saver.Save();
-            moneyText.ShowText();
+            Saver.instance.Save();
+            PlayerStates.Instance.UpdateAllStatesUI();
         }
     }
     public uint Experience
@@ -47,55 +45,32 @@ public class Player : MonoBehaviour
         set
         {
             experience = value;
-            saver.Save();
+            Saver.instance.Save();
             if (CurrentLevel is NormalLevel && Experience >= ((NormalLevel)CurrentLevel).ExperienceToNextLevel)
             {
                 //Indexing of levels is 1 more than indexing of lists
                 CurrentLevel = allLevels.Levels[(int)CurrentLevel.Number];
+                NewLevelInfoPanel.Instance.ShowLevelInfoPanel();
                 Experience = 0;
             }
-            experienceText.ShowText();
+            PlayerStates.Instance.UpdateAllStatesUI();
         }
     }
-    public List<Product> InventoryProducts
-    {
-        get => inventoryProducts;
-        set
-        {
-            inventoryProducts = value;
-            saver.Save();
-        }
-    }
-    public List<Food> InventoryFoods
-    {
-        get => inventoryFoods;
-        set
-        {
-            inventoryFoods = value;
-            saver.Save();
-        }
-    }
-    public List<Weapon> InventoryWeapons
-    {
-        get => inventoryWeapons;
-        set
-        {
-            inventoryWeapons = value;
-            saver.Save();
-        }
-    }
+    public List<Product> InventoryProducts => inventoryProducts;
+    public List<Food> InventoryFoods => inventoryFoods;
+    public List<Weapon> InventoryWeapons => inventoryWeapons;
+
     public Level CurrentLevel
     {
         get => currentLevel;
         private set
         {
             currentLevel = value;
-            saver.Save();
-            UpdateFindPossibleDishes();
+            Saver.instance.Save();
+            UpdatePossibleDishes();
             CheckAvailableFood();
             CheckAvailableWeapons();
-            levelText.ShowText();
-            addMoneyForAdvertisingButton.ShowText();
+            PlayerStates.Instance.UpdateAllStatesUI();
         }
     }
     public Food CurrentOrder
@@ -104,7 +79,7 @@ public class Player : MonoBehaviour
         set
         {
             currentOrder = value;
-            saver.Save();
+            Saver.instance.Save();
         }
     }
 
@@ -114,33 +89,40 @@ public class Player : MonoBehaviour
         set
         {
             currentVisitorIndex = value;
-            saver.Save();
+            Saver.instance.Save();
         }
+    }
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            onLoad.Invoke();
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+            Instance = this;
+            StartCoroutine(OnFirstAwake());
+        }
+    }
+
+    private IEnumerator OnFirstAwake()
+    {
+        yield return new WaitUntil(() => Saver.instance != null);
+        Saver.instance.Load();
+        onLoad.Invoke();
     }
 
     private static List<Food> FindPossibleFoods(List<Food> allFoods, List<Product> playerProducts)
     {
-        List<Food> possibleFoods = new List<Food>();
-        foreach (Food dish in allFoods)
-        {
-            if (CanCook(dish, playerProducts))
-            {
-                possibleFoods.Add(dish);
-            }
-        }
-        return possibleFoods;
+        return allFoods.Where(dish => CanCook(dish, playerProducts)).ToList();
     }
     
     private static bool CanCook(Food cookingFood, List<Product> playerProducts)
     {
-        foreach (Product needProduct in cookingFood.CookingProducts)
-        {
-            if (!playerProducts.Contains(needProduct))
-            {
-                return false;
-            }
-        }
-        return true;
+        return cookingFood.CookingProducts.All(playerProducts.Contains);
     }
     
     public void CookFood(Food food)
@@ -148,13 +130,15 @@ public class Player : MonoBehaviour
         foreach (Product product in food.CookingProducts)
         {
             InventoryProducts.Remove(product);
+            Saver.instance.Save();
         }
         InventoryFoods.Add(food);
+        Saver.instance.Save();
     }
 
-    public void UpdateFindPossibleDishes()
+    public void UpdatePossibleDishes()
     {
-        possibleToCookDishes = FindPossibleFoods(AvailableFood, inventoryProducts);
+        PossibleToCookDishes = FindPossibleFoods(AvailableFood, inventoryProducts);
     }
 
     private void CheckAvailableFood()
@@ -180,6 +164,16 @@ public class Player : MonoBehaviour
             }
         }
     }
+
+    private static List<Item> FindItemsByIDes(List<string> itemsIDes, List<Item> allItems)
+    {
+        return itemsIDes.Select(id => FindItemByID(id, allItems)).ToList();
+    }
+
+    private static Item FindItemByID(string itemID, List<Item> allItems)
+    {
+        return allItems.FirstOrDefault(item => item.ID == itemID);
+    }
     
     public void SetPlayerInfo(SavingData savingData)
     {
@@ -194,47 +188,8 @@ public class Player : MonoBehaviour
             currentOrder = (Food)FindItemByID(savingData.currentOrderID, new List<Item>(allFoods.Foods));
             currentVisitorIndex = savingData.currentVisitorIndex;
         }
-        ShowAllStatesViewers();
+        PlayerStates.Instance.UpdateAllStatesUI();
         CheckAvailableFood();
         CheckAvailableWeapons();
-        OnLoad();
     }
-
-    private static Item FindItemByID(string itemID, List<Item> allItems)
-    {
-        foreach (Item item in allItems)
-        {
-            if (item.ID == itemID)
-            {
-                return item;
-            }
-        }
-        return null;
-    }
-
-    private static List<Item> FindItemsByIDes(List<string> itemsIDes, List<Item> allItems)
-    {
-        List<Item> items = new List<Item>();
-        foreach (string ID in itemsIDes)
-        {
-            Item currentItem = FindItemByID(ID, allItems);
-            items.Add(currentItem);
-        }
-        return items;
-    }
-
-    public void AddMoneyForAdvertising()
-    {
-        Money += CurrentLevel.MoneyForAdvertisingCount;
-    }
-
-    public void ShowAllStatesViewers()
-    {
-        moneyText.ShowText();
-        experienceText.ShowText();
-        levelText.ShowText();
-        addMoneyForAdvertisingButton.ShowText();
-    }
-
-    private void OnLoad() => onLoadData.Invoke();
 }

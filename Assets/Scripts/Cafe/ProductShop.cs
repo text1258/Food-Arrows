@@ -3,30 +3,30 @@ using UnityEngine;
 
 public class ProductShop : MonoBehaviour
 {
-    [SerializeField] private Player player;
     [SerializeField] private AllLevels allLevels;
 
     [field: HideInInspector]
     public List<Product> AvailableProducts { get; private set; }
 
-    private void Awake()
+    private void Start()
     {
         CheckAvailableFood();
     }
 
-    public void BuyProduct(Product product, Player player)
+    public void BuyProduct(Product product)
     {
-        if (player.Money >= product.Price)
+        if (Player.Instance.Money >= product.Price)
         {
-            player.Money -= product.Price;
-            player.InventoryProducts.Add(product);
+            Player.Instance.Money -= product.Price;
+            Player.Instance.InventoryProducts.Add(product);
+            Saver.instance.Save();
         }
     }
     
     private void CheckAvailableFood()
     {
         AvailableProducts = new List<Product>();
-        for (int i = 0; i <= player.CurrentLevel.Number - 1; i++)
+        for (int i = 0; i <= Player.Instance.CurrentLevel.Number - 1; i++)
         {
             foreach (Product product in allLevels.Levels[i].OpenInThisLevelProducts)
             {

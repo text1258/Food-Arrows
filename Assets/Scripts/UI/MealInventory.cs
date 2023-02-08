@@ -10,12 +10,12 @@ public class MealInventory : ItemsPannel
     public override void CreateItemsPanel()
     {
         Image currentImage;
-        foreach (Food dish in player.InventoryFoods)
+        foreach (Food dish in Player.Instance.InventoryFoods)
         {
             currentImage = Instantiate(inventoryCellPrefab, parent: dishesInventory.content.transform);
             currentImage.sprite = dish.Picture;
         }
-        foreach (Product product in player.InventoryProducts)
+        foreach (Product product in Player.Instance.InventoryProducts)
         {
             currentImage = Instantiate(inventoryCellPrefab, parent: productsInventory.content.transform);
             currentImage.sprite = product.Picture;

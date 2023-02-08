@@ -414,6 +414,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 99443420}
+  - component: {fileID: 99443421}
   m_Layer: 5
   m_Name: StatisticsTextes
   m_TagString: Untagged
@@ -444,6 +445,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &99443421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99443419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8af8f4f716754d87a158f540d6dc29d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceTexts:
+  - {fileID: 626010385}
+  - {fileID: 1639344899}
+  - {fileID: 1924643023}
 --- !u!1 &114518810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,7 +1134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02652a526774d36a3b46d24182f52ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1295352510}
   dishesInventory: {fileID: 513641539}
   productsInventory: {fileID: 588578046}
   inventoryCellPrefab: {fileID: 6980457428303368719, guid: 9d868c1c079f4c6439b0ac50a7bef5e4, type: 3}
@@ -1199,6 +1215,7 @@ RectTransform:
   - {fileID: 355964994}
   - {fileID: 1234639121}
   - {fileID: 99443420}
+  - {fileID: 1268320286}
   - {fileID: 1798149268}
   - {fileID: 552478316}
   - {fileID: 1187905221}
@@ -1225,7 +1242,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   commentText: {fileID: 2143273081}
   commentTextTitle: 'Are you sure to buy it. It wil be cost '
-  player: {fileID: 1295352510}
   confirmPanelGameObject: {fileID: 1861949134}
   confirmPanelImage: {fileID: 1861949133}
   agreeButton: {fileID: 1861949132}
@@ -1233,194 +1249,6 @@ MonoBehaviour:
   phraseIfNotMoney: You don't have enough money
   cellWeapon: {fileID: 0}
   pressedWeapon: {fileID: 0}
---- !u!1 &397419432
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 397419435}
-  - component: {fileID: 397419434}
-  - component: {fileID: 397419433}
-  - component: {fileID: 397419436}
-  m_Layer: 5
-  m_Name: TargetRewardMoneyText
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &397419433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 397419432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 5
-  m_fontSizeBase: 5
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 0
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: -4.394205, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  _SortingLayer: 0
-  _SortingLayerID: 0
-  _SortingOrder: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 397419434}
-  m_maskType: 0
---- !u!23 &397419434
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 397419432}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!224 &397419435
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 397419432}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.475, y: 0.475, z: 0.475}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 1705936775}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: -5.8}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &397419436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 397419432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ee94a06d6b24aca89e264da51a503f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 397419433}
-  phrase: 'get: '
-  currentTarget: {fileID: 0}
 --- !u!1 &416484254
 GameObject:
   m_ObjectHideFlags: 0
@@ -1641,7 +1469,7 @@ RectTransform:
   - {fileID: 1600401949}
   - {fileID: 1890665673}
   m_Father: {fileID: 379749350}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.90400004}
@@ -2055,7 +1883,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 626010386}
   phrase: 'Money: '
-  player: {fileID: 1295352510}
 --- !u!114 &626010386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3285,7 +3112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8a4fd24519941098fc9cd23958512bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1295352510}
   weaponTable: {fileID: 681489545}
   weaponSize: 0.15
   allWeapons: {fileID: 11400000, guid: 3324ed56fa539334db9688bed0891f30, type: 2}
@@ -3628,12 +3454,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 379749350}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.90400004}
   m_AnchorMax: {x: 0.74954325, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.000030517578, y: -0.00012207031}
+  m_SizeDelta: {x: 0.000030517578, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1200109655
 GameObject:
@@ -3701,7 +3527,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50ba0651411e405f866ef489cdf0e842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1295352510}
 --- !u!4 &1213962775
 Transform:
   m_ObjectHideFlags: 0
@@ -3848,6 +3673,156 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1268320285
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1268320286}
+  - component: {fileID: 1268320288}
+  - component: {fileID: 1268320287}
+  - component: {fileID: 1268320289}
+  m_Layer: 5
+  m_Name: TargetRewardMoneyText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1268320286
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268320285}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 379749350}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -190, y: 584}
+  m_SizeDelta: {x: 300, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1268320287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268320285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Award: 100'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 22
+  m_fontSizeBase: 22
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1268320288
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268320285}
+  m_CullTransparentMesh: 1
+--- !u!114 &1268320289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268320285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ee94a06d6b24aca89e264da51a503f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1268320287}
+  phrase: 'Award: '
 --- !u!1 &1295352509
 GameObject:
   m_ObjectHideFlags: 0
@@ -3877,6 +3852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a352c4443b64bb48b0fad2ecebb4fea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PossibleToCookDishes: []
   money: 500
   experience: 0
   inventoryFoods:
@@ -3892,12 +3868,7 @@ MonoBehaviour:
   allProducts: {fileID: 11400000, guid: 50905259750ac314eb58461d3c8b2158, type: 2}
   allWeapons: {fileID: 11400000, guid: 3324ed56fa539334db9688bed0891f30, type: 2}
   allLevels: {fileID: 11400000, guid: a25c99677605d764982f755242115d5a, type: 2}
-  moneyText: {fileID: 626010385}
-  experienceText: {fileID: 1639344899}
-  levelText: {fileID: 1924643023}
-  addMoneyForAdvertisingButton: {fileID: 1306402145}
-  saver: {fileID: 1213962774}
-  onLoadData:
+  onLoad:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1033394159}
@@ -3924,8 +3895,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  possibleToCookDishes:
-  - {fileID: 11400000, guid: bc1368d60932c974fbf357a4b78e3c53, type: 2}
 --- !u!4 &1295352511
 Transform:
   m_ObjectHideFlags: 0
@@ -4226,7 +4195,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 957085659}
   phrase: ' money'
-  player: {fileID: 1295352510}
 --- !u!1 &1314988588
 GameObject:
   m_ObjectHideFlags: 0
@@ -4956,7 +4924,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1639344900}
   phrase: 'Experience: '
-  player: {fileID: 1295352510}
 --- !u!114 &1639344900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5082,8 +5049,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 397419435}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5099,8 +5065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17b565a57f8c46fcae6a569520a866fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1295352510}
-  targetRewardMoneyText: {fileID: 397419436}
+  targetRewardMoneyText: {fileID: 1268320289}
   currentTarget: {fileID: 0}
 --- !u!1 &1743502900
 GameObject:
@@ -5398,7 +5363,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 379749350}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.1}
   m_AnchorMax: {x: 0.25, y: 0.3}
@@ -5839,7 +5804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5539970803531268774, guid: 838a9798f02ee0a46aa84dbd729a8358, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5539970803531268774, guid: 838a9798f02ee0a46aa84dbd729a8358, type: 3}
       propertyPath: m_AnchorMax.x
@@ -6491,7 +6456,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 1924643021}
   phrase: 'Level: '
-  player: {fileID: 1295352510}
 --- !u!1 &1924887062
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,7 +16,6 @@ public class Target : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private uint rewardMoney;
     [SerializeField] private float timeBeforeDestroy;
-    [HideInInspector] public Player player;
     [HideInInspector] public TargetSpawner targetSpawner;
     [HideInInspector] public bool notHitByMissile = true;
     
@@ -38,7 +37,7 @@ public class Target : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Missile>() != null)
         {
-            player.Money += rewardMoney;
+            Player.Instance.Money += rewardMoney;
         }
     }
 

@@ -7,10 +7,10 @@ public class CookingPanelCell : ItemsPannelCell
 
     public override void OnItemCellClick()
     {
-        confirmPanel.confirmPanelGameObject.gameObject.SetActive(true);
-        confirmPanel.confirmPanelImage.sprite = cellFood.Picture;
+        confirmPanel.ConfirmPanelGameObject.gameObject.SetActive(true);
+        confirmPanel.ConfirmPanelImage.sprite = cellFood.Picture;
         confirmPanel.CommentText.text = confirmPanel.CommentTextTitle;
         confirmPanel.cookingFood = cellFood;
-        confirmPanel.agreeButton.onClick.AddListener(confirmPanel.Confirm);
+        confirmPanel.AgreeButton.onClick.AddListener(confirmPanel.Confirm);
     }
 }

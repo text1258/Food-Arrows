@@ -1,16 +1,7 @@
-﻿using UnityEngine;
-
-public class TargetRewardMoneyText : ResourceText
+﻿public class TargetRewardMoneyText : ResourceText
 {
-    [HideInInspector] public Target currentTarget;
-    
-    public override void ShowText()
+    public void ShowText(string value)
     {
-        text.text = $"{phrase}{currentTarget.RewardMoney}";
-    }
-
-    private void Update()
-    {
-        transform.position = currentTarget.transform.position;
+        text.text = $"{phrase}{value}";
     }
 }

@@ -6,7 +6,6 @@ using Random = UnityEngine.Random;
 
 public class VisitorSpawner : MonoBehaviour
 {
-    [SerializeField] private Player player;
     [SerializeField] private Vector3 spawnPosition;
     [SerializeField] private List<Visitor> visitors;
     [SerializeField] private GiveOrderButton giveOrderButton;
@@ -20,32 +19,32 @@ public class VisitorSpawner : MonoBehaviour
 
     private IEnumerator Start()
     {
-        if (player.CurrentVisitorIndex != "")
+        if (Player.Instance.CurrentVisitorIndex != "")
         {
-            currentVisitor = Instantiate(visitors[Convert.ToInt32(player.CurrentVisitorIndex)]);
+            currentVisitor = Instantiate(visitors[Convert.ToInt32(Player.Instance.CurrentVisitorIndex)]);
         }
         else
         {
             int currentVisitorIndex = Random.Range(0, visitors.Count);
-            player.CurrentVisitorIndex = currentVisitorIndex.ToString();
+            Player.Instance.CurrentVisitorIndex = currentVisitorIndex.ToString();
             currentVisitor = Instantiate(visitors[currentVisitorIndex]);
         }
-        if (player.CurrentOrder != null)
+        if (Player.Instance.CurrentOrder != null)
         {
-            currentVisitor.order = player.CurrentOrder;
+            currentVisitor.order = Player.Instance.CurrentOrder;
         }
         while (true)
         {
             if (currentVisitor == null)
             {
                 int currentVisitorIndex = Random.Range(0, visitors.Count);
-                player.CurrentVisitorIndex = currentVisitorIndex.ToString();
+                Player.Instance.CurrentVisitorIndex = currentVisitorIndex.ToString();
                 currentVisitor = Instantiate(visitors[currentVisitorIndex]);
             }
             if (currentVisitor.order == null)
             {
-                currentVisitor.order = player.AvailableFood[Random.Range(0, player.AvailableFood.Count)];
-                player.CurrentOrder = currentVisitor.order;
+                currentVisitor.order = Player.Instance.AvailableFood[Random.Range(0, Player.Instance.AvailableFood.Count)];
+                Player.Instance.CurrentOrder = currentVisitor.order;
             }
             currentVisitor.transform.position = new Vector3(spawnPosition.x, currentVisitor.GetComponent<MeshRenderer>().bounds.size.y / 2, spawnPosition.z);
             //Move visitor to center

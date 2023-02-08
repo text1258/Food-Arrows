@@ -9,8 +9,8 @@ public class CookingPanel : ItemsPannel
     
     public override void CreateItemsPanel()
     {
-        player.UpdateFindPossibleDishes();
-        foreach (Food food in player.possibleToCookDishes)
+        Player.Instance.UpdatePossibleDishes();
+        foreach (Food food in Player.Instance.PossibleToCookDishes)
         {
             Button currentButton = Instantiate(cookingPanelCellPrefab, parent: cookingPanel.content.transform);
             currentButton.image.sprite = food.Picture;

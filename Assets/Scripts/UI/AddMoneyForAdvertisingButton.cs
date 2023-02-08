@@ -1,11 +1,10 @@
-﻿using UnityEngine;
-
-public class AddMoneyForAdvertisingButton : ResourceText
+﻿namespace UI
 {
-    [SerializeField] private Player player;
-
-    public override void ShowText()
+    public class AddMoneyForAdvertisingButton : ResourceText
     {
-        text.text = $"+ {player.CurrentLevel.MoneyForAdvertisingCount}{phrase}";
+        public override void ShowText()
+        {
+            text.text = $"+ {Player.Instance.CurrentLevel.MoneyForAdvertisingCount}{phrase}";
+        }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 
-public abstract class ResourceText : MonoBehaviour
+public class ResourceText : MonoBehaviour
 {
     [SerializeField] protected TMP_Text text;
     [SerializeField] protected string phrase;

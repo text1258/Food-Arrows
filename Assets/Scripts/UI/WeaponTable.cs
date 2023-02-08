@@ -33,10 +33,10 @@ public class WeaponTable : ItemsPannel
         currentWeapon.transform.localScale *= ratioChangedCurrentWeaponSizeToNotChanged;
         currentWeapon.GetComponent<RectTransform>().localPosition = Vector3.forward * -weaponSize / 2;
         weaponTable.content.GetComponent<HorizontalLayoutGroup>().SetLayoutHorizontal();
-        if (!player.InventoryWeapons.Contains(weapon))
+        if (!Player.Instance.InventoryWeapons.Contains(weapon))
         {
             GameObject Barrier;
-            if (player.AvailableWeapons.Contains(weapon))
+            if (Player.Instance.AvailableWeapons.Contains(weapon))
             {
                 Barrier = Instantiate(notPurchasedWeaponBarrierPrefab, parent: currentWeapon.transform);
                 Barrier.GetComponent<Weapon3DButtonNotPurchased>().confirmPanel = confirmPurchaseWeaponPanel;
