@@ -12,7 +12,7 @@ public class CookingFoodAnimation : MonoBehaviour
     [SerializeField] private Vector3 minSpawnProductsPosition;
     [HideInInspector] public Food cookingFood;
     
-    private void OnDrawGizmos()
+    private void OnDrawGizmosSelected()
     {;
         Gizmos.color = new Color(255, 0, 0, 0.5f);
         Gizmos.DrawSphere(cookingPosition, 0.15f);

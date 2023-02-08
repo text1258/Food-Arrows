@@ -1,15 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UI;
 using UnityEngine;
 using UnityEngine.Events;
+using UI;
 
 public class Player : MonoBehaviour
 {
     public static Player Instance;
     [HideInInspector] public List<Food> PossibleToCookDishes;
-    
+
     [Header("States")]
     [SerializeField] private uint money;
     [SerializeField] private uint experience;
@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     [SerializeField] private AllLevels allLevels;
     [Header("Save")]
     [SerializeField] private UnityEvent onLoad;
-    
+
     private Food currentOrder;
     private string currentVisitorIndex;
     public List<Food> AvailableFood { get; private set; }
@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
             {
                 //Indexing of levels is 1 more than indexing of lists
                 CurrentLevel = allLevels.Levels[(int)CurrentLevel.Number];
-                NewLevelInfoPanel.Instance.ShowLevelInfoPanel();
+                InfoPanel.Instance.ShowInfoPanel("New Level! You Open:", (CurrentLevel.OpenInThisLevelFoods.Select(x => x.Picture).Concat(CurrentLevel.OpenInThisLevelProducts.Select(x => x.Picture)).Concat(CurrentLevel.OpenInThisLevelWeapons.Select(x => x.Picture))).ToArray());
                 Experience = 0;
             }
             PlayerStates.Instance.UpdateAllStatesUI();
@@ -119,12 +119,12 @@ public class Player : MonoBehaviour
     {
         return allFoods.Where(dish => CanCook(dish, playerProducts)).ToList();
     }
-    
+
     private static bool CanCook(Food cookingFood, List<Product> playerProducts)
     {
         return cookingFood.CookingProducts.All(playerProducts.Contains);
     }
-    
+
     public void CookFood(Food food)
     {
         foreach (Product product in food.CookingProducts)
@@ -152,7 +152,7 @@ public class Player : MonoBehaviour
             }
         }
     }
-    
+
     private void CheckAvailableWeapons()
     {
         AvailableWeapons = new List<Weapon>();
@@ -174,7 +174,7 @@ public class Player : MonoBehaviour
     {
         return allItems.FirstOrDefault(item => item.ID == itemID);
     }
-    
+
     public void SetPlayerInfo(SavingData savingData)
     {
         if (savingData != null)

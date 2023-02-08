@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UI;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class GiveOrderButton : MonoBehaviour
@@ -14,11 +16,16 @@ public class GiveOrderButton : MonoBehaviour
         orderImage.sprite = CurrentVisitor.order.Picture;
     }
 
-    public void ConfirmGiveOrder()
+    public void GiveOrder()
     {
         if (Player.Instance.InventoryFoods.Contains(CurrentVisitor.order))
         {
-            GiveOrder(CurrentVisitor);
+            Player.Instance.InventoryFoods.Remove(CurrentVisitor.order);
+            Player.Instance.Experience += 1;
+            Player.Instance.CurrentOrder = null;
+            Player.Instance.CurrentVisitorIndex = null;
+            CurrentVisitor.isSatisfied = true;
+            Saver.instance.Save();
             this.gameObject.SetActive(false);
         }
         else
@@ -30,14 +37,9 @@ public class GiveOrderButton : MonoBehaviour
             currentShowMessage = StartCoroutine(messageText.ShowMessage(phraseIfNotFood, 3f));
         }
     }
-    
-    private void GiveOrder(Visitor visitor)
+
+    public void ShowCurrentFoodInfo()
     {
-        Player.Instance.InventoryFoods.Remove(visitor.order);
-        Player.Instance.Experience += 1;
-        Player.Instance.CurrentOrder = null;
-        Player.Instance.CurrentVisitorIndex = null;
-        visitor.isSatisfied = true;
-        Saver.instance.Save();
+        InfoPanel.Instance.ShowInfoPanel("Products for cooking this food:", CurrentVisitor.order.CookingProducts.Select(x => x.Picture).ToArray());
     }
 }
