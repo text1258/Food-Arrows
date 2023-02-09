@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class ProductShop : MonoBehaviour
 {
-    [SerializeField] private AllLevels allLevels;
-
     [field: HideInInspector]
     public List<Product> AvailableProducts { get; private set; }
 
@@ -28,7 +26,7 @@ public class ProductShop : MonoBehaviour
         AvailableProducts = new List<Product>();
         for (int i = 0; i <= Player.Instance.CurrentLevel.Number - 1; i++)
         {
-            foreach (Product product in allLevels.Levels[i].OpenInThisLevelProducts)
+            foreach (Product product in AllScriptableObjects.GetAllScriptableObjects<Level>()[i].OpenInThisLevelProducts)
             {
                 AvailableProducts.Add(product);
             }

@@ -5,7 +5,6 @@ public class WeaponTable : ItemsPannel
 {
     [SerializeField] private ScrollRect weaponTable;
     [SerializeField] private float weaponSize;
-    [SerializeField] private AllWeapons allWeapons;
     [SerializeField] private GameObject notPurchasedWeaponBarrierPrefab;
     [SerializeField] private GameObject notAvailableWeaponBarrierPrefab;
     [SerializeField] private SelectWeapon selectWeapon;
@@ -14,7 +13,7 @@ public class WeaponTable : ItemsPannel
 
     public override void CreateItemsPanel()
     {
-        foreach (Weapon weapon in allWeapons.Weapons)
+        foreach (Weapon weapon in AllScriptableObjects.GetAllScriptableObjects<Weapon>())
         {
             AddWeapon(weapon);
         }
