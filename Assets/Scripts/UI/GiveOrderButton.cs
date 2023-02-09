@@ -1,12 +1,11 @@
 ﻿using System.Linq;
-using UI;
 using UnityEngine;
 using UnityEngine.UI;
+using UI;
 
 public class GiveOrderButton : MonoBehaviour
 {
     [SerializeField] private Image orderImage;
-    [SerializeField] private MessageText messageText;
     [SerializeField] private string phraseIfNotFood;
     [HideInInspector] public Visitor CurrentVisitor;
     [HideInInspector] private Coroutine currentShowMessage;
@@ -34,7 +33,7 @@ public class GiveOrderButton : MonoBehaviour
             {
                 StopCoroutine(currentShowMessage);
             }
-            currentShowMessage = StartCoroutine(messageText.ShowMessage(phraseIfNotFood, 3f));
+            MessageText.Instance.Message(phraseIfNotFood, 3f);
         }
     }
 

@@ -9,7 +9,9 @@ public class VisitorSpawner : MonoBehaviour
     [SerializeField] private Vector3 spawnPosition;
     [SerializeField] private List<Visitor> visitors;
     [SerializeField] private GiveOrderButton giveOrderButton;
-    [HideInInspector] private Visitor currentVisitor;
+    [SerializeField] private AllLevels allLevels;
+
+    private Visitor currentVisitor;
 
     private void OnDrawGizmosSelected()
     {
@@ -43,7 +45,7 @@ public class VisitorSpawner : MonoBehaviour
             }
             if (currentVisitor.order == null)
             {
-                currentVisitor.order = Player.Instance.AvailableFood[Random.Range(0, Player.Instance.AvailableFood.Count)];
+                currentVisitor.order = RandomAvailableFood();
                 Player.Instance.CurrentOrder = currentVisitor.order;
             }
             currentVisitor.transform.position = new Vector3(spawnPosition.x, currentVisitor.GetComponent<MeshRenderer>().bounds.size.y / 2, spawnPosition.z);
@@ -71,5 +73,18 @@ public class VisitorSpawner : MonoBehaviour
             Destroy(currentVisitor.gameObject);
             currentVisitor = null;
         }
+    }
+
+    private Food RandomAvailableFood()
+    {
+        List<Food> availableFood = new List<Food>();
+        for (int i = 0; i <= Player.Instance.CurrentLevel.Number - 1; i++)
+        {
+            foreach (Food food in allLevels.Levels[i].OpenInThisLevelFoods)
+            {
+                availableFood.Add(food);
+            }
+        }
+        return availableFood[Random.Range(0, availableFood.Count)];
     }
 }

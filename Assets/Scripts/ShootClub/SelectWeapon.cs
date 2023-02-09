@@ -5,8 +5,9 @@ public class SelectWeapon : MonoBehaviour
 {
     [SerializeField] private RechargeViewer rechargeViewer;
     [SerializeField] private Button restoreRechargeToFullButton;
-    [HideInInspector] private Weapon selectedWeapon;
-    [HideInInspector] public GameObject currentWeapon;
+
+    private Weapon selectedWeapon;
+    private GameObject currentWeapon;
 
     public Weapon SelectedWeapon
     {

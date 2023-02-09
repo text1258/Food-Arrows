@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class CookingFoodAnimation : MonoBehaviour
 {
+    public static CookingFoodAnimation Instance;
+
     [SerializeField] private Vector3 cookingPosition;
     [SerializeField] private float productsGatheringAnimationTime;
     [SerializeField] private float foodGoToPlayerAnimationTime;
     [SerializeField] private ParticleSystem onCookingParticleSystem;
     [SerializeField] private Vector3 maxSpawnProductsPosition;
     [SerializeField] private Vector3 minSpawnProductsPosition;
-    [HideInInspector] public Food cookingFood;
     
     private void OnDrawGizmosSelected()
     {;
@@ -20,24 +21,34 @@ public class CookingFoodAnimation : MonoBehaviour
         Gizmos.DrawCube((maxSpawnProductsPosition + minSpawnProductsPosition) / 2, maxSpawnProductsPosition - minSpawnProductsPosition);
     }
 
-    public IEnumerator CookingAnimate()
+    private void Awake()
     {
-        List <GameObject> cookingProducts = new List<GameObject>();
+        Instance = this;
+    }
+
+    public void StartCookAnimation(Food cookingFood)
+    {
+        StartCoroutine(CookingAnimation(cookingFood));
+    }
+
+    private IEnumerator CookingAnimation(Food cookingFood)
+    {
+        List <GameObject> productsFromRecipe = new List<GameObject>();
         foreach (Product currentProduct in cookingFood.CookingProducts)
         {
             GameObject currentInstantiatedProduct = Instantiate(currentProduct.ItemPrefab,
                 RandomVector(maxSpawnProductsPosition, minSpawnProductsPosition), Quaternion.identity);
-            cookingProducts.Add(currentInstantiatedProduct);
+            productsFromRecipe.Add(currentInstantiatedProduct);
             if (currentInstantiatedProduct.GetComponent<InstantiatedProduct>() == null)
             {
                 currentInstantiatedProduct.AddComponent<InstantiatedProduct>();
             }
         }
         float traveledPath = 0f;
-        while (Vector3.Distance(cookingProducts[0].transform.position, cookingPosition) > 0.01f)
+        while (Vector3.Distance(productsFromRecipe[0].transform.position, cookingPosition) > 0.01f)
         {
             traveledPath += Time.deltaTime / productsGatheringAnimationTime;
-            foreach (var currentGameObject in cookingProducts)
+            foreach (var currentGameObject in productsFromRecipe)
             {
                 currentGameObject.transform.position = Vector3.Slerp(currentGameObject.GetComponent<InstantiatedProduct>().startPosition, cookingPosition, traveledPath);
             }
@@ -46,7 +57,7 @@ public class CookingFoodAnimation : MonoBehaviour
         traveledPath = 0f;
         onCookingParticleSystem.transform.position = cookingPosition;
         onCookingParticleSystem.Play();
-        cookingProducts.ForEach(Destroy);
+        productsFromRecipe.ForEach(Destroy);
         GameObject instantiatedFood = Instantiate(cookingFood.ItemPrefab, cookingPosition, Quaternion.identity); 
         Vector3 startPosition = instantiatedFood.transform.position;
         while (Vector3.Distance(instantiatedFood.transform.position, Player.Instance.transform.position) > 0.01f)
@@ -55,7 +66,7 @@ public class CookingFoodAnimation : MonoBehaviour
             instantiatedFood.transform.position = Vector3.Slerp(startPosition, Player.Instance.transform.position, traveledPath); 
             yield return null;
         }
-        Destroy(instantiatedFood);
+        Destroy(instantiatedFood.gameObject);
         yield break;
     }
     

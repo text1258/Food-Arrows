@@ -1,39 +1,27 @@
-﻿using UI;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ProductShopPannel : ItemsPannel
 {
-    [SerializeField] private ProductShop productShop;
     [SerializeField] private ScrollRect shopPanel;
-    [SerializeField] private Button cellPrefab;
-    [SerializeField] protected ConfirmPurchaseMealPanel confirmMealPanel;
+    [SerializeField] private ProductShopCell cellPrefab;
 
     public override void CreateItemsPanel()
     {
-        foreach (Product product in productShop.AvailableProducts)
+        ProductShop.Instance.UpdateAvailableToBuyProducts();
+        foreach (Product product in ProductShop.Instance.AvailableToBuyProducts)
         {
-            Button currentButton = Instantiate(cellPrefab, parent: shopPanel.content.transform);
-            currentButton.image.sprite = product.Picture;
-            ProductShopCell currentProductShopCell = currentButton.GetComponent<ProductShopCell>();
-            if (currentProductShopCell != null)
-            {
-                currentProductShopCell.confirmMealPanel = confirmMealPanel;
-                currentProductShopCell.cellProduct = product;
-            }
-            else
-            {
-                Debug.LogError("On cell button must be ProductShopCell");
-            }
+            GameObject currentCell = Instantiate(cellPrefab.gameObject, parent: shopPanel.content.transform);
+            currentCell.GetComponent<Image>().sprite = product.Picture;
+            currentCell.GetComponent<ProductShopCell>().cellProduct = product;
         }
     }
     
     public override void ClearItemsPanel()
     {
-        for (int i = 0; i < shopPanel.content.transform.childCount; i++)
+        foreach (Transform child in shopPanel.content)
         {
-            Transform currentTransform = shopPanel.content.transform.GetChild(i);
-            Destroy(currentTransform.gameObject);
+            Destroy(child.gameObject);
         }
     }
 }

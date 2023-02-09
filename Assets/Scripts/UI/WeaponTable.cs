@@ -8,12 +8,11 @@ public class WeaponTable : ItemsPannel
     [SerializeField] private GameObject notPurchasedWeaponBarrierPrefab;
     [SerializeField] private GameObject notAvailableWeaponBarrierPrefab;
     [SerializeField] private SelectWeapon selectWeapon;
-    [SerializeField] private ConfirmPurchaseWeaponPanel confirmPurchaseWeaponPanel;
-    [SerializeField] private MessageText messageText;
+    [SerializeField] private AllWeapons allWeapons;
 
     public override void CreateItemsPanel()
     {
-        foreach (Weapon weapon in AllScriptableObjects.GetAllScriptableObjects<Weapon>())
+        foreach (Weapon weapon in allWeapons.Weapons)
         {
             AddWeapon(weapon);
         }
@@ -38,12 +37,10 @@ public class WeaponTable : ItemsPannel
             if (Player.Instance.AvailableWeapons.Contains(weapon))
             {
                 Barrier = Instantiate(notPurchasedWeaponBarrierPrefab, parent: currentWeapon.transform);
-                Barrier.GetComponent<Weapon3DButtonNotPurchased>().confirmPanel = confirmPurchaseWeaponPanel;
             }
             else
             {
                 Barrier = Instantiate(notAvailableWeaponBarrierPrefab, parent: currentWeapon.transform);
-                Barrier.GetComponent<Weapon3DButtonUnavailable>().messageText = this.messageText;
             }
             Barrier.GetComponent<Weapon3DButton>().cellWeapon = weapon;
             Barrier.transform.localScale = currentWeapon.GetComponent<BoxCollider>().size;

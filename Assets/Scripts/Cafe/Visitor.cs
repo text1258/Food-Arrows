@@ -5,8 +5,8 @@ public class Visitor : MonoBehaviour
     [SerializeField] private string visitorName;
     [SerializeField] private float speed;
     [SerializeField] private Animator visitorAnimator;
+    [SerializeField] public Food order;
     [HideInInspector] public bool isSatisfied = false;
-    [HideInInspector] public Food order;
     private float visitorSpeed;
 
     private void Awake()
