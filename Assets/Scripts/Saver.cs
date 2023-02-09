@@ -34,7 +34,9 @@ public class Saver : MonoBehaviour
                 GetItemsIDes(new List<Item>(Player.Instance.InventoryFoods)), GetItemsIDes(new List<Item>(Player.Instance.InventoryProducts)),
                 GetItemsIDes(new List<Item>(Player.Instance.InventoryWeapons)), Player.Instance.CurrentOrder.ID, Player.Instance.CurrentVisitorIndex);
         }
+#if UNITY_EDITOR
         File.WriteAllText("Assets/SavingData.json", JsonUtility.ToJson(savingData));
+#endif
     }
 
     [ContextMenu("Load")]
@@ -43,7 +45,9 @@ public class Saver : MonoBehaviour
         SavingData savingData = null;
         try
         {
+#if UNITY_EDITOR
             savingData = JsonUtility.FromJson<SavingData>(File.ReadAllText("Assets/SavingData.json"));
+#endif
         }
         catch { }
         Player.Instance.SetPlayerInfo(savingData);
