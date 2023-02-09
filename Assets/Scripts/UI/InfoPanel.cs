@@ -35,6 +35,10 @@ namespace UI
             {
                 Destroy(child.gameObject);
             }
+            foreach (Transform child in transform)
+            {
+                child.gameObject.SetActive(false);
+            }
         }
     }
 }
