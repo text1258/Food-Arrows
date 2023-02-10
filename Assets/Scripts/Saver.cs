@@ -36,6 +36,9 @@ public class Saver : MonoBehaviour
         }
 #if UNITY_EDITOR
         File.WriteAllText("Assets/SavingData.json", JsonUtility.ToJson(savingData));
+#else
+        PlayerPrefs.SetString("SavingData", JsonUtility.ToJson(savingData));
+        PlayerPrefs.Save();
 #endif
     }
 
@@ -47,6 +50,8 @@ public class Saver : MonoBehaviour
         {
 #if UNITY_EDITOR
             savingData = JsonUtility.FromJson<SavingData>(File.ReadAllText("Assets/SavingData.json"));
+#else
+            savingData = JsonUtility.FromJson<SavingData>(PlayerPrefs.GetString("SavingData"));
 #endif
         }
         catch { }
