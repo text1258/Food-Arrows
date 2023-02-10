@@ -2,6 +2,6 @@
 {
     public void ShowText(string value)
     {
-        text.text = $"{phrase}{value}";
+        text.text = $"Награда: {value}";
     }
 }

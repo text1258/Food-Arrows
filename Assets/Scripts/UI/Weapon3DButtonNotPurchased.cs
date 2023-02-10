@@ -4,7 +4,7 @@ public class Weapon3DButtonNotPurchased : Weapon3DButton
 {
     public override void OnItemCellClick()
     {
-        ConfirmPanel.Instance.CreateConfirmPanel($"Are you sure to buy it? It wil be cost {cellWeapon.Price}",
+        ConfirmPanel.Instance.CreateConfirmPanel($"Подтвердите покупку. Это будет стоить {cellWeapon.Price}",
             cellWeapon.Picture, onConfirm: BuyThisWeapon);
     }
 
@@ -19,7 +19,7 @@ public class Weapon3DButtonNotPurchased : Weapon3DButton
         }
         else
         {
-            MessageText.Instance.Message("You don't have enough money!", 2f);
+            MessageText.Instance.Message("У вас недостаточно денег(", 2f);
         }
     }
 }

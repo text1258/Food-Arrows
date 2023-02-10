@@ -6,9 +6,7 @@ using UI;
 public class GiveOrderButton : MonoBehaviour
 {
     [SerializeField] private Image orderImage;
-    [SerializeField] private string phraseIfNotFood;
     [HideInInspector] public Visitor CurrentVisitor;
-    [HideInInspector] private Coroutine currentShowMessage;
 
     private void OnEnable()
     {
@@ -29,16 +27,12 @@ public class GiveOrderButton : MonoBehaviour
         }
         else
         {
-            if (currentShowMessage != null)
-            {
-                StopCoroutine(currentShowMessage);
-            }
-            MessageText.Instance.Message(phraseIfNotFood, 3f);
+            MessageText.Instance.Message("Этой еды нет в инвенторе!", 3f);
         }
     }
 
     public void ShowCurrentFoodInfo()
     {
-        InfoPanel.Instance.ShowInfoPanel("Products for cooking this food:", CurrentVisitor.order.CookingProducts.Select(x => x.Picture).ToArray());
+        InfoPanel.Instance.ShowInfoPanel("Продукты для приготовления этой еды:", CurrentVisitor.order.CookingProducts.Select(x => x.Picture).ToArray());
     }
 }

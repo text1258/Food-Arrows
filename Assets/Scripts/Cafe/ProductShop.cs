@@ -22,7 +22,7 @@ public class ProductShop : MonoBehaviour
         }
         else
         {
-            MessageText.Instance.Message("You don't have enough money!", 2f);
+            MessageText.Instance.Message("У вас недостаточно денег(", 2f);
         }
     }
     

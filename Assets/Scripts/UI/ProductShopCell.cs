@@ -7,7 +7,7 @@ public class ProductShopCell : ItemsPannelCell
     
     public override void OnItemCellClick()
     {
-        ConfirmPanel.Instance.CreateConfirmPanel($"You want to buy it. It will cost {cellProduct.Price}",
+        ConfirmPanel.Instance.CreateConfirmPanel($"Подтвердите покупку. Это будет стоить {cellProduct.Price}",
             cellProduct.Picture, onConfirm: BuyThisProduct);
     }
 

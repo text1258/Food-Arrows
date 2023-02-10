@@ -1,9 +1,7 @@
-﻿using UnityEngine;
-
-public class LevelText : ResourceText
+﻿public class LevelText : ResourceText
 {
     public override void ShowText()
     {
-        text.text = $"{phrase}{Player.Instance.CurrentLevel.Number}";
+        text.text = $"Уровень: {Player.Instance.CurrentLevel.Number}";
     }
 }

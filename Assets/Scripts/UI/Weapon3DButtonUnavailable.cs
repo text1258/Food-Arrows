@@ -4,6 +4,6 @@ public class Weapon3DButtonUnavailable : Weapon3DButton
 {
     public override void OnItemCellClick()
     {
-        MessageText.Instance.Message("This weapon is unavailable in current level", 1.5f);
+        MessageText.Instance.Message("Это ещё не доступно на вашем уровне", 1.5f);
     }
 }

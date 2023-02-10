@@ -7,7 +7,7 @@ public class CookingPanelCell : ItemsPannelCell
 
     public override void OnItemCellClick()
     {
-        ConfirmPanel.Instance.CreateConfirmPanel($"Do you want to cook it?",
+        ConfirmPanel.Instance.CreateConfirmPanel($"Вы хотите это приготовить?",
             cellFood.Picture, onConfirm: cellFood.Cook);
     }
 }
