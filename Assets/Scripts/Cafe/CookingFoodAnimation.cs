@@ -55,6 +55,10 @@ public class CookingFoodAnimation : MonoBehaviour
             yield return null;
         }
         traveledPath = 0f;
+        if (GameObject.Find(onCookingParticleSystem.name) == null)
+        {
+            onCookingParticleSystem = Instantiate(onCookingParticleSystem);
+        }
         onCookingParticleSystem.transform.position = cookingPosition;
         onCookingParticleSystem.Play();
         productsFromRecipe.ForEach(Destroy);

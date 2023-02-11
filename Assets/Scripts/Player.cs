@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
         set
         {
             money = value;
-            Saver.instance.Save();
+            Saver.Instance.Save();
             PlayerStates.Instance.UpdateAllStatesUI();
         }
     }
@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
         set
         {
             experience = value;
-            Saver.instance.Save();
+            Saver.Instance.Save();
             if (CurrentLevel is NormalLevel && Experience >= ((NormalLevel)CurrentLevel).ExperienceToNextLevel)
             {
                 //Indexing of levels is 1 more than indexing of lists
@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
         private set
         {
             currentLevel = value;
-            Saver.instance.Save();
+            Saver.Instance.Save();
             CheckAvailableWeapons();
             PlayerStates.Instance.UpdateAllStatesUI();
         }
@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
         set
         {
             currentOrder = value;
-            Saver.instance.Save();
+            Saver.Instance.Save();
         }
     }
 
@@ -85,7 +85,7 @@ public class Player : MonoBehaviour
         set
         {
             currentVisitorIndex = value;
-            Saver.instance.Save();
+            Saver.Instance.Save();
         }
     }
 
@@ -106,8 +106,8 @@ public class Player : MonoBehaviour
 
     private IEnumerator OnFirstAwake()
     {
-        yield return new WaitUntil(() => Saver.instance != null);
-        Saver.instance.Load();
+        yield return new WaitUntil(() => Saver.Instance != null);
+        Saver.Instance.Load();
         onLoad.Invoke();
     }
 

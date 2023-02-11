@@ -14,7 +14,7 @@ public class Weapon3DButtonNotPurchased : Weapon3DButton
         {
             Player.Instance.InventoryWeapons.Add(cellWeapon);
             Player.Instance.Money -= cellWeapon.Price;
-            Saver.instance.Save();
+            Saver.Instance.Save();
             Destroy(gameObject);
         }
         else

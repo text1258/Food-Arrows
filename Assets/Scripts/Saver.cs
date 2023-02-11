@@ -4,18 +4,11 @@ using UnityEngine;
 
 public class Saver : MonoBehaviour
 {
-    [HideInInspector] public static Saver instance = null;
+    public static Saver Instance = null;
+
     private void Awake()
     {
-        if (instance != null && instance != this)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-            instance = this;
-        }
+        Instance = this;
     }
 
     [ContextMenu("Save")]

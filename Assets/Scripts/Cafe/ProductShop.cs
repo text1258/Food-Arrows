@@ -18,7 +18,7 @@ public class ProductShop : MonoBehaviour
         {
             Player.Instance.Money -= product.Price;
             Player.Instance.InventoryProducts.Add(product);
-            Saver.instance.Save();
+            Saver.Instance.Save();
         }
         else
         {

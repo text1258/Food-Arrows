@@ -22,12 +22,12 @@ public class GiveOrderButton : MonoBehaviour
             Player.Instance.CurrentOrder = null;
             Player.Instance.CurrentVisitorIndex = null;
             CurrentVisitor.isSatisfied = true;
-            Saver.instance.Save();
+            Saver.Instance.Save();
             this.gameObject.SetActive(false);
         }
         else
         {
-            MessageText.Instance.Message("Этой еды нет в инвенторе!", 3f);
+            MessageText.Instance.Message("Этой еды нет в инвентаре!", 3f);
         }
     }
 

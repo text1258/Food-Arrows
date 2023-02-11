@@ -1,13 +1,19 @@
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class ItemsPannel : MonoBehaviour
 {
-    public virtual void CreateItemsPanel() {}
-    public virtual void ClearItemsPanel() {}
+    [SerializeField] protected TMP_Text title;
+    [SerializeField] protected ScrollRect itemsScrollRect;
 
-    public void UpdateItemsPanel()
+    public virtual void CreateItemsPanel() {}
+
+    public virtual void ClearItemsPanel()
     {
-        ClearItemsPanel();
-        CreateItemsPanel();
+        foreach (Transform child in itemsScrollRect.content)
+        {
+            Destroy(child.gameObject);
+        }
     }
 }

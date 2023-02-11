@@ -5,11 +5,18 @@ using UnityEngine.UI;
 
 public class CookingPanel : ItemsPannel
 {
+    public static CookingPanel Instance;
+
     [SerializeField] private ScrollRect cookingPanel;
     [SerializeField] private CookingPanelCell cookingPanelCellPrefab;
     [SerializeField] private AllFoods allFoods;
 
     private List<Food> possibleToCookDishes;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     public override void CreateItemsPanel()
     {
@@ -28,6 +35,19 @@ public class CookingPanel : ItemsPannel
         { 
             Destroy(child.gameObject);
         }
+    }
+    public void Cook(Food food)
+    {
+        foreach (Product product in food.CookingProducts)
+        {
+            Player.Instance.InventoryProducts.Remove(product);
+            Saver.Instance.Save();
+        }
+        Player.Instance.InventoryFoods.Add(food);
+        Saver.Instance.Save();
+        CookingFoodAnimation.Instance.StartCookAnimation(food);
+        ClearItemsPanel();
+        CreateItemsPanel();
     }
 
     private static List<Food> FindPossibleFoods(List<Food> allFoods, List<Product> playerProducts)

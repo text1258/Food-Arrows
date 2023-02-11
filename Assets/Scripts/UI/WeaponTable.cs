@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class WeaponTable : ItemsPannel
+public class WeaponTable : MonoBehaviour
 {
     [SerializeField] private ScrollRect weaponTable;
     [SerializeField] private float weaponSize;
@@ -10,7 +10,7 @@ public class WeaponTable : ItemsPannel
     [SerializeField] private SelectWeapon selectWeapon;
     [SerializeField] private AllWeapons allWeapons;
 
-    public override void CreateItemsPanel()
+    public void CreateItemsPanel()
     {
         foreach (Weapon weapon in allWeapons.Weapons)
         {
