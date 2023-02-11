@@ -5,12 +5,12 @@ using UnityEngine;
 public abstract class Item : ScriptableObject
 {
     [SerializeField] private uint iD;
-    [SerializeField] private Sprite picture;
+    [SerializeField] private Sprite sprite;
     [SerializeField] private GameObject itemPrefab;
     [SerializeField] private uint price;
     
     public uint Price => price;
-    public Sprite Picture => picture;
+    public Sprite Sprite => sprite;
     public GameObject ItemPrefab => itemPrefab;
     public string ID
     {

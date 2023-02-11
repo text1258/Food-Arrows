@@ -3,11 +3,10 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CookingPanel : ItemsPannel
+public class CookingPanel : MonoBehaviour
 {
     public static CookingPanel Instance;
 
-    [SerializeField] private ScrollRect cookingPanel;
     [SerializeField] private CookingPanelCell cookingPanelCellPrefab;
     [SerializeField] private AllFoods allFoods;
 
@@ -18,24 +17,18 @@ public class CookingPanel : ItemsPannel
         Instance = this;
     }
 
-    public override void CreateItemsPanel()
+    public void ShowCookingPanel()
     {
         possibleToCookDishes = FindPossibleFoods(allFoods.Foods, Player.Instance.InventoryProducts);
+        ItemsPannel.Instance.CreateItemsPanel("Выберите, что хотите приготовить");
         foreach (Food food in possibleToCookDishes)
         {
-            GameObject currentCell = Instantiate(cookingPanelCellPrefab.gameObject, parent: cookingPanel.content.transform);
-            currentCell.GetComponent<Image>().sprite = food.Picture;
-            currentCell.GetComponent<CookingPanelCell>().cellFood = food;
+            cookingPanelCellPrefab.GetComponent<Image>().sprite = food.Sprite;
+            cookingPanelCellPrefab.GetComponent<CookingPanelCell>().cellFood = food;
+            ItemsPannel.Instance.AddItemToPanel(cookingPanelCellPrefab.gameObject);
         }
     }
 
-    public override void ClearItemsPanel()
-    {
-        foreach (Transform child in cookingPanel.content.transform)
-        { 
-            Destroy(child.gameObject);
-        }
-    }
     public void Cook(Food food)
     {
         foreach (Product product in food.CookingProducts)
@@ -46,8 +39,8 @@ public class CookingPanel : ItemsPannel
         Player.Instance.InventoryFoods.Add(food);
         Saver.Instance.Save();
         CookingFoodAnimation.Instance.StartCookAnimation(food);
-        ClearItemsPanel();
-        CreateItemsPanel();
+        ItemsPannel.Instance.ClearItemsPanel();
+        ShowCookingPanel();
     }
 
     private static List<Food> FindPossibleFoods(List<Food> allFoods, List<Product> playerProducts)

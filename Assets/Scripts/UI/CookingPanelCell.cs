@@ -8,7 +8,7 @@ public class CookingPanelCell : ItemsPannelCell
     public override void OnItemCellClick()
     {
         ConfirmPanel.Instance.CreateConfirmPanel($"Вы хотите это приготовить?",
-            cellFood.Picture, onConfirm: CookThisFood);
+            cellFood.Sprite, onConfirm: CookThisFood);
     }
 
     private void CookThisFood()

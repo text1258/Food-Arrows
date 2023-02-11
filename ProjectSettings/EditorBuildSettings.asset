@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/ShootClub.unity
-    guid: 156f56e887b4fa44eac8d23fd6799c74
-  - enabled: 1
     path: Assets/Scenes/Cafe.unity
     guid: 58358e6b952a79c4fb90821fdd1bfb6c
+  - enabled: 1
+    path: Assets/Scenes/ShootClub.unity
+    guid: 156f56e887b4fa44eac8d23fd6799c74
   m_configObjects: {}

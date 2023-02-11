@@ -10,7 +10,7 @@ public class GiveOrderButton : MonoBehaviour
 
     private void OnEnable()
     {
-        orderImage.sprite = CurrentVisitor.order.Picture;
+        orderImage.sprite = CurrentVisitor.order.Sprite;
     }
 
     public void GiveOrder()
@@ -33,6 +33,6 @@ public class GiveOrderButton : MonoBehaviour
 
     public void ShowCurrentFoodInfo()
     {
-        InfoPanel.Instance.ShowInfoPanel("Продукты для приготовления этой еды:", CurrentVisitor.order.CookingProducts.Select(x => x.Picture).ToArray());
+        InfoPanel.Instance.ShowInfoPanel("Продукты для приготовления этой еды:", CurrentVisitor.order.CookingProducts.Select(x => x.Sprite).ToArray());
     }
 }
