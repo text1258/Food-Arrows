@@ -2,7 +2,7 @@
 
 public abstract class Weapon3DButton : ItemsPannelCell
 {
-    [HideInInspector] public Weapon cellWeapon;
+    [HideInInspector] public Weapon CellWeapon;
 
     private void OnMouseUpAsButton()
     {

@@ -6,6 +6,7 @@ public abstract class InstantiatedWeapon : MonoBehaviour
     public static InstantiatedWeapon Instance;
 
     [SerializeField] public Weapon weapon;
+    [SerializeField] public Vector3 SpawnPos;
     [SerializeField] protected Animator weaponAnimator;
     [SerializeField] protected GameObject missilePrefab;
     [SerializeField] protected Sprite missileSprite;

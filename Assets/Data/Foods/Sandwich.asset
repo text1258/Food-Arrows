@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e288a125af4743f7b571a2e1af9a0a79, type: 3}
   m_Name: Sandwich
   m_EditorClassIdentifier: 
-  iD: 5
+  iD: 1
   sprite: {fileID: 21300000, guid: a663e5e091c0c8e43af42547fd4c066d, type: 3}
   itemPrefab: {fileID: 8932929607226046622, guid: c7781da101f4918479cdc21ade0d9e4f, type: 3}
   price: 300

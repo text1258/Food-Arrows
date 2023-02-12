@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df52bc72ffa249dea01b2d72ddbb0d74, type: 3}
   m_Name: Weapon 1
   m_EditorClassIdentifier: 
-  iD: 6
+  iD: 7
   sprite: {fileID: 21300000, guid: f09eae8c0ea04254b90c5386a034a225, type: 3}
-  itemPrefab: {fileID: 6486166019331308722, guid: 5beee010945f9ae49acb0d424dcb3c22, type: 3}
+  itemPrefab: {fileID: 5065986144841758987, guid: 3c484afd22342a043af945e18bf51b7e, type: 3}
   price: 100
   weaponPrefab: {fileID: 743253568702675106, guid: bd657e9b38266694dae5a30ac88f4f57, type: 3}
   missileCount: 7

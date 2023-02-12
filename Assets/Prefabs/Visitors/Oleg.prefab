@@ -148,9 +148,8 @@ MonoBehaviour:
   visitorName: Oleg
   speed: 5
   visitorAnimator: {fileID: 6792957567160789175}
-  ID: 0
-  isSatisfied: 0
   order: {fileID: 0}
+  isSatisfied: 0
 --- !u!95 &6792957567160789175
 Animator:
   serializedVersion: 4

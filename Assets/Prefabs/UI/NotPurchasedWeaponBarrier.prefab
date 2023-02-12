@@ -111,4 +111,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellWeapon: {fileID: 0}
-  confirmPanel: {fileID: 0}

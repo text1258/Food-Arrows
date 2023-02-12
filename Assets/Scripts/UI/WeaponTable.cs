@@ -21,8 +21,7 @@ public class WeaponTable : MonoBehaviour
     private void AddWeapon(Weapon weapon)
     {
         GameObject currentWeapon = Instantiate(weapon.ItemPrefab, parent: weaponTable.content);
-        currentWeapon.GetComponent<Weapon3DButton>().cellWeapon = weapon;
-        currentWeapon.GetComponent<Weapon3DButtonAvailble>().selectWeapon = this.selectWeapon;
+        currentWeapon.GetComponent<Weapon3DButton>().CellWeapon = weapon;
         currentWeapon.transform.localScale = Vector3.one;
         currentWeapon.transform.rotation = Quaternion.identity;
         Vector3 currentWeaponBoundsSize = currentWeapon.GetComponent<MeshRenderer>().bounds.size;
@@ -42,7 +41,7 @@ public class WeaponTable : MonoBehaviour
             {
                 Barrier = Instantiate(notAvailableWeaponBarrierPrefab, parent: currentWeapon.transform);
             }
-            Barrier.GetComponent<Weapon3DButton>().cellWeapon = weapon;
+            Barrier.GetComponent<Weapon3DButton>().CellWeapon = weapon;
             Barrier.transform.localScale = currentWeapon.GetComponent<BoxCollider>().size;
             Barrier.transform.localPosition = currentWeapon.GetComponent<BoxCollider>().center;
         }

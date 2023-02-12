@@ -146,4 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58f9c4739264a7490f592a5329d264d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellDish: {fileID: 0}
+  cellFood: {fileID: 0}

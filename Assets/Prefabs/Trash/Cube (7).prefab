@@ -116,4 +116,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellWeapon: {fileID: 0}
-  shooting: {fileID: 0}
+  selectWeapon: {fileID: 0}

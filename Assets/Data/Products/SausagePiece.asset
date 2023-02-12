@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad7c70cbf0af4659b7b8d9caa016d504, type: 3}
   m_Name: SausagePiece
   m_EditorClassIdentifier: 
-  iD: 5
+  iD: 2
   sprite: {fileID: 21300000, guid: 742840993befc6e43802e00c599a3bd4, type: 3}
   itemPrefab: {fileID: 102093399813243218, guid: dd6b1b90f43207c45b71dbc8a390b184, type: 3}
   price: 100

@@ -104,7 +104,6 @@ MonoBehaviour:
   missileSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   cooldown: 1
   missileRechargeTime: 5
-  rechargeViewer: {fileID: 0}
   bulletSpawnPoint: {fileID: 5316529374692713849}
   shotForce: 1500
 --- !u!95 &5303578432216110740

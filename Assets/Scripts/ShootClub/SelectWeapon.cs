@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class SelectWeapon : MonoBehaviour
 {
+    public static SelectWeapon Instance;
+
     [SerializeField] private Button restoreRechargeToFullButton;
 
     private Weapon selectedWeapon;
@@ -18,8 +20,13 @@ public class SelectWeapon : MonoBehaviour
             {
                 Destroy(currentWeapon);
             }
-            currentWeapon = Instantiate(selectedWeapon.WeaponPrefab, transform.position, transform.rotation, parent: transform);
+            currentWeapon = Instantiate(selectedWeapon.WeaponPrefab, selectedWeapon.WeaponPrefab.GetComponent<InstantiatedWeapon>().SpawnPos, transform.rotation, parent: transform);
             restoreRechargeToFullButton.gameObject.SetActive(true);
         }
+    }
+
+    private void Awake()
+    {
+        Instance = this;
     }
 }

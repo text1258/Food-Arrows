@@ -1639,7 +1639,6 @@ MonoBehaviour:
   speed: 1
   rewardMoney: 100
   timeBeforeDestroy: 7
-  player: {fileID: 0}
   targetSpawner: {fileID: 0}
   notHitByMissile: 1
 --- !u!1 &6564733483835637624
