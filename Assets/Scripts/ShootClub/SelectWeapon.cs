@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class SelectWeapon : MonoBehaviour
 {
-    [SerializeField] private RechargeViewer rechargeViewer;
     [SerializeField] private Button restoreRechargeToFullButton;
 
     private Weapon selectedWeapon;
@@ -19,19 +18,8 @@ public class SelectWeapon : MonoBehaviour
             {
                 Destroy(currentWeapon);
             }
-            currentWeapon = Instantiate(selectedWeapon.WeaponPrefab, this.transform.position, this.transform.rotation, parent: this.transform);
-            currentWeapon.GetComponent<InstantiatedWeapon>().rechargeViewer = rechargeViewer;
-            rechargeViewer.CurrentInstantiatedWeapon = currentWeapon.GetComponent<InstantiatedWeapon>();
-            rechargeViewer.gameObject.SetActive(true);
+            currentWeapon = Instantiate(selectedWeapon.WeaponPrefab, transform.position, transform.rotation, parent: transform);
             restoreRechargeToFullButton.gameObject.SetActive(true);
-            rechargeViewer.CreateMissilesPanel();
-            currentWeapon.GetComponent<InstantiatedWeapon>().CurrentMissileCount = 0;
         }
-    }
-
-    public void RestoreRechargeToFull()
-    {
-        currentWeapon.GetComponent<InstantiatedWeapon>().CurrentMissileCount = currentWeapon.GetComponent<InstantiatedWeapon>().weapon.MissileCount;
-        currentWeapon.GetComponent<InstantiatedWeapon>().currentRestoreRecharge = null;
     }
 }

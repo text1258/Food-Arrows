@@ -13,11 +13,15 @@ MonoBehaviour:
   m_Name: Level 2
   m_EditorClassIdentifier: 
   number: 2
-  openInThisLevelFoods: []
-  openInThisLevelProducts: []
+  openInThisLevelFoods:
+  - {fileID: 11400000, guid: edea6e6933cf8934f9d192126b8719e1, type: 2}
+  openInThisLevelProducts:
+  - {fileID: 11400000, guid: 6ac63f467b504e74bb4dad4be4606377, type: 2}
+  - {fileID: 11400000, guid: f1545721721cbca4a81b135a7d4572b0, type: 2}
+  - {fileID: 11400000, guid: c2e302f4501053a449464486efef7bcd, type: 2}
   openInThisLevelWeapons:
   - {fileID: 11400000, guid: f610bfe7f13ea214da89965ce18705ae, type: 2}
   spawnAtThisLevelTargets:
   - {fileID: 1858410179838401945, guid: 74d2c4c45d28b794a9705dc062ce8067, type: 3}
-  moneyForAdvertisingCount: 150
+  moneyForAdvertising: 150
   experienceToNextLevel: 3

@@ -18,4 +18,4 @@ MonoBehaviour:
   openInThisLevelWeapons: []
   spawnAtThisLevelTargets:
   - {fileID: 1858410179838401945, guid: 74d2c4c45d28b794a9705dc062ce8067, type: 3}
-  moneyForAdvertisingCount: 300
+  moneyForAdvertising: 300

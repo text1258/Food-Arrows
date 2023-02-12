@@ -37,7 +37,7 @@ public class CookingFoodAnimation : MonoBehaviour
         foreach (Product currentProduct in cookingFood.CookingProducts)
         {
             GameObject currentInstantiatedProduct = Instantiate(currentProduct.ItemPrefab,
-                RandomVector(maxSpawnProductsPosition, minSpawnProductsPosition), Quaternion.identity);
+                RandomVector(maxSpawnProductsPosition, minSpawnProductsPosition), currentProduct.ItemPrefab.transform.rotation);
             productsFromRecipe.Add(currentInstantiatedProduct);
             if (currentInstantiatedProduct.GetComponent<InstantiatedProduct>() == null)
             {

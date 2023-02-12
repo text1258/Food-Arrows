@@ -8,12 +8,12 @@ public abstract class Level : ScriptableObject
     [SerializeField] protected List<Product> openInThisLevelProducts;
     [SerializeField] protected List<Weapon> openInThisLevelWeapons;
     [SerializeField] protected List<Target> spawnAtThisLevelTargets;
-    [SerializeField] protected uint moneyForAdvertisingCount;
+    [SerializeField] protected uint moneyForAdvertising;
 
     public uint Number => number;
     public List<Food> OpenInThisLevelFoods => openInThisLevelFoods;
     public List<Product> OpenInThisLevelProducts => openInThisLevelProducts;
     public List<Weapon> OpenInThisLevelWeapons => openInThisLevelWeapons;
     public List<Target> SpawnAtThisLevelTargets => spawnAtThisLevelTargets;
-    public uint MoneyForAdvertisingCount => moneyForAdvertisingCount;
+    public uint MoneyForAdvertising => moneyForAdvertising;
 }

@@ -111,6 +111,28 @@ public class Player : MonoBehaviour
         onLoad.Invoke();
     }
 
+    public void SetPlayerInfo(SavingData savingData)
+    {
+        if (savingData != null)
+        {
+            currentLevel = allLevels.Levels[(int)(savingData.levelNumber - 1)];
+            money = savingData.money;
+            experience = savingData.experience;
+            inventoryFoods = FindItemsByIDes(savingData.inventoryFoodsIDes, new List<Item>(allFoods.Foods)).ConvertAll(item => (Food)item);
+            inventoryProducts = FindItemsByIDes(savingData.inventoryProductsIDes, new List<Item>(allProducts.Products)).ConvertAll(item => (Product)item);
+            inventoryWeapons = FindItemsByIDes(savingData.inventoryWeaponsIDes, new List<Item>(allWeapons.Weapons)).ConvertAll(item => (Weapon)item);
+            currentOrder = (Food)FindItemByID(savingData.currentOrderID, new List<Item>(allFoods.Foods));
+            currentVisitorIndex = savingData.currentVisitorIndex;
+        }
+        PlayerStates.Instance.UpdateAllStatesUI();
+        CheckAvailableWeapons();
+    }
+
+    public void AddMoneyForAdversiting()
+    {
+        Money += CurrentLevel.MoneyForAdvertising;
+    }
+
     private void CheckAvailableWeapons()
     {
         AvailableWeapons = new List<Weapon>();
@@ -131,22 +153,5 @@ public class Player : MonoBehaviour
     private static Item FindItemByID(string itemID, List<Item> allItems)
     {
         return allItems.FirstOrDefault(item => item.ID == itemID);
-    }
-
-    public void SetPlayerInfo(SavingData savingData)
-    {
-        if (savingData != null)
-        {
-            currentLevel = allLevels.Levels[(int)(savingData.levelNumber - 1)];
-            money = savingData.money;
-            experience = savingData.experience;
-            inventoryFoods = FindItemsByIDes(savingData.inventoryFoodsIDes, new List<Item>(allFoods.Foods)).ConvertAll(item => (Food)item);
-            inventoryProducts = FindItemsByIDes(savingData.inventoryProductsIDes, new List<Item>(allProducts.Products)).ConvertAll(item => (Product)item);
-            inventoryWeapons = FindItemsByIDes(savingData.inventoryWeaponsIDes, new List<Item>(allWeapons.Weapons)).ConvertAll(item => (Weapon)item);
-            currentOrder = (Food)FindItemByID(savingData.currentOrderID, new List<Item>(allFoods.Foods));
-            currentVisitorIndex = savingData.currentVisitorIndex;
-        }
-        PlayerStates.Instance.UpdateAllStatesUI();
-        CheckAvailableWeapons();
     }
 }
