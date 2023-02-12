@@ -148,8 +148,8 @@ extern void Level_get_OpenInThisLevelProducts_m2E9F038C951950F309DECE11081ACB552
 extern void Level_get_OpenInThisLevelWeapons_m2EE20A6C330F73434B9363BF745ED1B795C4F229 (void);
 // 0x00000044 System.Collections.Generic.List`1<Target> Level::get_SpawnAtThisLevelTargets()
 extern void Level_get_SpawnAtThisLevelTargets_m24C7BCD839434E894D7D05F3E47E15846F2C11F4 (void);
-// 0x00000045 System.UInt32 Level::get_MoneyForAdvertisingCount()
-extern void Level_get_MoneyForAdvertisingCount_m1D2185CD999941F07EBB5459D8D4C167F0E24CFE (void);
+// 0x00000045 System.UInt32 Level::get_MoneyForAdvertising()
+extern void Level_get_MoneyForAdvertising_m35B2EA8ACC09DEFD30C24E716939FDE71D70A8E5 (void);
 // 0x00000046 System.Void Level::.ctor()
 extern void Level__ctor_mD8581BC772C33D9960DCE832878E1A5C45F7C0DA (void);
 // 0x00000047 System.UInt32 NormalLevel::get_ExperienceToNextLevel()
@@ -190,120 +190,120 @@ extern void Player_set_CurrentVisitorIndex_mF0D3230CD1D2E8E6D29662B2CE04DBB6C9E5
 extern void Player_Awake_m512A28E1559EB8AEEB2E1DB873F9F99FCC96BA67 (void);
 // 0x00000059 System.Collections.IEnumerator Player::OnFirstAwake()
 extern void Player_OnFirstAwake_m81487574DB0638A86493B5A976190DEB36A1971B (void);
-// 0x0000005A System.Void Player::CheckAvailableWeapons()
-extern void Player_CheckAvailableWeapons_m74F1AAF7E0A1A2DDB2D72A68EA36DCAE9489CB25 (void);
-// 0x0000005B System.Collections.Generic.List`1<Item> Player::FindItemsByIDes(System.Collections.Generic.List`1<System.String>,System.Collections.Generic.List`1<Item>)
-extern void Player_FindItemsByIDes_m06F2038F015C5A4036762B57C2277DC60613A913 (void);
-// 0x0000005C Item Player::FindItemByID(System.String,System.Collections.Generic.List`1<Item>)
-extern void Player_FindItemByID_mD75982009F12E6BB655A05C2920977DB5D965E2F (void);
-// 0x0000005D System.Void Player::SetPlayerInfo(SavingData)
+// 0x0000005A System.Void Player::SetPlayerInfo(SavingData)
 extern void Player_SetPlayerInfo_m4BE5FBDE99315C679C72DCEAB94F1C220B5EB137 (void);
-// 0x0000005E System.Void Player::.ctor()
+// 0x0000005B System.Void Player::AddMoneyForAdversiting()
+extern void Player_AddMoneyForAdversiting_mA3D5C709EEECDB723579F47A56DCB3C665E047F8 (void);
+// 0x0000005C System.Void Player::CheckAvailableWeapons()
+extern void Player_CheckAvailableWeapons_m74F1AAF7E0A1A2DDB2D72A68EA36DCAE9489CB25 (void);
+// 0x0000005D System.Collections.Generic.List`1<Item> Player::FindItemsByIDes(System.Collections.Generic.List`1<System.String>,System.Collections.Generic.List`1<Item>)
+extern void Player_FindItemsByIDes_m06F2038F015C5A4036762B57C2277DC60613A913 (void);
+// 0x0000005E Item Player::FindItemByID(System.String,System.Collections.Generic.List`1<Item>)
+extern void Player_FindItemByID_mD75982009F12E6BB655A05C2920977DB5D965E2F (void);
+// 0x0000005F System.Void Player::.ctor()
 extern void Player__ctor_m0A83E0706592FC871B0CF188B37AFC6649F3D85D (void);
-// 0x0000005F System.Void Player/<>c::.cctor()
+// 0x00000060 System.Void Player/<>c::.cctor()
 extern void U3CU3Ec__cctor_m333EAC97FFFC4AC5316133A4DC5EC7AD44FE9AEC (void);
-// 0x00000060 System.Void Player/<>c::.ctor()
+// 0x00000061 System.Void Player/<>c::.ctor()
 extern void U3CU3Ec__ctor_m65D828A3D8124CFC3EB485F9BF5F20E107BAB2B7 (void);
-// 0x00000061 UnityEngine.Sprite Player/<>c::<set_Experience>b__23_0(Food)
+// 0x00000062 UnityEngine.Sprite Player/<>c::<set_Experience>b__23_0(Food)
 extern void U3CU3Ec_U3Cset_ExperienceU3Eb__23_0_m57F99FE62C1AACA78714535C4679B57D404730B5 (void);
-// 0x00000062 UnityEngine.Sprite Player/<>c::<set_Experience>b__23_1(Product)
+// 0x00000063 UnityEngine.Sprite Player/<>c::<set_Experience>b__23_1(Product)
 extern void U3CU3Ec_U3Cset_ExperienceU3Eb__23_1_mD2C91B4978ACCBA44D03EB8C205DE1D6287602A5 (void);
-// 0x00000063 UnityEngine.Sprite Player/<>c::<set_Experience>b__23_2(Weapon)
+// 0x00000064 UnityEngine.Sprite Player/<>c::<set_Experience>b__23_2(Weapon)
 extern void U3CU3Ec_U3Cset_ExperienceU3Eb__23_2_mB3200F892621F5BB0DF2C4BFD7611738A2F055F5 (void);
-// 0x00000064 System.Boolean Player/<>c::<OnFirstAwake>b__40_0()
+// 0x00000065 System.Boolean Player/<>c::<OnFirstAwake>b__40_0()
 extern void U3CU3Ec_U3COnFirstAwakeU3Eb__40_0_mEAC7CACCD24DB55DEAF112FCD428D31094B6BF62 (void);
-// 0x00000065 Food Player/<>c::<SetPlayerInfo>b__44_0(Item)
-extern void U3CU3Ec_U3CSetPlayerInfoU3Eb__44_0_mBD8A98A93D048582A5F03EBF119FF9F68D100AB5 (void);
-// 0x00000066 Product Player/<>c::<SetPlayerInfo>b__44_1(Item)
-extern void U3CU3Ec_U3CSetPlayerInfoU3Eb__44_1_m78A64DB03D02C9DE984515B5F027E6008D709846 (void);
-// 0x00000067 Weapon Player/<>c::<SetPlayerInfo>b__44_2(Item)
-extern void U3CU3Ec_U3CSetPlayerInfoU3Eb__44_2_mECA111D3710FD47AAA4757D2099B94E034318FE1 (void);
-// 0x00000068 System.Void Player/<OnFirstAwake>d__40::.ctor(System.Int32)
+// 0x00000066 Food Player/<>c::<SetPlayerInfo>b__41_0(Item)
+extern void U3CU3Ec_U3CSetPlayerInfoU3Eb__41_0_m753F7A1026245B9B563C02FC14F20FB69E9F9282 (void);
+// 0x00000067 Product Player/<>c::<SetPlayerInfo>b__41_1(Item)
+extern void U3CU3Ec_U3CSetPlayerInfoU3Eb__41_1_m7D566F1FC1648E1380F47E304D95FCF5B0B35709 (void);
+// 0x00000068 Weapon Player/<>c::<SetPlayerInfo>b__41_2(Item)
+extern void U3CU3Ec_U3CSetPlayerInfoU3Eb__41_2_m36D24280FECC90153A0BDD79D2D5BA3201475506 (void);
+// 0x00000069 System.Void Player/<OnFirstAwake>d__40::.ctor(System.Int32)
 extern void U3COnFirstAwakeU3Ed__40__ctor_mB6EE6FA287B2BCC3F979803DE004E5CFE47202EF (void);
-// 0x00000069 System.Void Player/<OnFirstAwake>d__40::System.IDisposable.Dispose()
+// 0x0000006A System.Void Player/<OnFirstAwake>d__40::System.IDisposable.Dispose()
 extern void U3COnFirstAwakeU3Ed__40_System_IDisposable_Dispose_m4F9192B8A5FFF8CC1611B2AE4B92556AE0637D3B (void);
-// 0x0000006A System.Boolean Player/<OnFirstAwake>d__40::MoveNext()
+// 0x0000006B System.Boolean Player/<OnFirstAwake>d__40::MoveNext()
 extern void U3COnFirstAwakeU3Ed__40_MoveNext_m7F94F19506F9A495A93771A95930ACD356EEC0BA (void);
-// 0x0000006B System.Object Player/<OnFirstAwake>d__40::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x0000006C System.Object Player/<OnFirstAwake>d__40::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3COnFirstAwakeU3Ed__40_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m99FA64EB278336735D02710E3E99172CFD6DD1C6 (void);
-// 0x0000006C System.Void Player/<OnFirstAwake>d__40::System.Collections.IEnumerator.Reset()
+// 0x0000006D System.Void Player/<OnFirstAwake>d__40::System.Collections.IEnumerator.Reset()
 extern void U3COnFirstAwakeU3Ed__40_System_Collections_IEnumerator_Reset_m53D1D636AF7DE105EF0143481481EC205562CCDF (void);
-// 0x0000006D System.Object Player/<OnFirstAwake>d__40::System.Collections.IEnumerator.get_Current()
+// 0x0000006E System.Object Player/<OnFirstAwake>d__40::System.Collections.IEnumerator.get_Current()
 extern void U3COnFirstAwakeU3Ed__40_System_Collections_IEnumerator_get_Current_mBCC348759281901F92877F75B094C3E1C885EF4F (void);
-// 0x0000006E System.Void Player/<>c__DisplayClass42_0::.ctor()
-extern void U3CU3Ec__DisplayClass42_0__ctor_m0540C48FCCF6F2EBE9A2F17896E469078D18E2E2 (void);
-// 0x0000006F Item Player/<>c__DisplayClass42_0::<FindItemsByIDes>b__0(System.String)
-extern void U3CU3Ec__DisplayClass42_0_U3CFindItemsByIDesU3Eb__0_m37589E552F9A54ECD79297603622709ACAF667DE (void);
-// 0x00000070 System.Void Player/<>c__DisplayClass43_0::.ctor()
-extern void U3CU3Ec__DisplayClass43_0__ctor_m161941F2B481C66D9C71022B9EB6511693E30089 (void);
-// 0x00000071 System.Boolean Player/<>c__DisplayClass43_0::<FindItemByID>b__0(Item)
-extern void U3CU3Ec__DisplayClass43_0_U3CFindItemByIDU3Eb__0_m310FE00FAC73981789C5A87903FB25CA2EA9A33B (void);
-// 0x00000072 System.Void Saver::Awake()
+// 0x0000006F System.Void Player/<>c__DisplayClass44_0::.ctor()
+extern void U3CU3Ec__DisplayClass44_0__ctor_mA8F7071A6E00013B7138A801CB8B6BFDF58DE9E6 (void);
+// 0x00000070 Item Player/<>c__DisplayClass44_0::<FindItemsByIDes>b__0(System.String)
+extern void U3CU3Ec__DisplayClass44_0_U3CFindItemsByIDesU3Eb__0_mE3FF46A0A77732DC5559D560190ADED347B2591F (void);
+// 0x00000071 System.Void Player/<>c__DisplayClass45_0::.ctor()
+extern void U3CU3Ec__DisplayClass45_0__ctor_m1AA300FCDFD55D8D1275587158CBB16A794713C3 (void);
+// 0x00000072 System.Boolean Player/<>c__DisplayClass45_0::<FindItemByID>b__0(Item)
+extern void U3CU3Ec__DisplayClass45_0_U3CFindItemByIDU3Eb__0_m65C91920F1BE107A3C4DF878144ADCA5408A239C (void);
+// 0x00000073 System.Void Saver::Awake()
 extern void Saver_Awake_m7D57875D0D708DDE7F4A41D3642A4D3FEDC3D693 (void);
-// 0x00000073 System.Void Saver::Save()
+// 0x00000074 System.Void Saver::Save()
 extern void Saver_Save_m46BE161E52B385E5A13430AD3D278A0156B148E4 (void);
-// 0x00000074 System.Void Saver::Load()
+// 0x00000075 System.Void Saver::Load()
 extern void Saver_Load_m1A5B068EA8695D5A79898336B5FCD9AD5785A652 (void);
-// 0x00000075 System.Collections.Generic.List`1<System.String> Saver::GetItemsIDes(System.Collections.Generic.List`1<Item>)
+// 0x00000076 System.Collections.Generic.List`1<System.String> Saver::GetItemsIDes(System.Collections.Generic.List`1<Item>)
 extern void Saver_GetItemsIDes_m1388177560CCA1FFEEAA9F50582EB2DB282DBA70 (void);
-// 0x00000076 System.Void Saver::.ctor()
+// 0x00000077 System.Void Saver::.ctor()
 extern void Saver__ctor_m3651AE3F108C01AF5479ADCC2E2B255D38FF1C79 (void);
-// 0x00000077 System.Void SavingData::.ctor(System.UInt32,System.UInt32,System.UInt32,System.Collections.Generic.List`1<System.String>,System.Collections.Generic.List`1<System.String>,System.Collections.Generic.List`1<System.String>,System.String,System.String)
+// 0x00000078 System.Void SavingData::.ctor(System.UInt32,System.UInt32,System.UInt32,System.Collections.Generic.List`1<System.String>,System.Collections.Generic.List`1<System.String>,System.Collections.Generic.List`1<System.String>,System.String,System.String)
 extern void SavingData__ctor_mEC3511CCA01D3C3C88E760AFE7D8E0888D9BB251 (void);
-// 0x00000078 System.Void SavingData::.ctor(System.UInt32,System.UInt32,System.UInt32,System.Collections.Generic.List`1<System.String>,System.Collections.Generic.List`1<System.String>,System.Collections.Generic.List`1<System.String>)
+// 0x00000079 System.Void SavingData::.ctor(System.UInt32,System.UInt32,System.UInt32,System.Collections.Generic.List`1<System.String>,System.Collections.Generic.List`1<System.String>,System.Collections.Generic.List`1<System.String>)
 extern void SavingData__ctor_m58BD2A2BE2FB41A64433316429D024CDE453DA3A (void);
-// 0x00000079 System.Void SceneLoader::LoadScene(System.String)
+// 0x0000007A System.Void SceneLoader::LoadScene(System.String)
 extern void SceneLoader_LoadScene_mFE87E2AA20B80CBECD7C02C3A6EF68661736A3F1 (void);
-// 0x0000007A System.Void SceneLoader::.ctor()
+// 0x0000007B System.Void SceneLoader::.ctor()
 extern void SceneLoader__ctor_m2248766DF38AF07562AD31501C7275B8DF1B7D29 (void);
-// 0x0000007B System.Collections.Generic.List`1<Weapon> AllWeapons::get_Weapons()
+// 0x0000007C System.Collections.Generic.List`1<Weapon> AllWeapons::get_Weapons()
 extern void AllWeapons_get_Weapons_mE60700ECB9F6C62C1DB4CE9468D9BA7E893BE498 (void);
-// 0x0000007C System.Void AllWeapons::.ctor()
+// 0x0000007D System.Void AllWeapons::.ctor()
 extern void AllWeapons__ctor_mDED12BA76124CD945DF573AB285D27D1AEC385FA (void);
-// 0x0000007D System.UInt32 InstantiatedWeapon::get_CurrentMissileCount()
+// 0x0000007E System.UInt32 InstantiatedWeapon::get_CurrentMissileCount()
 extern void InstantiatedWeapon_get_CurrentMissileCount_m9D5DD151534A2A3339C7E9CC0E17E9DA958470AD (void);
-// 0x0000007E System.Void InstantiatedWeapon::set_CurrentMissileCount(System.UInt32)
+// 0x0000007F System.Void InstantiatedWeapon::set_CurrentMissileCount(System.UInt32)
 extern void InstantiatedWeapon_set_CurrentMissileCount_m7824E2F38632402A6568BCF539E432F6130C03AA (void);
-// 0x0000007F Weapon InstantiatedWeapon::get_Weapon()
+// 0x00000080 Weapon InstantiatedWeapon::get_Weapon()
 extern void InstantiatedWeapon_get_Weapon_m7072F1D9DA4E75BF1C65331AE88554648CF88EA9 (void);
-// 0x00000080 System.Single InstantiatedWeapon::get_MissileRechargeTime()
+// 0x00000081 System.Single InstantiatedWeapon::get_MissileRechargeTime()
 extern void InstantiatedWeapon_get_MissileRechargeTime_m4F47623C5942A7B4212C6348F2B3B3D957B40BF4 (void);
-// 0x00000081 UnityEngine.Sprite InstantiatedWeapon::get_MissileSprite()
+// 0x00000082 UnityEngine.Sprite InstantiatedWeapon::get_MissileSprite()
 extern void InstantiatedWeapon_get_MissileSprite_mFBA648F17E3534CD6319071142928553CEE3E305 (void);
-// 0x00000082 System.Void InstantiatedWeapon::Awake()
+// 0x00000083 System.Void InstantiatedWeapon::Awake()
 extern void InstantiatedWeapon_Awake_mB70D7143F60C4A63C0DDFF554C9EFC0D1BEBFBC2 (void);
-// 0x00000083 System.Single InstantiatedWeapon::get_PastMissileRechargeTime()
+// 0x00000084 System.Single InstantiatedWeapon::get_PastMissileRechargeTime()
 extern void InstantiatedWeapon_get_PastMissileRechargeTime_m50F071E61AB2BB62276BEA27109C72727F4A723F (void);
-// 0x00000084 System.Void InstantiatedWeapon::set_PastMissileRechargeTime(System.Single)
+// 0x00000085 System.Void InstantiatedWeapon::set_PastMissileRechargeTime(System.Single)
 extern void InstantiatedWeapon_set_PastMissileRechargeTime_mF29402C380F201CBDCB403C90ED4A66DF35A3F89 (void);
-// 0x00000085 System.Collections.IEnumerator InstantiatedWeapon::RestoreRecharge()
+// 0x00000086 System.Collections.IEnumerator InstantiatedWeapon::RestoreRecharge()
 extern void InstantiatedWeapon_RestoreRecharge_mCF2EBD2C430FD57A2B6B366A50A78840D913D1D7 (void);
-// 0x00000086 System.Void InstantiatedWeapon::.ctor()
+// 0x00000087 System.Void InstantiatedWeapon::.ctor()
 extern void InstantiatedWeapon__ctor_mAD949359E8B09807ED88EAD41DE1CF75BADD065D (void);
-// 0x00000087 System.Void InstantiatedWeapon/<RestoreRecharge>d__24::.ctor(System.Int32)
+// 0x00000088 System.Void InstantiatedWeapon/<RestoreRecharge>d__24::.ctor(System.Int32)
 extern void U3CRestoreRechargeU3Ed__24__ctor_mFC18A1CB4CC7978ED3EEBECA4F64592F68971C0C (void);
-// 0x00000088 System.Void InstantiatedWeapon/<RestoreRecharge>d__24::System.IDisposable.Dispose()
+// 0x00000089 System.Void InstantiatedWeapon/<RestoreRecharge>d__24::System.IDisposable.Dispose()
 extern void U3CRestoreRechargeU3Ed__24_System_IDisposable_Dispose_m83473DDD5EC2DBA6A3C681F074904E1CE1EB8854 (void);
-// 0x00000089 System.Boolean InstantiatedWeapon/<RestoreRecharge>d__24::MoveNext()
+// 0x0000008A System.Boolean InstantiatedWeapon/<RestoreRecharge>d__24::MoveNext()
 extern void U3CRestoreRechargeU3Ed__24_MoveNext_m77643056C5EA573027D05CF9B164F06AD178C878 (void);
-// 0x0000008A System.Object InstantiatedWeapon/<RestoreRecharge>d__24::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x0000008B System.Object InstantiatedWeapon/<RestoreRecharge>d__24::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CRestoreRechargeU3Ed__24_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m885DCFA58C840CF3FA0597FA0C8B75D2339B1DF0 (void);
-// 0x0000008B System.Void InstantiatedWeapon/<RestoreRecharge>d__24::System.Collections.IEnumerator.Reset()
+// 0x0000008C System.Void InstantiatedWeapon/<RestoreRecharge>d__24::System.Collections.IEnumerator.Reset()
 extern void U3CRestoreRechargeU3Ed__24_System_Collections_IEnumerator_Reset_m1FB2C4D9223E574D5AD0F6B0B4A8B9027E071AF0 (void);
-// 0x0000008C System.Object InstantiatedWeapon/<RestoreRecharge>d__24::System.Collections.IEnumerator.get_Current()
+// 0x0000008D System.Object InstantiatedWeapon/<RestoreRecharge>d__24::System.Collections.IEnumerator.get_Current()
 extern void U3CRestoreRechargeU3Ed__24_System_Collections_IEnumerator_get_Current_m4FCF6425B3E5E81DE84109F75065EC717CE19F10 (void);
-// 0x0000008D System.Void Missile::OnCollisionEnter(UnityEngine.Collision)
-extern void Missile_OnCollisionEnter_m36E9990F57EB14435FA7EC980A4100DA0D98C4BC (void);
 // 0x0000008E System.Void Missile::.ctor()
 extern void Missile__ctor_m5D749F34166F3148A1242D17A5BAF8698F11A30F (void);
-// 0x0000008F System.Void CannonMissile::.ctor()
+// 0x0000008F System.Void CannonMissile::OnCollisionEnter(UnityEngine.Collision)
+extern void CannonMissile_OnCollisionEnter_mD10FF87D1547096101C546BB7FBB9318C8438DDD (void);
+// 0x00000090 System.Void CannonMissile::.ctor()
 extern void CannonMissile__ctor_mC487608DBDB1E4FBFA25FA8D5E2051D603B07766 (void);
-// 0x00000090 Weapon SelectWeapon::get_SelectedWeapon()
+// 0x00000091 Weapon SelectWeapon::get_SelectedWeapon()
 extern void SelectWeapon_get_SelectedWeapon_m320599D96071850B227299E8E0FB7A7BED1585FB (void);
-// 0x00000091 System.Void SelectWeapon::set_SelectedWeapon(Weapon)
+// 0x00000092 System.Void SelectWeapon::set_SelectedWeapon(Weapon)
 extern void SelectWeapon_set_SelectedWeapon_m2F2A1D3BE6F524ABAC0B79938E3D5D93981373EC (void);
-// 0x00000092 System.Void SelectWeapon::RestoreRechargeToFull()
-extern void SelectWeapon_RestoreRechargeToFull_m41C2DF5B7C82BD292E18C15FD740842BAEF36403 (void);
 // 0x00000093 System.Void SelectWeapon::.ctor()
 extern void SelectWeapon__ctor_m6D3ABEA4E9DB2DC7E6C935E3AED486D1F692BE1B (void);
 // 0x00000094 UnityEngine.Vector3 Target::get_TargetMaxSpawnZoneSize()
@@ -488,18 +488,18 @@ extern void ProductShopCell__ctor_m10FDEADD1D55B6ADB5B94C058C869CC8E8E1358B (voi
 extern void ProductShopPannel_ShowProductShopPannel_m2EC8905B928F358ADDD0B95FA0CB3155006F6DA9 (void);
 // 0x000000EE System.Void ProductShopPannel::.ctor()
 extern void ProductShopPannel__ctor_m4DDD3D419A4D222FFEEBB5C916FF1FCB40A33CA9 (void);
-// 0x000000EF InstantiatedWeapon RechargeViewer::get_CurrentInstantiatedWeapon()
-extern void RechargeViewer_get_CurrentInstantiatedWeapon_m4391B1AC33CEFA983E85A53136B69609F5B3BCF7 (void);
-// 0x000000F0 System.Void RechargeViewer::set_CurrentInstantiatedWeapon(InstantiatedWeapon)
-extern void RechargeViewer_set_CurrentInstantiatedWeapon_mC8F4F2E19682D001DEC5706E9AE086A694BD044B (void);
-// 0x000000F1 System.Void RechargeViewer::CreateMissilesPanel()
-extern void RechargeViewer_CreateMissilesPanel_m806D2040C3BB7FC8149DBEB43FC7F41928B0DF3A (void);
-// 0x000000F2 System.Void RechargeViewer::UpdateMissilesPanel()
-extern void RechargeViewer_UpdateMissilesPanel_m2B0DC465CAC0F14B77E9BE9D3B019FA06CF703CB (void);
-// 0x000000F3 System.Void RechargeViewer::ClearMissilesPanel()
-extern void RechargeViewer_ClearMissilesPanel_mD759E47CEB8DF9D3E1EDD9F36CCFB72DDE101C7B (void);
-// 0x000000F4 System.Void RechargeViewer::.ctor()
-extern void RechargeViewer__ctor_m0FB3EF32E032999A776322F9945BEC6798EE03CF (void);
+// 0x000000EF System.Void Recharge::Awake()
+extern void Recharge_Awake_m9EB8950DB1205D05D57266115761203DE8A54E19 (void);
+// 0x000000F0 System.Void Recharge::CreateMissilesPanel()
+extern void Recharge_CreateMissilesPanel_mBD006A47C7574504D11D31987EFF7E53CFC8B113 (void);
+// 0x000000F1 System.Void Recharge::RestoreRechargeToFull()
+extern void Recharge_RestoreRechargeToFull_mBB58DFC3C2A20367D81B35AF4AD5194E911FF453 (void);
+// 0x000000F2 System.Void Recharge::UpdateMissilesPanel()
+extern void Recharge_UpdateMissilesPanel_mE0F0BB86E9CCF0BBFDAB3AC3B056A6C9911799B1 (void);
+// 0x000000F3 System.Void Recharge::ClearMissilesPanel()
+extern void Recharge_ClearMissilesPanel_m656952EA159F1E0ED347F78CCFB013840A08FA8B (void);
+// 0x000000F4 System.Void Recharge::.ctor()
+extern void Recharge__ctor_m67A42D6E58A00E66D47DB8B9C854C65795DB5128 (void);
 // 0x000000F5 System.Void ResourceText::ShowText()
 extern void ResourceText_ShowText_m111AC05BFC6227A9F6D103BBB4938D6CFC15516A (void);
 // 0x000000F6 System.Void ResourceText::.ctor()
@@ -532,10 +532,10 @@ extern void WeaponTable_CreateItemsPanel_mA10A499FF47182B0587DAFFA89039647B1DA82
 extern void WeaponTable_AddWeapon_m7F92252F887FB896C53EB27F23457B2C6FF6F895 (void);
 // 0x00000104 System.Void WeaponTable::.ctor()
 extern void WeaponTable__ctor_mE12D37467978B18C4C4F5F3E865FB2586F7CB44A (void);
-// 0x00000105 System.Void UI.AddMoneyForAdvertisingButton::ShowText()
-extern void AddMoneyForAdvertisingButton_ShowText_mF0E5749DA85E022986530E82DA9785772E59534F (void);
-// 0x00000106 System.Void UI.AddMoneyForAdvertisingButton::.ctor()
-extern void AddMoneyForAdvertisingButton__ctor_m209DE10236839F36B20E5DCF1388144355C87CD7 (void);
+// 0x00000105 System.Void UI.AddMoneyForAdvertisingText::ShowText()
+extern void AddMoneyForAdvertisingText_ShowText_m542E90B5D17B109C498D9AE7A5FD346B39E5F6B6 (void);
+// 0x00000106 System.Void UI.AddMoneyForAdvertisingText::.ctor()
+extern void AddMoneyForAdvertisingText__ctor_m030F23DB774B29F9BED6CBED6B387A19BEF9DB8B (void);
 // 0x00000107 System.Void UI.ConfirmPanel::Awake()
 extern void ConfirmPanel_Awake_m7182E6D9E3A6C3FC8609CC579A1499BA430313A2 (void);
 // 0x00000108 System.Void UI.ConfirmPanel::CreateConfirmPanel(System.String,UnityEngine.Sprite,UnityEngine.Events.UnityAction,UnityEngine.Events.UnityAction)
@@ -630,7 +630,7 @@ static Il2CppMethodPointer s_methodPointers[274] =
 	Level_get_OpenInThisLevelProducts_m2E9F038C951950F309DECE11081ACB552E8D6052,
 	Level_get_OpenInThisLevelWeapons_m2EE20A6C330F73434B9363BF745ED1B795C4F229,
 	Level_get_SpawnAtThisLevelTargets_m24C7BCD839434E894D7D05F3E47E15846F2C11F4,
-	Level_get_MoneyForAdvertisingCount_m1D2185CD999941F07EBB5459D8D4C167F0E24CFE,
+	Level_get_MoneyForAdvertising_m35B2EA8ACC09DEFD30C24E716939FDE71D70A8E5,
 	Level__ctor_mD8581BC772C33D9960DCE832878E1A5C45F7C0DA,
 	NormalLevel_get_ExperienceToNextLevel_m572F3D21123CFBAB82EE89393A6BDAFF8063F54A,
 	NormalLevel__ctor_m5F36F3629F0A02161D3A627554973C13E00B61B6,
@@ -651,10 +651,11 @@ static Il2CppMethodPointer s_methodPointers[274] =
 	Player_set_CurrentVisitorIndex_mF0D3230CD1D2E8E6D29662B2CE04DBB6C9E58B51,
 	Player_Awake_m512A28E1559EB8AEEB2E1DB873F9F99FCC96BA67,
 	Player_OnFirstAwake_m81487574DB0638A86493B5A976190DEB36A1971B,
+	Player_SetPlayerInfo_m4BE5FBDE99315C679C72DCEAB94F1C220B5EB137,
+	Player_AddMoneyForAdversiting_mA3D5C709EEECDB723579F47A56DCB3C665E047F8,
 	Player_CheckAvailableWeapons_m74F1AAF7E0A1A2DDB2D72A68EA36DCAE9489CB25,
 	Player_FindItemsByIDes_m06F2038F015C5A4036762B57C2277DC60613A913,
 	Player_FindItemByID_mD75982009F12E6BB655A05C2920977DB5D965E2F,
-	Player_SetPlayerInfo_m4BE5FBDE99315C679C72DCEAB94F1C220B5EB137,
 	Player__ctor_m0A83E0706592FC871B0CF188B37AFC6649F3D85D,
 	U3CU3Ec__cctor_m333EAC97FFFC4AC5316133A4DC5EC7AD44FE9AEC,
 	U3CU3Ec__ctor_m65D828A3D8124CFC3EB485F9BF5F20E107BAB2B7,
@@ -662,19 +663,19 @@ static Il2CppMethodPointer s_methodPointers[274] =
 	U3CU3Ec_U3Cset_ExperienceU3Eb__23_1_mD2C91B4978ACCBA44D03EB8C205DE1D6287602A5,
 	U3CU3Ec_U3Cset_ExperienceU3Eb__23_2_mB3200F892621F5BB0DF2C4BFD7611738A2F055F5,
 	U3CU3Ec_U3COnFirstAwakeU3Eb__40_0_mEAC7CACCD24DB55DEAF112FCD428D31094B6BF62,
-	U3CU3Ec_U3CSetPlayerInfoU3Eb__44_0_mBD8A98A93D048582A5F03EBF119FF9F68D100AB5,
-	U3CU3Ec_U3CSetPlayerInfoU3Eb__44_1_m78A64DB03D02C9DE984515B5F027E6008D709846,
-	U3CU3Ec_U3CSetPlayerInfoU3Eb__44_2_mECA111D3710FD47AAA4757D2099B94E034318FE1,
+	U3CU3Ec_U3CSetPlayerInfoU3Eb__41_0_m753F7A1026245B9B563C02FC14F20FB69E9F9282,
+	U3CU3Ec_U3CSetPlayerInfoU3Eb__41_1_m7D566F1FC1648E1380F47E304D95FCF5B0B35709,
+	U3CU3Ec_U3CSetPlayerInfoU3Eb__41_2_m36D24280FECC90153A0BDD79D2D5BA3201475506,
 	U3COnFirstAwakeU3Ed__40__ctor_mB6EE6FA287B2BCC3F979803DE004E5CFE47202EF,
 	U3COnFirstAwakeU3Ed__40_System_IDisposable_Dispose_m4F9192B8A5FFF8CC1611B2AE4B92556AE0637D3B,
 	U3COnFirstAwakeU3Ed__40_MoveNext_m7F94F19506F9A495A93771A95930ACD356EEC0BA,
 	U3COnFirstAwakeU3Ed__40_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m99FA64EB278336735D02710E3E99172CFD6DD1C6,
 	U3COnFirstAwakeU3Ed__40_System_Collections_IEnumerator_Reset_m53D1D636AF7DE105EF0143481481EC205562CCDF,
 	U3COnFirstAwakeU3Ed__40_System_Collections_IEnumerator_get_Current_mBCC348759281901F92877F75B094C3E1C885EF4F,
-	U3CU3Ec__DisplayClass42_0__ctor_m0540C48FCCF6F2EBE9A2F17896E469078D18E2E2,
-	U3CU3Ec__DisplayClass42_0_U3CFindItemsByIDesU3Eb__0_m37589E552F9A54ECD79297603622709ACAF667DE,
-	U3CU3Ec__DisplayClass43_0__ctor_m161941F2B481C66D9C71022B9EB6511693E30089,
-	U3CU3Ec__DisplayClass43_0_U3CFindItemByIDU3Eb__0_m310FE00FAC73981789C5A87903FB25CA2EA9A33B,
+	U3CU3Ec__DisplayClass44_0__ctor_mA8F7071A6E00013B7138A801CB8B6BFDF58DE9E6,
+	U3CU3Ec__DisplayClass44_0_U3CFindItemsByIDesU3Eb__0_mE3FF46A0A77732DC5559D560190ADED347B2591F,
+	U3CU3Ec__DisplayClass45_0__ctor_m1AA300FCDFD55D8D1275587158CBB16A794713C3,
+	U3CU3Ec__DisplayClass45_0_U3CFindItemByIDU3Eb__0_m65C91920F1BE107A3C4DF878144ADCA5408A239C,
 	Saver_Awake_m7D57875D0D708DDE7F4A41D3642A4D3FEDC3D693,
 	Saver_Save_m46BE161E52B385E5A13430AD3D278A0156B148E4,
 	Saver_Load_m1A5B068EA8695D5A79898336B5FCD9AD5785A652,
@@ -702,12 +703,11 @@ static Il2CppMethodPointer s_methodPointers[274] =
 	U3CRestoreRechargeU3Ed__24_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m885DCFA58C840CF3FA0597FA0C8B75D2339B1DF0,
 	U3CRestoreRechargeU3Ed__24_System_Collections_IEnumerator_Reset_m1FB2C4D9223E574D5AD0F6B0B4A8B9027E071AF0,
 	U3CRestoreRechargeU3Ed__24_System_Collections_IEnumerator_get_Current_m4FCF6425B3E5E81DE84109F75065EC717CE19F10,
-	Missile_OnCollisionEnter_m36E9990F57EB14435FA7EC980A4100DA0D98C4BC,
 	Missile__ctor_m5D749F34166F3148A1242D17A5BAF8698F11A30F,
+	CannonMissile_OnCollisionEnter_mD10FF87D1547096101C546BB7FBB9318C8438DDD,
 	CannonMissile__ctor_mC487608DBDB1E4FBFA25FA8D5E2051D603B07766,
 	SelectWeapon_get_SelectedWeapon_m320599D96071850B227299E8E0FB7A7BED1585FB,
 	SelectWeapon_set_SelectedWeapon_m2F2A1D3BE6F524ABAC0B79938E3D5D93981373EC,
-	SelectWeapon_RestoreRechargeToFull_m41C2DF5B7C82BD292E18C15FD740842BAEF36403,
 	SelectWeapon__ctor_m6D3ABEA4E9DB2DC7E6C935E3AED486D1F692BE1B,
 	Target_get_TargetMaxSpawnZoneSize_mA7260D444983C819984CED7C19A18FDBA5665A29,
 	Target_get_TargetMinSpawnZoneSize_mC2978555E66BE57780DD07F047AB2501113C0573,
@@ -800,12 +800,12 @@ static Il2CppMethodPointer s_methodPointers[274] =
 	ProductShopCell__ctor_m10FDEADD1D55B6ADB5B94C058C869CC8E8E1358B,
 	ProductShopPannel_ShowProductShopPannel_m2EC8905B928F358ADDD0B95FA0CB3155006F6DA9,
 	ProductShopPannel__ctor_m4DDD3D419A4D222FFEEBB5C916FF1FCB40A33CA9,
-	RechargeViewer_get_CurrentInstantiatedWeapon_m4391B1AC33CEFA983E85A53136B69609F5B3BCF7,
-	RechargeViewer_set_CurrentInstantiatedWeapon_mC8F4F2E19682D001DEC5706E9AE086A694BD044B,
-	RechargeViewer_CreateMissilesPanel_m806D2040C3BB7FC8149DBEB43FC7F41928B0DF3A,
-	RechargeViewer_UpdateMissilesPanel_m2B0DC465CAC0F14B77E9BE9D3B019FA06CF703CB,
-	RechargeViewer_ClearMissilesPanel_mD759E47CEB8DF9D3E1EDD9F36CCFB72DDE101C7B,
-	RechargeViewer__ctor_m0FB3EF32E032999A776322F9945BEC6798EE03CF,
+	Recharge_Awake_m9EB8950DB1205D05D57266115761203DE8A54E19,
+	Recharge_CreateMissilesPanel_mBD006A47C7574504D11D31987EFF7E53CFC8B113,
+	Recharge_RestoreRechargeToFull_mBB58DFC3C2A20367D81B35AF4AD5194E911FF453,
+	Recharge_UpdateMissilesPanel_mE0F0BB86E9CCF0BBFDAB3AC3B056A6C9911799B1,
+	Recharge_ClearMissilesPanel_m656952EA159F1E0ED347F78CCFB013840A08FA8B,
+	Recharge__ctor_m67A42D6E58A00E66D47DB8B9C854C65795DB5128,
 	ResourceText_ShowText_m111AC05BFC6227A9F6D103BBB4938D6CFC15516A,
 	ResourceText__ctor_mD739BF4C82B30B9A0E6E43725FDB775688A37B9F,
 	TargetRewardMoneyText_ShowText_m3072D5E3A3A671AD2292969A3A0393A4E6511F47,
@@ -822,8 +822,8 @@ static Il2CppMethodPointer s_methodPointers[274] =
 	WeaponTable_CreateItemsPanel_mA10A499FF47182B0587DAFFA89039647B1DA8269,
 	WeaponTable_AddWeapon_m7F92252F887FB896C53EB27F23457B2C6FF6F895,
 	WeaponTable__ctor_mE12D37467978B18C4C4F5F3E865FB2586F7CB44A,
-	AddMoneyForAdvertisingButton_ShowText_mF0E5749DA85E022986530E82DA9785772E59534F,
-	AddMoneyForAdvertisingButton__ctor_m209DE10236839F36B20E5DCF1388144355C87CD7,
+	AddMoneyForAdvertisingText_ShowText_m542E90B5D17B109C498D9AE7A5FD346B39E5F6B6,
+	AddMoneyForAdvertisingText__ctor_m030F23DB774B29F9BED6CBED6B387A19BEF9DB8B,
 	ConfirmPanel_Awake_m7182E6D9E3A6C3FC8609CC579A1499BA430313A2,
 	ConfirmPanel_CreateConfirmPanel_m5594D3858CA362E123708663E18622B52A0F4911,
 	ConfirmPanel_ClearConfirmPanel_m881011F1385486E2C6E96D8EA38E04232E65407D,
@@ -928,10 +928,11 @@ static const int32_t s_InvokerIndices[274] =
 	2841,
 	3515,
 	3422,
+	2841,
+	3515,
 	3515,
 	4698,
 	4698,
-	2841,
 	3515,
 	5319,
 	3515,
@@ -979,12 +980,11 @@ static const int32_t s_InvokerIndices[274] =
 	3422,
 	3515,
 	3422,
-	2841,
 	3515,
+	2841,
 	3515,
 	3422,
 	2841,
-	3515,
 	3515,
 	3507,
 	3507,
@@ -1077,8 +1077,8 @@ static const int32_t s_InvokerIndices[274] =
 	3515,
 	3515,
 	3515,
-	3422,
-	2841,
+	3515,
+	3515,
 	3515,
 	3515,
 	3515,
