@@ -49,15 +49,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: d77faf1fd47455a4d81dc06b395cfdff, type: 2}
-  SpawnPos: {x: 0, y: 1, z: 0.15}
-  weaponAnimator: {fileID: 5173733723591449764}
+  SpawnPosition: {x: 0, y: 1, z: 0.15}
   missilePrefab: {fileID: 3047941620833858439, guid: 0b4189c1745409442ad513cf38091e7b, type: 3}
   missileSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   cooldown: 2
   missileRechargeTime: 5
+  shotingPart: {fileID: 7214327266725922635}
   bulletSpawnPoint: {fileID: 5316529374692713849}
   shotForce: 3500
-  cannon: {fileID: 7214327266725922635}
+  cannonAnimator: {fileID: 5173733723591449764}
 --- !u!95 &5173733723591449764
 Animator:
   serializedVersion: 4
