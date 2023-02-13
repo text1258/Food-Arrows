@@ -80,15 +80,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: f610bfe7f13ea214da89965ce18705ae, type: 2}
-  SpawnPosition: {x: 0.13, y: 1.4, z: -0.45}
+  SpawnPosition: {x: 0.13, y: 1.4, z: -0.5}
   missilePrefab: {fileID: 4637337996052996593, guid: fc6e204d6fc0bea4998c4cca293df6b5, type: 3}
   missileSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   cooldown: 0
-  missileRechargeTime: 5
+  missileRechargeTime: 2
   shotingPart: {fileID: 743253568702675106}
   maxPullbackPosition: {x: 0, y: 0.025000002, z: 0.0000000047683715}
-  maxPullbackForce: 700
-  bowStringPullbackTime: 2
+  maxPullbackForce: 1300
+  bowStringPullbackTime: 1
   bowStringReturnTime: 0.5
   bowStringOrigin: {fileID: 5918667273798742893}
 --- !u!1 &2235138964862205390
