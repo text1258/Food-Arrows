@@ -62,7 +62,7 @@ public abstract class InstantiatedWeapon : MonoBehaviour
 #if UNITY_EDITOR
             !EventSystem.current.IsPointerOverGameObject())
 #else
-            !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)))
+            !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
 #endif
         {
             if (Input.GetMouseButtonUp(0))
@@ -93,7 +93,7 @@ public abstract class InstantiatedWeapon : MonoBehaviour
 #if UNITY_EDITOR
             !EventSystem.current.IsPointerOverGameObject())
 #else
-            !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)))
+            !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
 #endif
             {
                 shotingPart.transform.LookAt(hit.point);
