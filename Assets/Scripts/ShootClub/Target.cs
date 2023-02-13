@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -16,16 +17,9 @@ public class Target : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private uint rewardMoney;
     [SerializeField] private float timeBeforeDestroy;
-    [HideInInspector] public TargetSpawner targetSpawner;
     [HideInInspector] public bool notHitByMissile = true;
-    
-    public Vector3 TargetMaxSpawnZoneSize => targetMaxSpawnZoneSize;
-    public Vector3 TargetMinSpawnZoneSize => targetMinSpawnZoneSize;
-    public Vector3 MaxTargetAngels => maxTargetAngels;
-    public bool IsChangeVisibility => isChangeVisibility;
-    public bool IsMoving => isMoving;
+
     public uint RewardMoney => rewardMoney;
-    public float TimeBeforeDestroy => timeBeforeDestroy;
 
     private void OnDrawGizmosSelected()
     {
@@ -33,11 +27,25 @@ public class Target : MonoBehaviour
         Gizmos.DrawCube((targetMaxSpawnZoneSize + targetMinSpawnZoneSize) / 2, targetMaxSpawnZoneSize - targetMinSpawnZoneSize);
     }
 
+    private void Awake()
+    {
+        transform.rotation = Quaternion.Euler(Random.Range(-maxTargetAngels.x, maxTargetAngels.x), Random.Range(-maxTargetAngels.y, maxTargetAngels.y), Random.Range(-maxTargetAngels.z, maxTargetAngels.z));
+        transform.position = RandomVector(targetMaxSpawnZoneSize, targetMinSpawnZoneSize);
+        if (isChangeVisibility == true)
+        {
+            StartCoroutine(ChangeVisibility());
+        }
+        if (isMoving == true)
+        {
+            StartCoroutine(MoveToRandomPoint());
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<Missile>() != null)
         {
-            Player.Instance.Money += rewardMoney;
+            DestroyTarget();
         }
     }
 
@@ -69,17 +77,31 @@ public class Target : MonoBehaviour
 
     public IEnumerator MoveToRandomPoint()
     {
-        Vector3 direction = RandomVector(TargetMaxSpawnZoneSize, TargetMinSpawnZoneSize);
+        Vector3 direction = RandomVector(targetMaxSpawnZoneSize, targetMinSpawnZoneSize);
         while (notHitByMissile)
         {
             transform.position = Vector3.Lerp(transform.position, direction, Time.deltaTime * speed);
             if (Vector3.Distance(transform.position, direction) <= 0.1f)
             {
-                direction = RandomVector(TargetMaxSpawnZoneSize, TargetMinSpawnZoneSize);
+                direction = RandomVector(targetMaxSpawnZoneSize, targetMinSpawnZoneSize);
             }
             yield return null;
         }
         yield break;
+    }
+
+    public void DestroyTarget()
+    {
+        notHitByMissile = false;
+        Player.Instance.Money += rewardMoney;
+        GetComponent<Collider>().enabled = false;
+        GetComponent<MeshRenderer>().enabled = false;
+        foreach (Transform child in transform)
+        {
+            child.gameObject.SetActive(true);
+        }
+        TargetSpawner.Instance.SpawnTarget();
+        Destroy(gameObject, timeBeforeDestroy);
     }
 
     private static Vector3 RandomVector(Vector3 a, Vector3 b)

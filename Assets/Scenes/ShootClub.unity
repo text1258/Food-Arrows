@@ -1054,6 +1054,7 @@ MonoBehaviour:
   - {fileID: 1498703514}
   - {fileID: 1003331470}
   - {fileID: 1306402145}
+  - {fileID: 1268320289}
 --- !u!1 &921426850
 GameObject:
   m_ObjectHideFlags: 0
@@ -2934,8 +2935,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17b565a57f8c46fcae6a569520a866fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetRewardMoneyText: {fileID: 1268320289}
-  currentTarget: {fileID: 0}
 --- !u!1 &1747725576
 GameObject:
   m_ObjectHideFlags: 0

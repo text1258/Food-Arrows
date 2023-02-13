@@ -27,7 +27,8 @@ public class Bow : InstantiatedWeapon
         if (isRuturning == false)
         {
             startBowStringOriginPosition = bowStringOrigin.transform.localPosition;
-            arrow = Instantiate(missilePrefab, bowStringOrigin.transform.transform.position, missilePrefab.transform.rotation, parent: shotingPart.transform);
+            arrow = Instantiate(missilePrefab, parent: bowStringOrigin.transform);
+            arrow.GetComponent<Rigidbody>().useGravity = false;
         }
     }
 
@@ -45,6 +46,7 @@ public class Bow : InstantiatedWeapon
 
     protected override void OnStrike()
     {
+        arrow.GetComponent<Rigidbody>().useGravity = true;
         arrow.transform.SetParent(null);
         arrow.GetComponent<Rigidbody>().AddForce(arrow.transform.forward * maxPullbackForce * pullback);
         pullback = 0f;

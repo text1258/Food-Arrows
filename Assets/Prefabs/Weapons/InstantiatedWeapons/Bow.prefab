@@ -83,11 +83,11 @@ MonoBehaviour:
   SpawnPosition: {x: 0.13, y: 1.4, z: -0.45}
   missilePrefab: {fileID: 4637337996052996593, guid: fc6e204d6fc0bea4998c4cca293df6b5, type: 3}
   missileSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  cooldown: 3
+  cooldown: 0
   missileRechargeTime: 5
   shotingPart: {fileID: 743253568702675106}
   maxPullbackPosition: {x: 0, y: 0.025000002, z: 0.0000000047683715}
-  maxPullbackForce: 3000
+  maxPullbackForce: 700
   bowStringPullbackTime: 2
   bowStringReturnTime: 0.5
   bowStringOrigin: {fileID: 5918667273798742893}
@@ -118,7 +118,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3566949501080358643}
   m_RootOrder: 2

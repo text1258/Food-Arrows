@@ -1,7 +1,11 @@
 ﻿public class TargetRewardMoneyText : ResourceText
 {
-    public void ShowText(string value)
+    public override void ShowText()
     {
-        text.text = $"Награда: {value}";
+        try
+        {
+            text.text = $"Награда: {TargetSpawner.Instance.CurrentTarget.RewardMoney}";
+        }
+        catch { }
     }
 }

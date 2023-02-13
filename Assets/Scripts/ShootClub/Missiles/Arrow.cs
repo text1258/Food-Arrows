@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class CannonMissile : Missile
+public class Arrow : MonoBehaviour
 {
     [SerializeField] private float timeBeforeDestroy;
 
