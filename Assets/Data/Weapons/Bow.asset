@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df52bc72ffa249dea01b2d72ddbb0d74, type: 3}
   m_Name: Bow
   m_EditorClassIdentifier: 
-  iD: 9
-  sprite: {fileID: 21300000, guid: f09eae8c0ea04254b90c5386a034a225, type: 3}
+  iD: 10
+  sprite: {fileID: 21300000, guid: 6a21f55cad922b44cb5f3ef861ccd627, type: 3}
   itemPrefab: {fileID: 5065986144841758987, guid: 3c484afd22342a043af945e18bf51b7e, type: 3}
   price: 0
   weaponPrefab: {fileID: 743253568702675106, guid: cd30009a1c819fb46bb163499b2caed4, type: 3}
-  missileCount: 3
+  missileCount: 4
+  missileSprite: {fileID: 21300000, guid: 685ecec59f6a14542977238e62138eb1, type: 3}
+  cooldown: 0
+  missileRechargeTime: 3

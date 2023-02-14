@@ -58,8 +58,8 @@ Transform:
   m_GameObject: {fileID: 743253568702675106}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 0.05, y: 0.03, z: 0.05}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8560392082080238013}
   - {fileID: 7419074424302443490}
@@ -80,16 +80,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: f610bfe7f13ea214da89965ce18705ae, type: 2}
-  SpawnPosition: {x: 0.13, y: 1.4, z: -0.5}
+  SpawnPosition: {x: 0.1, y: 1.4, z: -0.6}
   missilePrefab: {fileID: 4637337996052996593, guid: fc6e204d6fc0bea4998c4cca293df6b5, type: 3}
-  missileSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  missileSprite: {fileID: 21300000, guid: 685ecec59f6a14542977238e62138eb1, type: 3}
   cooldown: 0
-  missileRechargeTime: 2
+  missileRechargeTime: 4
   shotingPart: {fileID: 743253568702675106}
-  maxPullbackPosition: {x: 0, y: 0.025000002, z: 0.0000000047683715}
+  maxPullbackPosition: {x: 0, y: 0.005, z: 0}
   maxPullbackForce: 1300
-  bowStringPullbackTime: 1
-  bowStringReturnTime: 0.5
+  bowStringPullbackTime: 0.5
+  bowStringReturnTime: 0.03
   bowStringOrigin: {fileID: 5918667273798742893}
 --- !u!1 &2235138964862205390
 GameObject:
@@ -118,7 +118,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 1
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3566949501080358643}
   m_RootOrder: 2
@@ -206,7 +206,7 @@ Transform:
   m_GameObject: {fileID: 2550226365862219330}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3566949501080358643}

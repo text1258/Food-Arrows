@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e288a125af4743f7b571a2e1af9a0a79, type: 3}
   m_Name: HotDog
   m_EditorClassIdentifier: 
-  iD: 10
-  sprite: {fileID: 21300000, guid: 9a1ab8af8c446204e989a90f18305caf, type: 3}
+  iD: 1
+  sprite: {fileID: 21300000, guid: a1dec250ee681e843a6e075d49498ddd, type: 3}
   itemPrefab: {fileID: 61361136785359060, guid: 839c3bfb8eb2b994094f0547f7ac3fed, type: 3}
   price: 300
   cookingProducts:

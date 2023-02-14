@@ -9,9 +9,6 @@ public abstract class InstantiatedWeapon : MonoBehaviour
     [SerializeField] public Weapon weapon;
     [SerializeField] public Vector3 SpawnPosition;
     [SerializeField] protected GameObject missilePrefab;
-    [SerializeField] protected Sprite missileSprite;
-    [SerializeField] protected float cooldown;
-    [SerializeField] protected float missileRechargeTime;
     [SerializeField] protected GameObject shotingPart;
     [HideInInspector] private uint currentMissileCount;
     [HideInInspector] protected float pastCooldown;
@@ -35,9 +32,6 @@ public abstract class InstantiatedWeapon : MonoBehaviour
         }
     }
     public Weapon Weapon => weapon;
-    public float MissileRechargeTime => missileRechargeTime;
-
-    public Sprite MissileSprite => missileSprite;
 
     public float PastMissileRechargeTime
     {
@@ -53,12 +47,12 @@ public abstract class InstantiatedWeapon : MonoBehaviour
     }
     private void Start()
     {
-        pastCooldown = cooldown;
+        pastCooldown = weapon.Cooldown;
     }
 
     private void Update()
     {
-        if (pastCooldown >= cooldown && CurrentMissileCount > 0 &&
+        if (pastCooldown >= weapon.Cooldown && CurrentMissileCount > 0 &&
 #if UNITY_EDITOR
             !EventSystem.current.IsPointerOverGameObject())
 #else
@@ -78,7 +72,7 @@ public abstract class InstantiatedWeapon : MonoBehaviour
                 OnMouseInput();
             }
         }
-        if (pastCooldown < cooldown)
+        if (pastCooldown < weapon.Cooldown)
         {
             pastCooldown += Time.deltaTime;
         }
@@ -120,7 +114,7 @@ public abstract class InstantiatedWeapon : MonoBehaviour
     {
         while (CurrentMissileCount < weapon.MissileCount)
         {
-            while (PastMissileRechargeTime < MissileRechargeTime)
+            while (PastMissileRechargeTime < Weapon.MissileRechargeTime)
             {
                 if (CurrentMissileCount == weapon.MissileCount)
                 {

@@ -19,9 +19,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1002d7fadfe96d343b1de51f92601d61, type: 2}
   - {fileID: 11400000, guid: 2b883c2d45d55a6429a2038000844785, type: 2}
   - {fileID: 11400000, guid: bc6076b7ff36ef3448b92c16c1bf7fdf, type: 2}
-  openInThisLevelWeapons:
-  - {fileID: 11400000, guid: d77faf1fd47455a4d81dc06b395cfdff, type: 2}
+  openInThisLevelWeapons: []
   spawnAtThisLevelTargets:
   - {fileID: 1858410179838401945, guid: 74d2c4c45d28b794a9705dc062ce8067, type: 3}
-  moneyForAdvertising: 100
+  moneyForAdvertising: 300
   experienceToNextLevel: 1

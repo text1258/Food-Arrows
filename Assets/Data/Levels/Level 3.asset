@@ -15,7 +15,8 @@ MonoBehaviour:
   number: 3
   openInThisLevelFoods: []
   openInThisLevelProducts: []
-  openInThisLevelWeapons: []
+  openInThisLevelWeapons:
+  - {fileID: 11400000, guid: d77faf1fd47455a4d81dc06b395cfdff, type: 2}
   spawnAtThisLevelTargets:
   - {fileID: 1858410179838401945, guid: 74d2c4c45d28b794a9705dc062ce8067, type: 3}
-  moneyForAdvertising: 300
+  moneyForAdvertising: 500

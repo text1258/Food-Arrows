@@ -1871,14 +1871,14 @@ struct Enumerator_t49742A61974B06BB73678C5555C3E42E6C843772  : public RuntimeObj
 	int32_t ____index_1;
 };
 
-// InstantiatedWeapon/<RestoreRecharge>d__34
-struct U3CRestoreRechargeU3Ed__34_tDE0C75745F643E4C42FDD1CDDE3DE75B82E60234  : public RuntimeObject
+// InstantiatedWeapon/<RestoreRecharge>d__27
+struct U3CRestoreRechargeU3Ed__27_t8276867B16ACF4E0D00546C539A226769019E0FB  : public RuntimeObject
 {
-	// System.Int32 InstantiatedWeapon/<RestoreRecharge>d__34::<>1__state
+	// System.Int32 InstantiatedWeapon/<RestoreRecharge>d__27::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object InstantiatedWeapon/<RestoreRecharge>d__34::<>2__current
+	// System.Object InstantiatedWeapon/<RestoreRecharge>d__27::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// InstantiatedWeapon InstantiatedWeapon/<RestoreRecharge>d__34::<>4__this
+	// InstantiatedWeapon InstantiatedWeapon/<RestoreRecharge>d__27::<>4__this
 	InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C* ___U3CU3E4__this_2;
 };
 
@@ -7418,6 +7418,12 @@ struct Weapon_tC6498A6B45093D50A1AB4BBD7C82842D5C624302  : public Item_tFAF77888
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___weaponPrefab_8;
 	// System.UInt32 Weapon::missileCount
 	uint32_t ___missileCount_9;
+	// UnityEngine.Sprite Weapon::missileSprite
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___missileSprite_10;
+	// System.Single Weapon::cooldown
+	float ___cooldown_11;
+	// System.Single Weapon::missileRechargeTime
+	float ___missileRechargeTime_12;
 };
 
 // UI.ConfirmPanel
@@ -7521,24 +7527,18 @@ struct InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C  : public Mo
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___SpawnPosition_6;
 	// UnityEngine.GameObject InstantiatedWeapon::missilePrefab
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___missilePrefab_7;
-	// UnityEngine.Sprite InstantiatedWeapon::missileSprite
-	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___missileSprite_8;
-	// System.Single InstantiatedWeapon::cooldown
-	float ___cooldown_9;
-	// System.Single InstantiatedWeapon::missileRechargeTime
-	float ___missileRechargeTime_10;
 	// UnityEngine.GameObject InstantiatedWeapon::shotingPart
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___shotingPart_11;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___shotingPart_8;
 	// System.UInt32 InstantiatedWeapon::currentMissileCount
-	uint32_t ___currentMissileCount_12;
+	uint32_t ___currentMissileCount_9;
 	// System.Single InstantiatedWeapon::pastCooldown
-	float ___pastCooldown_13;
+	float ___pastCooldown_10;
 	// System.Single InstantiatedWeapon::pastMissileRechargeTime
-	float ___pastMissileRechargeTime_14;
+	float ___pastMissileRechargeTime_11;
 	// UnityEngine.RaycastHit InstantiatedWeapon::hit
-	RaycastHit_t6F30BD0B38B56401CA833A1B87BD74F2ACD2F2B5 ___hit_15;
+	RaycastHit_t6F30BD0B38B56401CA833A1B87BD74F2ACD2F2B5 ___hit_12;
 	// UnityEngine.Coroutine InstantiatedWeapon::currentRestoreRecharge
-	Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* ___currentRestoreRecharge_16;
+	Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* ___currentRestoreRecharge_13;
 };
 
 struct InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C_StaticFields
@@ -7857,36 +7857,36 @@ struct BaseRaycaster_t7DC8158FD3CA0193455344379DD5FF7CD5F1F832  : public UIBehav
 struct Bow_t55F8377E29992BEA74165C2B6686FFAD5A9684AB  : public InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C
 {
 	// UnityEngine.Vector3 Bow::maxPullbackPosition
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___maxPullbackPosition_17;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___maxPullbackPosition_14;
 	// System.Single Bow::maxPullbackForce
-	float ___maxPullbackForce_18;
+	float ___maxPullbackForce_15;
 	// System.Single Bow::bowStringPullbackTime
-	float ___bowStringPullbackTime_19;
+	float ___bowStringPullbackTime_16;
 	// System.Single Bow::bowStringReturnTime
-	float ___bowStringReturnTime_20;
+	float ___bowStringReturnTime_17;
 	// UnityEngine.GameObject Bow::bowStringOrigin
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___bowStringOrigin_21;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___bowStringOrigin_18;
 	// System.Single Bow::pullback
-	float ___pullback_22;
+	float ___pullback_19;
 	// UnityEngine.Vector3 Bow::startBowStringOriginPosition
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___startBowStringOriginPosition_23;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___startBowStringOriginPosition_20;
 	// UnityEngine.GameObject Bow::arrow
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___arrow_24;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___arrow_21;
 	// System.Boolean Bow::isRuturning
-	bool ___isRuturning_25;
+	bool ___isRuturning_22;
 	// System.Boolean Bow::isMouseInputedDown
-	bool ___isMouseInputedDown_26;
+	bool ___isMouseInputedDown_23;
 };
 
 // Cannon
 struct Cannon_tB62D3B47A8038B8A44CB361EA87F458FB546CF33  : public InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C
 {
 	// UnityEngine.Transform Cannon::bulletSpawnPoint
-	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___bulletSpawnPoint_17;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___bulletSpawnPoint_14;
 	// System.Single Cannon::shotForce
-	float ___shotForce_18;
+	float ___shotForce_15;
 	// UnityEngine.Animator Cannon::cannonAnimator
-	Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* ___cannonAnimator_19;
+	Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* ___cannonAnimator_16;
 };
 
 // CannonMissile
@@ -8660,10 +8660,10 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3299[1] =
 	static_cast<int32_t>(offsetof(AllWeapons_t25C6356CBA0E5BEEDE0B0847C9CA7DC8A83BB409, ___weapons_4)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3300[3] = 
 {
-	static_cast<int32_t>(offsetof(U3CRestoreRechargeU3Ed__34_tDE0C75745F643E4C42FDD1CDDE3DE75B82E60234, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CRestoreRechargeU3Ed__34_tDE0C75745F643E4C42FDD1CDDE3DE75B82E60234, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CRestoreRechargeU3Ed__34_tDE0C75745F643E4C42FDD1CDDE3DE75B82E60234, ___U3CU3E4__this_2)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3301[13] = 
+	static_cast<int32_t>(offsetof(U3CRestoreRechargeU3Ed__27_t8276867B16ACF4E0D00546C539A226769019E0FB, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CRestoreRechargeU3Ed__27_t8276867B16ACF4E0D00546C539A226769019E0FB, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CRestoreRechargeU3Ed__27_t8276867B16ACF4E0D00546C539A226769019E0FB, ___U3CU3E4__this_2)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3301[10] = 
 {
-	static_cast<int32_t>(offsetof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C_StaticFields, ___Instance_4)),static_cast<int32_t>(offsetof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C, ___weapon_5)),static_cast<int32_t>(offsetof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C, ___SpawnPosition_6)),static_cast<int32_t>(offsetof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C, ___missilePrefab_7)),static_cast<int32_t>(offsetof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C, ___missileSprite_8)),static_cast<int32_t>(offsetof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C, ___cooldown_9)),static_cast<int32_t>(offsetof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C, ___missileRechargeTime_10)),static_cast<int32_t>(offsetof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C, ___shotingPart_11)),static_cast<int32_t>(offsetof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C, ___currentMissileCount_12)),static_cast<int32_t>(offsetof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C, ___pastCooldown_13)),static_cast<int32_t>(offsetof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C, ___pastMissileRechargeTime_14)),static_cast<int32_t>(offsetof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C, ___hit_15)),static_cast<int32_t>(offsetof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C, ___currentRestoreRecharge_16)),};
+	static_cast<int32_t>(offsetof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C_StaticFields, ___Instance_4)),static_cast<int32_t>(offsetof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C, ___weapon_5)),static_cast<int32_t>(offsetof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C, ___SpawnPosition_6)),static_cast<int32_t>(offsetof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C, ___missilePrefab_7)),static_cast<int32_t>(offsetof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C, ___shotingPart_8)),static_cast<int32_t>(offsetof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C, ___currentMissileCount_9)),static_cast<int32_t>(offsetof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C, ___pastCooldown_10)),static_cast<int32_t>(offsetof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C, ___pastMissileRechargeTime_11)),static_cast<int32_t>(offsetof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C, ___hit_12)),static_cast<int32_t>(offsetof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C, ___currentRestoreRecharge_13)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3303[1] = 
 {
 	static_cast<int32_t>(offsetof(Arrow_t7048A6830A9F76E0448BBD44FD9C3C00BC138DBF, ___timeBeforeDestroy_4)),};
@@ -8685,18 +8685,18 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3308[13] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3309[3] = 
 {
 	static_cast<int32_t>(offsetof(TargetSpawner_t5701DCB79AC9F5B1C796EF5F7E6155FE6D5D9F2D_StaticFields, ___Instance_4)),static_cast<int32_t>(offsetof(TargetSpawner_t5701DCB79AC9F5B1C796EF5F7E6155FE6D5D9F2D, ___currentLevelTargets_5)),static_cast<int32_t>(offsetof(TargetSpawner_t5701DCB79AC9F5B1C796EF5F7E6155FE6D5D9F2D, ___currentTarget_6)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3310[2] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3310[5] = 
 {
-	static_cast<int32_t>(offsetof(Weapon_tC6498A6B45093D50A1AB4BBD7C82842D5C624302, ___weaponPrefab_8)),static_cast<int32_t>(offsetof(Weapon_tC6498A6B45093D50A1AB4BBD7C82842D5C624302, ___missileCount_9)),};
+	static_cast<int32_t>(offsetof(Weapon_tC6498A6B45093D50A1AB4BBD7C82842D5C624302, ___weaponPrefab_8)),static_cast<int32_t>(offsetof(Weapon_tC6498A6B45093D50A1AB4BBD7C82842D5C624302, ___missileCount_9)),static_cast<int32_t>(offsetof(Weapon_tC6498A6B45093D50A1AB4BBD7C82842D5C624302, ___missileSprite_10)),static_cast<int32_t>(offsetof(Weapon_tC6498A6B45093D50A1AB4BBD7C82842D5C624302, ___cooldown_11)),static_cast<int32_t>(offsetof(Weapon_tC6498A6B45093D50A1AB4BBD7C82842D5C624302, ___missileRechargeTime_12)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3311[3] = 
 {
 	static_cast<int32_t>(offsetof(U3CRuturnBowStringU3Ed__14_tC276748FCDE20D759FB0105F69D5643C2A8DF072, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CRuturnBowStringU3Ed__14_tC276748FCDE20D759FB0105F69D5643C2A8DF072, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CRuturnBowStringU3Ed__14_tC276748FCDE20D759FB0105F69D5643C2A8DF072, ___U3CU3E4__this_2)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3312[10] = 
 {
-	static_cast<int32_t>(offsetof(Bow_t55F8377E29992BEA74165C2B6686FFAD5A9684AB, ___maxPullbackPosition_17)),static_cast<int32_t>(offsetof(Bow_t55F8377E29992BEA74165C2B6686FFAD5A9684AB, ___maxPullbackForce_18)),static_cast<int32_t>(offsetof(Bow_t55F8377E29992BEA74165C2B6686FFAD5A9684AB, ___bowStringPullbackTime_19)),static_cast<int32_t>(offsetof(Bow_t55F8377E29992BEA74165C2B6686FFAD5A9684AB, ___bowStringReturnTime_20)),static_cast<int32_t>(offsetof(Bow_t55F8377E29992BEA74165C2B6686FFAD5A9684AB, ___bowStringOrigin_21)),static_cast<int32_t>(offsetof(Bow_t55F8377E29992BEA74165C2B6686FFAD5A9684AB, ___pullback_22)),static_cast<int32_t>(offsetof(Bow_t55F8377E29992BEA74165C2B6686FFAD5A9684AB, ___startBowStringOriginPosition_23)),static_cast<int32_t>(offsetof(Bow_t55F8377E29992BEA74165C2B6686FFAD5A9684AB, ___arrow_24)),static_cast<int32_t>(offsetof(Bow_t55F8377E29992BEA74165C2B6686FFAD5A9684AB, ___isRuturning_25)),static_cast<int32_t>(offsetof(Bow_t55F8377E29992BEA74165C2B6686FFAD5A9684AB, ___isMouseInputedDown_26)),};
+	static_cast<int32_t>(offsetof(Bow_t55F8377E29992BEA74165C2B6686FFAD5A9684AB, ___maxPullbackPosition_14)),static_cast<int32_t>(offsetof(Bow_t55F8377E29992BEA74165C2B6686FFAD5A9684AB, ___maxPullbackForce_15)),static_cast<int32_t>(offsetof(Bow_t55F8377E29992BEA74165C2B6686FFAD5A9684AB, ___bowStringPullbackTime_16)),static_cast<int32_t>(offsetof(Bow_t55F8377E29992BEA74165C2B6686FFAD5A9684AB, ___bowStringReturnTime_17)),static_cast<int32_t>(offsetof(Bow_t55F8377E29992BEA74165C2B6686FFAD5A9684AB, ___bowStringOrigin_18)),static_cast<int32_t>(offsetof(Bow_t55F8377E29992BEA74165C2B6686FFAD5A9684AB, ___pullback_19)),static_cast<int32_t>(offsetof(Bow_t55F8377E29992BEA74165C2B6686FFAD5A9684AB, ___startBowStringOriginPosition_20)),static_cast<int32_t>(offsetof(Bow_t55F8377E29992BEA74165C2B6686FFAD5A9684AB, ___arrow_21)),static_cast<int32_t>(offsetof(Bow_t55F8377E29992BEA74165C2B6686FFAD5A9684AB, ___isRuturning_22)),static_cast<int32_t>(offsetof(Bow_t55F8377E29992BEA74165C2B6686FFAD5A9684AB, ___isMouseInputedDown_23)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3313[3] = 
 {
-	static_cast<int32_t>(offsetof(Cannon_tB62D3B47A8038B8A44CB361EA87F458FB546CF33, ___bulletSpawnPoint_17)),static_cast<int32_t>(offsetof(Cannon_tB62D3B47A8038B8A44CB361EA87F458FB546CF33, ___shotForce_18)),static_cast<int32_t>(offsetof(Cannon_tB62D3B47A8038B8A44CB361EA87F458FB546CF33, ___cannonAnimator_19)),};
+	static_cast<int32_t>(offsetof(Cannon_tB62D3B47A8038B8A44CB361EA87F458FB546CF33, ___bulletSpawnPoint_14)),static_cast<int32_t>(offsetof(Cannon_tB62D3B47A8038B8A44CB361EA87F458FB546CF33, ___shotForce_15)),static_cast<int32_t>(offsetof(Cannon_tB62D3B47A8038B8A44CB361EA87F458FB546CF33, ___cannonAnimator_16)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3314[1] = 
 {
 	static_cast<int32_t>(offsetof(U3CU3Ec__DisplayClass7_0_t19654749735550942DCC464CA7B1A51781197C87, ___playerProducts_0)),};

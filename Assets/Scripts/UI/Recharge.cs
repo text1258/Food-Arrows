@@ -21,8 +21,8 @@ public class Recharge : MonoBehaviour
         for (int i = 0; i < InstantiatedWeapon.Instance.Weapon.MissileCount; i++)
         {
             Image currentImage = Instantiate(imagePrefab, parent: missilesPanel.transform);
-            currentImage.sprite = InstantiatedWeapon.Instance.MissileSprite;
-            currentImage.GetComponentInChildren<Image>().sprite = InstantiatedWeapon.Instance.MissileSprite;
+            currentImage.sprite = InstantiatedWeapon.Instance.Weapon.MissileSprite;
+            currentImage.transform.GetChild(0).GetComponent<Image>().sprite = InstantiatedWeapon.Instance.Weapon.MissileSprite;
             if (i <= InstantiatedWeapon.Instance.CurrentMissileCount)
             {
                 currentImage.transform.GetChild(0).GetComponent<Image>().fillAmount = 1f;
@@ -54,7 +54,7 @@ public class Recharge : MonoBehaviour
         }
         if (InstantiatedWeapon.Instance.CurrentMissileCount < InstantiatedWeapon.Instance.Weapon.MissileCount)
         {
-            missilesPanel.transform.GetChild(j).GetChild(0).GetComponent<Image>().fillAmount = InstantiatedWeapon.Instance.PastMissileRechargeTime / InstantiatedWeapon.Instance.MissileRechargeTime;
+            missilesPanel.transform.GetChild(j).GetChild(0).GetComponent<Image>().fillAmount = InstantiatedWeapon.Instance.PastMissileRechargeTime / InstantiatedWeapon.Instance.Weapon.MissileRechargeTime;
             for (int i = j + 1; i < missilesPanel.transform.childCount; i++)
             {
                 missilesPanel.transform.GetChild(i).GetChild(0).GetComponent<Image>().fillAmount = 0f;

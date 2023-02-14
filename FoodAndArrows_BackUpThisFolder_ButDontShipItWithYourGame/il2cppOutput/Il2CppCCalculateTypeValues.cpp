@@ -13611,14 +13611,14 @@ struct U3CMouseDragOutsideRectU3Ed__194_t781B4CA947F9CF50ED6945C50544D71BC12FB69
 	InputField_tABEA115F23FBD374EBE80D4FAC1D15BD6E37A140* ___U3CU3E4__this_3;
 };
 
-// InstantiatedWeapon/<RestoreRecharge>d__34
-struct U3CRestoreRechargeU3Ed__34_tDE0C75745F643E4C42FDD1CDDE3DE75B82E60234  : public RuntimeObject
+// InstantiatedWeapon/<RestoreRecharge>d__27
+struct U3CRestoreRechargeU3Ed__27_t8276867B16ACF4E0D00546C539A226769019E0FB  : public RuntimeObject
 {
-	// System.Int32 InstantiatedWeapon/<RestoreRecharge>d__34::<>1__state
+	// System.Int32 InstantiatedWeapon/<RestoreRecharge>d__27::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object InstantiatedWeapon/<RestoreRecharge>d__34::<>2__current
+	// System.Object InstantiatedWeapon/<RestoreRecharge>d__27::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// InstantiatedWeapon InstantiatedWeapon/<RestoreRecharge>d__34::<>4__this
+	// InstantiatedWeapon InstantiatedWeapon/<RestoreRecharge>d__27::<>4__this
 	InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C* ___U3CU3E4__this_2;
 };
 
@@ -46742,6 +46742,12 @@ struct Weapon_tC6498A6B45093D50A1AB4BBD7C82842D5C624302  : public Item_tFAF77888
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___weaponPrefab_8;
 	// System.UInt32 Weapon::missileCount
 	uint32_t ___missileCount_9;
+	// UnityEngine.Sprite Weapon::missileSprite
+	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___missileSprite_10;
+	// System.Single Weapon::cooldown
+	float ___cooldown_11;
+	// System.Single Weapon::missileRechargeTime
+	float ___missileRechargeTime_12;
 };
 
 // UnityEngine.UIElements.WheelEvent
@@ -47240,24 +47246,18 @@ struct InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C  : public Mo
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___SpawnPosition_6;
 	// UnityEngine.GameObject InstantiatedWeapon::missilePrefab
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___missilePrefab_7;
-	// UnityEngine.Sprite InstantiatedWeapon::missileSprite
-	Sprite_tAFF74BC83CD68037494CB0B4F28CBDF8971CAB99* ___missileSprite_8;
-	// System.Single InstantiatedWeapon::cooldown
-	float ___cooldown_9;
-	// System.Single InstantiatedWeapon::missileRechargeTime
-	float ___missileRechargeTime_10;
 	// UnityEngine.GameObject InstantiatedWeapon::shotingPart
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___shotingPart_11;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___shotingPart_8;
 	// System.UInt32 InstantiatedWeapon::currentMissileCount
-	uint32_t ___currentMissileCount_12;
+	uint32_t ___currentMissileCount_9;
 	// System.Single InstantiatedWeapon::pastCooldown
-	float ___pastCooldown_13;
+	float ___pastCooldown_10;
 	// System.Single InstantiatedWeapon::pastMissileRechargeTime
-	float ___pastMissileRechargeTime_14;
+	float ___pastMissileRechargeTime_11;
 	// UnityEngine.RaycastHit InstantiatedWeapon::hit
-	RaycastHit_t6F30BD0B38B56401CA833A1B87BD74F2ACD2F2B5 ___hit_15;
+	RaycastHit_t6F30BD0B38B56401CA833A1B87BD74F2ACD2F2B5 ___hit_12;
 	// UnityEngine.Coroutine InstantiatedWeapon::currentRestoreRecharge
-	Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* ___currentRestoreRecharge_16;
+	Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* ___currentRestoreRecharge_13;
 };
 
 struct InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C_StaticFields
@@ -47997,36 +47997,36 @@ struct BaseRaycaster_t7DC8158FD3CA0193455344379DD5FF7CD5F1F832  : public UIBehav
 struct Bow_t55F8377E29992BEA74165C2B6686FFAD5A9684AB  : public InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C
 {
 	// UnityEngine.Vector3 Bow::maxPullbackPosition
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___maxPullbackPosition_17;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___maxPullbackPosition_14;
 	// System.Single Bow::maxPullbackForce
-	float ___maxPullbackForce_18;
+	float ___maxPullbackForce_15;
 	// System.Single Bow::bowStringPullbackTime
-	float ___bowStringPullbackTime_19;
+	float ___bowStringPullbackTime_16;
 	// System.Single Bow::bowStringReturnTime
-	float ___bowStringReturnTime_20;
+	float ___bowStringReturnTime_17;
 	// UnityEngine.GameObject Bow::bowStringOrigin
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___bowStringOrigin_21;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___bowStringOrigin_18;
 	// System.Single Bow::pullback
-	float ___pullback_22;
+	float ___pullback_19;
 	// UnityEngine.Vector3 Bow::startBowStringOriginPosition
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___startBowStringOriginPosition_23;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___startBowStringOriginPosition_20;
 	// UnityEngine.GameObject Bow::arrow
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___arrow_24;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___arrow_21;
 	// System.Boolean Bow::isRuturning
-	bool ___isRuturning_25;
+	bool ___isRuturning_22;
 	// System.Boolean Bow::isMouseInputedDown
-	bool ___isMouseInputedDown_26;
+	bool ___isMouseInputedDown_23;
 };
 
 // Cannon
 struct Cannon_tB62D3B47A8038B8A44CB361EA87F458FB546CF33  : public InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C
 {
 	// UnityEngine.Transform Cannon::bulletSpawnPoint
-	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___bulletSpawnPoint_17;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___bulletSpawnPoint_14;
 	// System.Single Cannon::shotForce
-	float ___shotForce_18;
+	float ___shotForce_15;
 	// UnityEngine.Animator Cannon::cannonAnimator
-	Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* ___cannonAnimator_19;
+	Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* ___cannonAnimator_16;
 };
 
 // CannonMissile
@@ -56628,7 +56628,7 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize3298 = { sizeof(SceneLoader_
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3299;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize3299 = { sizeof(AllWeapons_t25C6356CBA0E5BEEDE0B0847C9CA7DC8A83BB409), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3300;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize3300 = { sizeof(U3CRestoreRechargeU3Ed__34_tDE0C75745F643E4C42FDD1CDDE3DE75B82E60234), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize3300 = { sizeof(U3CRestoreRechargeU3Ed__27_t8276867B16ACF4E0D00546C539A226769019E0FB), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3301;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize3301 = { sizeof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C), -1, sizeof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C_StaticFields), 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3302;
