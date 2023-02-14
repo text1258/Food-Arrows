@@ -52,12 +52,7 @@ public abstract class InstantiatedWeapon : MonoBehaviour
 
     private void Update()
     {
-        if (pastCooldown >= weapon.Cooldown && CurrentMissileCount > 0 &&
-#if UNITY_EDITOR
-            !EventSystem.current.IsPointerOverGameObject())
-#else
-            !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
-#endif
+        if (pastCooldown >= weapon.Cooldown && CurrentMissileCount > 0 && IsUIPressed() == false)
         {
             if (Input.GetMouseButtonUp(0))
             {
@@ -83,12 +78,7 @@ public abstract class InstantiatedWeapon : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, 100f))
         {
-            if (!hit.transform.gameObject.CompareTag("NonShootingPlace") &&
-#if UNITY_EDITOR
-            !EventSystem.current.IsPointerOverGameObject())
-#else
-            !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId))
-#endif
+            if (!hit.transform.gameObject.CompareTag("NonShootingPlace") && IsUIPressed() == false)
             {
                 shotingPart.transform.LookAt(hit.point);
             }
@@ -136,5 +126,21 @@ public abstract class InstantiatedWeapon : MonoBehaviour
         }
         currentRestoreRecharge = null;
         yield break;
+    }
+
+    private static bool IsUIPressed()
+    {
+#if UNITY_EDITOR
+        return EventSystem.current.IsPointerOverGameObject();
+#else
+        foreach (Touch touch in Input.touches)
+        {
+            if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
+            {
+                return true;
+            }
+        }
+        return false;
+#endif
     }
 }
