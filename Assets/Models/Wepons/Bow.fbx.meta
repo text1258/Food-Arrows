@@ -12,12 +12,32 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: ArrowBody.002
+    second: {fileID: 2100000, guid: df4048732e86dfb4bad2b896a9cd680d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ArrowTale
+    second: {fileID: 2100000, guid: a3a3e0b5f8fc6e644895e4069f1553a1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Arrowhead
     second: {fileID: 2100000, guid: fd935ad54cfe24b4e9cdaf3d30775378, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Arrowhead.002
+    second: {fileID: 2100000, guid: fd935ad54cfe24b4e9cdaf3d30775378, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Bow
+    second: {fileID: 2100000, guid: dab19870321c4784db95f67212347619, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bow.002
     second: {fileID: 2100000, guid: dab19870321c4784db95f67212347619, type: 2}
   materials:
     materialImportMode: 2

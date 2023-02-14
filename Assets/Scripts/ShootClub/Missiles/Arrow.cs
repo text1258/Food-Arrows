@@ -6,6 +6,7 @@ public class Arrow : Missile
 
     private void OnCollisionEnter(Collision collision)
     {
+        GetComponent<Rigidbody>().useGravity = true;
         Destroy(gameObject, timeBeforeDestroy);
     }
 }

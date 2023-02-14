@@ -13,30 +13,20 @@ public class Bow : InstantiatedWeapon
     private Vector3 startBowStringOriginPosition;
     private GameObject arrow;
     private bool isRuturning = false;
-    private bool isMouseInputedDown = false;
 
-    protected override void OnMouseInputUp()
-    {
-        if (isRuturning == false && isMouseInputedDown == true)
-        {
-            Strike();
-        }
-    }
-
-    protected override void OnMouseInputDown()
+    protected override void OnClcicknputDown()
     {
         if (isRuturning == false)
         {
             startBowStringOriginPosition = bowStringOrigin.transform.localPosition;
             arrow = Instantiate(missilePrefab, parent: bowStringOrigin.transform);
             arrow.GetComponent<Rigidbody>().useGravity = false;
-            isMouseInputedDown = true;
         }
     }
 
-    protected override void OnMouseInput()
+    protected override void OnClickInput()
     {
-        if (isRuturning == false && isMouseInputedDown == true)
+        if (isRuturning == false)
         {
             if (pullback < 1)
             {
@@ -46,17 +36,23 @@ public class Bow : InstantiatedWeapon
         }
     }
 
+    protected override void OnClickInputUp()
+    {
+        if (isRuturning == false)
+        {
+            Strike();
+        }
+    }
+
     protected override void OnStrike()
     {
-        arrow.GetComponent<Rigidbody>().useGravity = true;
         arrow.transform.SetParent(null);
         arrow.GetComponent<Rigidbody>().AddForce(arrow.transform.forward * maxPullbackForce * pullback);
         pullback = 0f;
-        isMouseInputedDown = false;
-        StartCoroutine(RuturnBowString());
+        StartCoroutine(RuturnBowStringPosition());
     }
 
-    private IEnumerator RuturnBowString()
+    private IEnumerator RuturnBowStringPosition()
     {
         isRuturning = true;
         while (pullback < 1) 

@@ -6,7 +6,7 @@ public class Cannon : InstantiatedWeapon
     [SerializeField] private float shotForce;
     [SerializeField] private Animator cannonAnimator;
 
-    protected override void OnMouseInputUp()
+    protected override void OnClickInputUp()
     {
         cannonAnimator.SetTrigger("isStriking");
     }

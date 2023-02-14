@@ -13076,14 +13076,14 @@ struct U3CU3Ec_t4ABD75CB4C6B90D57F48F69C2606A5EFFB7F80C0_StaticFields
 	SpanAction_2_t5AD9492C5DCDA0ABCE4EE25DCCF3EBD82BF591B7* ___U3CU3E9__38_0_1;
 };
 
-// Bow/<RuturnBowString>d__14
-struct U3CRuturnBowStringU3Ed__14_tC276748FCDE20D759FB0105F69D5643C2A8DF072  : public RuntimeObject
+// Bow/<RuturnBowStringPosition>d__13
+struct U3CRuturnBowStringPositionU3Ed__13_t77AD017B52FD167C3B69DE9169812F12EF3F7A05  : public RuntimeObject
 {
-	// System.Int32 Bow/<RuturnBowString>d__14::<>1__state
+	// System.Int32 Bow/<RuturnBowStringPosition>d__13::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object Bow/<RuturnBowString>d__14::<>2__current
+	// System.Object Bow/<RuturnBowStringPosition>d__13::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// Bow Bow/<RuturnBowString>d__14::<>4__this
+	// Bow Bow/<RuturnBowStringPosition>d__13::<>4__this
 	Bow_t55F8377E29992BEA74165C2B6686FFAD5A9684AB* ___U3CU3E4__this_2;
 };
 
@@ -13611,14 +13611,14 @@ struct U3CMouseDragOutsideRectU3Ed__194_t781B4CA947F9CF50ED6945C50544D71BC12FB69
 	InputField_tABEA115F23FBD374EBE80D4FAC1D15BD6E37A140* ___U3CU3E4__this_3;
 };
 
-// InstantiatedWeapon/<RestoreRecharge>d__27
-struct U3CRestoreRechargeU3Ed__27_t8276867B16ACF4E0D00546C539A226769019E0FB  : public RuntimeObject
+// InstantiatedWeapon/<RestoreRecharge>d__28
+struct U3CRestoreRechargeU3Ed__28_tE04FA873C58579730ED78A9A86CF7017DB45135E  : public RuntimeObject
 {
-	// System.Int32 InstantiatedWeapon/<RestoreRecharge>d__27::<>1__state
+	// System.Int32 InstantiatedWeapon/<RestoreRecharge>d__28::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object InstantiatedWeapon/<RestoreRecharge>d__27::<>2__current
+	// System.Object InstantiatedWeapon/<RestoreRecharge>d__28::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// InstantiatedWeapon InstantiatedWeapon/<RestoreRecharge>d__27::<>4__this
+	// InstantiatedWeapon InstantiatedWeapon/<RestoreRecharge>d__28::<>4__this
 	InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C* ___U3CU3E4__this_2;
 };
 
@@ -47256,8 +47256,10 @@ struct InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C  : public Mo
 	float ___pastMissileRechargeTime_11;
 	// UnityEngine.RaycastHit InstantiatedWeapon::hit
 	RaycastHit_t6F30BD0B38B56401CA833A1B87BD74F2ACD2F2B5 ___hit_12;
+	// System.Boolean InstantiatedWeapon::clicked
+	bool ___clicked_13;
 	// UnityEngine.Coroutine InstantiatedWeapon::currentRestoreRecharge
-	Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* ___currentRestoreRecharge_13;
+	Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* ___currentRestoreRecharge_14;
 };
 
 struct InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C_StaticFields
@@ -47997,36 +47999,34 @@ struct BaseRaycaster_t7DC8158FD3CA0193455344379DD5FF7CD5F1F832  : public UIBehav
 struct Bow_t55F8377E29992BEA74165C2B6686FFAD5A9684AB  : public InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C
 {
 	// UnityEngine.Vector3 Bow::maxPullbackPosition
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___maxPullbackPosition_14;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___maxPullbackPosition_15;
 	// System.Single Bow::maxPullbackForce
-	float ___maxPullbackForce_15;
+	float ___maxPullbackForce_16;
 	// System.Single Bow::bowStringPullbackTime
-	float ___bowStringPullbackTime_16;
+	float ___bowStringPullbackTime_17;
 	// System.Single Bow::bowStringReturnTime
-	float ___bowStringReturnTime_17;
+	float ___bowStringReturnTime_18;
 	// UnityEngine.GameObject Bow::bowStringOrigin
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___bowStringOrigin_18;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___bowStringOrigin_19;
 	// System.Single Bow::pullback
-	float ___pullback_19;
+	float ___pullback_20;
 	// UnityEngine.Vector3 Bow::startBowStringOriginPosition
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___startBowStringOriginPosition_20;
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___startBowStringOriginPosition_21;
 	// UnityEngine.GameObject Bow::arrow
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___arrow_21;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___arrow_22;
 	// System.Boolean Bow::isRuturning
-	bool ___isRuturning_22;
-	// System.Boolean Bow::isMouseInputedDown
-	bool ___isMouseInputedDown_23;
+	bool ___isRuturning_23;
 };
 
 // Cannon
 struct Cannon_tB62D3B47A8038B8A44CB361EA87F458FB546CF33  : public InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C
 {
 	// UnityEngine.Transform Cannon::bulletSpawnPoint
-	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___bulletSpawnPoint_14;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ___bulletSpawnPoint_15;
 	// System.Single Cannon::shotForce
-	float ___shotForce_15;
+	float ___shotForce_16;
 	// UnityEngine.Animator Cannon::cannonAnimator
-	Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* ___cannonAnimator_16;
+	Animator_t8A52E42AE54F76681838FE9E632683EF3952E883* ___cannonAnimator_17;
 };
 
 // CannonMissile
@@ -56628,7 +56628,7 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize3298 = { sizeof(SceneLoader_
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3299;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize3299 = { sizeof(AllWeapons_t25C6356CBA0E5BEEDE0B0847C9CA7DC8A83BB409), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3300;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize3300 = { sizeof(U3CRestoreRechargeU3Ed__27_t8276867B16ACF4E0D00546C539A226769019E0FB), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize3300 = { sizeof(U3CRestoreRechargeU3Ed__28_tE04FA873C58579730ED78A9A86CF7017DB45135E), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3301;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize3301 = { sizeof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C), -1, sizeof(InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C_StaticFields), 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3302;
@@ -56650,7 +56650,7 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize3309 = { sizeof(TargetSpawne
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3310;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize3310 = { sizeof(Weapon_tC6498A6B45093D50A1AB4BBD7C82842D5C624302), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3311;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize3311 = { sizeof(U3CRuturnBowStringU3Ed__14_tC276748FCDE20D759FB0105F69D5643C2A8DF072), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize3311 = { sizeof(U3CRuturnBowStringPositionU3Ed__13_t77AD017B52FD167C3B69DE9169812F12EF3F7A05), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3312;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize3312 = { sizeof(Bow_t55F8377E29992BEA74165C2B6686FFAD5A9684AB), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3313;

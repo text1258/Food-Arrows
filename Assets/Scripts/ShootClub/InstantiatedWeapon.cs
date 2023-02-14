@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -15,7 +16,7 @@ public abstract class InstantiatedWeapon : MonoBehaviour
     [HideInInspector] private float pastMissileRechargeTime;
 
     private RaycastHit hit;
-
+    private bool clicked = false;
     private Coroutine currentRestoreRecharge;
 
     public uint CurrentMissileCount
@@ -52,19 +53,39 @@ public abstract class InstantiatedWeapon : MonoBehaviour
 
     private void Update()
     {
-        if (pastCooldown >= weapon.Cooldown && CurrentMissileCount > 0 && IsUIPressed() == false)
+        if (Input.touchCount > 0)
         {
-            if (Input.GetMouseButtonUp(0))
+            if (pastCooldown >= weapon.Cooldown && CurrentMissileCount > 0)
             {
-                OnMouseInputUp();
-            }
-            if (Input.GetMouseButtonDown(0))
-            {
-                OnMouseInputDown();
-            }
-            if (Input.GetMouseButton(0))
-            {
-                OnMouseInput();
+                switch (Input.GetTouch(0).phase)
+                {
+                    case TouchPhase.Began:
+                        if (IsPointerOverUIObject() == false)
+                        {
+                            OnClcicknputDown();
+                            clicked = true;
+                        }
+                        break;
+                    case TouchPhase.Stationary:
+                        if (clicked == true)
+                        {
+                            OnClickInput();
+                        }
+                        break;
+                    case TouchPhase.Moved:
+                        if (clicked == true)
+                        {
+                            OnClickInput();
+                        }
+                        break;
+                    case TouchPhase.Ended:
+                        if (clicked == true)
+                        {
+                            OnClickInputUp();
+                            clicked = false;
+                        }
+                        break;
+                }
             }
         }
         if (pastCooldown < weapon.Cooldown)
@@ -75,15 +96,26 @@ public abstract class InstantiatedWeapon : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, 100f))
+        if (Input.touchCount > 0)
         {
-            if (!hit.transform.gameObject.CompareTag("NonShootingPlace") && IsUIPressed() == false)
+            Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+            if (Physics.Raycast(ray, out hit, 100f))
             {
-                shotingPart.transform.LookAt(hit.point);
+                if (!hit.transform.gameObject.CompareTag("NonShootingPlace") && IsPointerOverUIObject() == false)
+                {
+                    shotingPart.transform.LookAt(hit.point);
+                }
             }
         }
     }
+
+    protected virtual void OnClickInputUp() { }
+
+    protected virtual void OnClcicknputDown() { }
+
+    protected virtual void OnClickInput() { }
+
+    protected virtual void OnStrike() { }
 
     public void Strike()
     {
@@ -91,14 +123,6 @@ public abstract class InstantiatedWeapon : MonoBehaviour
         CurrentMissileCount -= 1;
         OnStrike();
     }
-
-    protected virtual void OnMouseInputUp() { }
-
-    protected virtual void OnMouseInputDown() { }
-
-    protected virtual void OnMouseInput() { }
-
-    protected virtual void OnStrike() { }
 
     private IEnumerator RestoreRecharge()
     {
@@ -128,19 +152,12 @@ public abstract class InstantiatedWeapon : MonoBehaviour
         yield break;
     }
 
-    private static bool IsUIPressed()
+    private static bool IsPointerOverUIObject()
     {
-#if UNITY_EDITOR
-        return EventSystem.current.IsPointerOverGameObject();
-#else
-        foreach (Touch touch in Input.touches)
-        {
-            if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
-            {
-                return true;
-            }
-        }
-        return false;
-#endif
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+        return results.Count > 0;
     }
 }
