@@ -5430,10 +5430,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InstantiatedWeapon_set_CurrentMissileCou
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Recharge_CreateMissilesPanel_mBD006A47C7574504D11D31987EFF7E53CFC8B113 (Recharge_t7016EAE773C0E49C6B55A69B9BED5BA240FA3C5E* __this, const RuntimeMethod* method) ;
 // System.Single Weapon::get_Cooldown()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR float Weapon_get_Cooldown_m883857DB2CDF302023B9D16321A8CC25CF923823_inline (Weapon_tC6498A6B45093D50A1AB4BBD7C82842D5C624302* __this, const RuntimeMethod* method) ;
-// System.Int32 UnityEngine.Input::get_touchCount()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Input_get_touchCount_m057388BFC67A0F4CA53764B1022867ED81D01E39 (const RuntimeMethod* method) ;
 // System.UInt32 InstantiatedWeapon::get_CurrentMissileCount()
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR uint32_t InstantiatedWeapon_get_CurrentMissileCount_m9D5DD151534A2A3339C7E9CC0E17E9DA958470AD_inline (InstantiatedWeapon_tE3AC4C9A335F8D60FA577006C8F1B00510EB999C* __this, const RuntimeMethod* method) ;
+// System.Int32 UnityEngine.Input::get_touchCount()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Input_get_touchCount_m057388BFC67A0F4CA53764B1022867ED81D01E39 (const RuntimeMethod* method) ;
 // UnityEngine.Touch UnityEngine.Input::GetTouch(System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Touch_t03E51455ED508492B3F278903A0114FA0E87B417 Input_GetTouch_m75D99FE801A94279874FA8DC6B6ADAD35F5123B1 (int32_t ___index0, const RuntimeMethod* method) ;
 // UnityEngine.TouchPhase UnityEngine.Touch::get_phase()
@@ -10128,30 +10128,30 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InstantiatedWeapon_Update_mDBF89AA6B7B89
 	Touch_t03E51455ED508492B3F278903A0114FA0E87B417 V_1;
 	memset((&V_1), 0, sizeof(V_1));
 	{
-		// if (Input.touchCount > 0)
-		int32_t L_0;
-		L_0 = Input_get_touchCount_m057388BFC67A0F4CA53764B1022867ED81D01E39(NULL);
-		if ((((int32_t)L_0) <= ((int32_t)0)))
-		{
-			goto IL_0099;
-		}
-	}
-	{
 		// if (pastCooldown >= weapon.Cooldown && CurrentMissileCount > 0)
-		float L_1 = __this->___pastCooldown_10;
-		Weapon_tC6498A6B45093D50A1AB4BBD7C82842D5C624302* L_2 = __this->___weapon_5;
-		NullCheck(L_2);
-		float L_3;
-		L_3 = Weapon_get_Cooldown_m883857DB2CDF302023B9D16321A8CC25CF923823_inline(L_2, NULL);
-		if ((!(((float)L_1) >= ((float)L_3))))
+		float L_0 = __this->___pastCooldown_10;
+		Weapon_tC6498A6B45093D50A1AB4BBD7C82842D5C624302* L_1 = __this->___weapon_5;
+		NullCheck(L_1);
+		float L_2;
+		L_2 = Weapon_get_Cooldown_m883857DB2CDF302023B9D16321A8CC25CF923823_inline(L_1, NULL);
+		if ((!(((float)L_0) >= ((float)L_2))))
 		{
 			goto IL_0099;
 		}
 	}
 	{
-		uint32_t L_4;
-		L_4 = InstantiatedWeapon_get_CurrentMissileCount_m9D5DD151534A2A3339C7E9CC0E17E9DA958470AD_inline(__this, NULL);
-		if ((!(((uint32_t)L_4) > ((uint32_t)0))))
+		uint32_t L_3;
+		L_3 = InstantiatedWeapon_get_CurrentMissileCount_m9D5DD151534A2A3339C7E9CC0E17E9DA958470AD_inline(__this, NULL);
+		if ((!(((uint32_t)L_3) > ((uint32_t)0))))
+		{
+			goto IL_0099;
+		}
+	}
+	{
+		// if (Input.touchCount > 0)
+		int32_t L_4;
+		L_4 = Input_get_touchCount_m057388BFC67A0F4CA53764B1022867ED81D01E39(NULL);
+		if ((((int32_t)L_4) <= ((int32_t)0)))
 		{
 			goto IL_0099;
 		}
@@ -10304,7 +10304,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void InstantiatedWeapon_FixedUpdate_mF5C2535E
 		}
 	}
 	{
-		// Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+		// ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
 		Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* L_1;
 		L_1 = Camera_get_main_m52C992F18E05355ABB9EEB64A4BF2215E12762DF(NULL);
 		Touch_t03E51455ED508492B3F278903A0114FA0E87B417 L_2;

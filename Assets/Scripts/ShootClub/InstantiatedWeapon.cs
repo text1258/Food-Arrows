@@ -53,9 +53,25 @@ public abstract class InstantiatedWeapon : MonoBehaviour
 
     private void Update()
     {
-        if (Input.touchCount > 0)
+        if (pastCooldown >= weapon.Cooldown && CurrentMissileCount > 0)
         {
-            if (pastCooldown >= weapon.Cooldown && CurrentMissileCount > 0)
+#if UNITY_EDITOR
+            if (Input.GetMouseButtonDown(0) && IsPointerOverUIObject() == false)
+            {
+                OnClcicknputDown();
+                clicked = true;
+            }
+            if (Input.GetMouseButton(0) && clicked == true)
+            {
+                OnClickInput();
+            }
+            if (Input.GetMouseButtonUp(0) && clicked == true)
+            {
+                OnClickInputUp();
+                clicked = false;
+            }
+#endif
+            if (Input.touchCount > 0)
             {
                 switch (Input.GetTouch(0).phase)
                 {
@@ -96,9 +112,20 @@ public abstract class InstantiatedWeapon : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Ray ray;
+#if UNITY_EDITOR
+        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out hit, 100f))
+        {
+            if (!hit.transform.gameObject.CompareTag("NonShootingPlace") && IsPointerOverUIObject() == false)
+            {
+                shotingPart.transform.LookAt(hit.point);
+            }
+        }
+#endif
         if (Input.touchCount > 0)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+            ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
             if (Physics.Raycast(ray, out hit, 100f))
             {
                 if (!hit.transform.gameObject.CompareTag("NonShootingPlace") && IsPointerOverUIObject() == false)
@@ -154,10 +181,14 @@ public abstract class InstantiatedWeapon : MonoBehaviour
 
     private static bool IsPointerOverUIObject()
     {
+#if UNITY_EDITOR
+        return EventSystem.current.IsPointerOverGameObject();
+#else
         PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
         eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
         return results.Count > 0;
+#endif
     }
 }
