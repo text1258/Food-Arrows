@@ -55,7 +55,6 @@ public abstract class InstantiatedWeapon : MonoBehaviour
     {
         if (pastCooldown >= weapon.Cooldown && CurrentMissileCount > 0)
         {
-#if UNITY_EDITOR
             if (Input.GetMouseButtonDown(0) && IsPointerOverUIObject() == false)
             {
                 OnClcicknputDown();
@@ -70,39 +69,6 @@ public abstract class InstantiatedWeapon : MonoBehaviour
                 OnClickInputUp();
                 clicked = false;
             }
-#endif
-            if (Input.touchCount > 0)
-            {
-                switch (Input.GetTouch(0).phase)
-                {
-                    case TouchPhase.Began:
-                        if (IsPointerOverUIObject() == false)
-                        {
-                            OnClcicknputDown();
-                            clicked = true;
-                        }
-                        break;
-                    case TouchPhase.Stationary:
-                        if (clicked == true)
-                        {
-                            OnClickInput();
-                        }
-                        break;
-                    case TouchPhase.Moved:
-                        if (clicked == true)
-                        {
-                            OnClickInput();
-                        }
-                        break;
-                    case TouchPhase.Ended:
-                        if (clicked == true)
-                        {
-                            OnClickInputUp();
-                            clicked = false;
-                        }
-                        break;
-                }
-            }
         }
         if (pastCooldown < weapon.Cooldown)
         {
@@ -113,25 +79,12 @@ public abstract class InstantiatedWeapon : MonoBehaviour
     private void FixedUpdate()
     {
         Ray ray;
-#if UNITY_EDITOR
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, 100f))
         {
             if (!hit.transform.gameObject.CompareTag("NonShootingPlace") && IsPointerOverUIObject() == false)
             {
                 shotingPart.transform.LookAt(hit.point);
-            }
-        }
-#endif
-        if (Input.touchCount > 0)
-        {
-            ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-            if (Physics.Raycast(ray, out hit, 100f))
-            {
-                if (!hit.transform.gameObject.CompareTag("NonShootingPlace") && IsPointerOverUIObject() == false)
-                {
-                    shotingPart.transform.LookAt(hit.point);
-                }
             }
         }
     }
@@ -181,14 +134,6 @@ public abstract class InstantiatedWeapon : MonoBehaviour
 
     private static bool IsPointerOverUIObject()
     {
-#if UNITY_EDITOR
         return EventSystem.current.IsPointerOverGameObject();
-#else
-        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
-        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-        List<RaycastResult> results = new List<RaycastResult>();
-        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
-        return results.Count > 0;
-#endif
     }
 }
