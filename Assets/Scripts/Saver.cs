@@ -19,13 +19,6 @@ public class Saver : MonoBehaviour
         }
     }
 
-    [DllImport("__Internal")]
-    private static extern void SaveToServer(string data);
-
-
-    [DllImport("__Internal")]
-    private static extern string LoadFromServer();
-
     [ContextMenu("Save")]
     public void Save()
     {
@@ -42,19 +35,11 @@ public class Saver : MonoBehaviour
                 GetItemsIDes(new List<Item>(Player.Instance.InventoryFoods)), GetItemsIDes(new List<Item>(Player.Instance.InventoryProducts)),
                 GetItemsIDes(new List<Item>(Player.Instance.InventoryWeapons)), Player.Instance.CurrentOrder.ID, Player.Instance.CurrentVisitorIndex);
         }
-        SaveToServer(JsonUtility.ToJson(savingData));
     }
 
     [ContextMenu("Load")]
     public void Load()
     {
-        SavingData savingData = null;
-        try
-        {
-            savingData = JsonUtility.FromJson<SavingData>(LoadFromServer());
-        }
-        catch { }
-        Player.Instance.SetPlayerInfo(savingData);
     }
 
     private static List<string> GetItemsIDes(List<Item> items)

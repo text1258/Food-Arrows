@@ -25,18 +25,7 @@ public class AdsShower : MonoBehaviour
 
     private void Start()
     {
-        if (isMinutePassed == true)
-        {
-            ShowFullScreenAdv();
-            StartCoroutine(MinuteAdsTimer());
-        }
     }
-
-    [DllImport("__Internal")]
-    private static extern void ShowFullScreenAdv();
-
-    [DllImport("__Internal")]
-    private static extern void ShowRewardedVideo();
 
     public void GetReward()
     {
@@ -46,7 +35,6 @@ public class AdsShower : MonoBehaviour
     public void CallVideoAd(UnityAction getReward)
     {
         this.getReward = getReward;
-        ShowRewardedVideo();
     }
 
     private IEnumerator MinuteAdsTimer()
