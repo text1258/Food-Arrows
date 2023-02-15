@@ -366,50 +366,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60019638}
   m_CullTransparentMesh: 1
---- !u!1 &60652740
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 60652742}
-  - component: {fileID: 60652741}
-  m_Layer: 0
-  m_Name: AdsShower
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &60652741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 60652740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc4ceb765454ae143a31500dc9111cae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &60652742
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 60652740}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &116914737
 GameObject:
   m_ObjectHideFlags: 0
@@ -2171,7 +2127,6 @@ GameObject:
   - component: {fileID: 872905158}
   - component: {fileID: 872905157}
   - component: {fileID: 872905155}
-  - component: {fileID: 872905160}
   m_Layer: 5
   m_Name: AddMoneyButton
   m_TagString: Untagged
@@ -2256,19 +2211,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 872905158}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 872905160}
-        m_TargetAssemblyTypeName: RewardAdsCaller, Assembly-CSharp
-        m_MethodName: ShowVideoAd
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &872905158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2307,18 +2250,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 872905154}
   m_CullTransparentMesh: 1
---- !u!114 &872905160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 872905154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbe9481855c154e4e937e8b8a1a8a012, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &981273353
 GameObject:
   m_ObjectHideFlags: 0
@@ -2864,7 +2795,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5539970803531268774, guid: 838a9798f02ee0a46aa84dbd729a8358, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5539970803531268774, guid: 838a9798f02ee0a46aa84dbd729a8358, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2966,7 +2897,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9113734096722631417, guid: bf2740bdb5bfafb4c9d7721336022899, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 9113734096722631417, guid: bf2740bdb5bfafb4c9d7721336022899, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3482,8 +3413,8 @@ RectTransform:
   - {fileID: 1074970208}
   - {fileID: 1181011619}
   - {fileID: 362615522}
-  - {fileID: 1411518159}
   - {fileID: 1320507473}
+  - {fileID: 1411518159}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4047,7 +3978,6 @@ GameObject:
   - component: {fileID: 2138801425}
   - component: {fileID: 2138801424}
   - component: {fileID: 2138801423}
-  - component: {fileID: 2138801427}
   m_Layer: 5
   m_Name: RestoreRechargeToFullButton
   m_TagString: Untagged
@@ -4098,19 +4028,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2138801424}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2138801427}
-        m_TargetAssemblyTypeName: RewardAdsCaller, Assembly-CSharp
-        m_MethodName: ShowVideoAd
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2138801424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4170,15 +4088,3 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2138801427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2138801422}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af483581dcbeb7443bd6e578c192ce71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
