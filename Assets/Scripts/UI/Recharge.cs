@@ -35,8 +35,8 @@ public class Recharge : MonoBehaviour
         missilesPanelCreated = true;
     }
 
-    [ContextMenu("RestoreRechargeToFull")]
-    public void RestoreRechargeToFull()
+    [ContextMenu("RechargeToFull")]
+    public void RechargeToFull()
     {
         InstantiatedWeapon.Instance.CurrentMissileCount = InstantiatedWeapon.Instance.weapon.MissileCount;
     }
