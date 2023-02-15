@@ -53,8 +53,9 @@ public abstract class InstantiatedWeapon : MonoBehaviour
 
     private void Update()
     {
-        if (pastCooldown >= weapon.Cooldown && CurrentMissileCount > 0)
+        if (Input.touchCount > 0)
         {
+<<<<<<< HEAD
             if (Input.GetMouseButtonDown(0) && IsPointerOverUIObject() == false)
             {
                 OnClcicknputDown();
@@ -68,6 +69,39 @@ public abstract class InstantiatedWeapon : MonoBehaviour
             {
                 OnClickInputUp();
                 clicked = false;
+=======
+            if (pastCooldown >= weapon.Cooldown && CurrentMissileCount > 0)
+            {
+                switch (Input.GetTouch(0).phase)
+                {
+                    case TouchPhase.Began:
+                        if (IsPointerOverUIObject() == false)
+                        {
+                            OnClcicknputDown();
+                            clicked = true;
+                        }
+                        break;
+                    case TouchPhase.Stationary:
+                        if (clicked == true)
+                        {
+                            OnClickInput();
+                        }
+                        break;
+                    case TouchPhase.Moved:
+                        if (clicked == true)
+                        {
+                            OnClickInput();
+                        }
+                        break;
+                    case TouchPhase.Ended:
+                        if (clicked == true)
+                        {
+                            OnClickInputUp();
+                            clicked = false;
+                        }
+                        break;
+                }
+>>>>>>> parent of 7579da6 (altha -_-)
             }
         }
         if (pastCooldown < weapon.Cooldown)
@@ -78,6 +112,7 @@ public abstract class InstantiatedWeapon : MonoBehaviour
 
     private void FixedUpdate()
     {
+<<<<<<< HEAD
         Ray ray;
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, 100f))
@@ -85,6 +120,17 @@ public abstract class InstantiatedWeapon : MonoBehaviour
             if (!hit.transform.gameObject.CompareTag("NonShootingPlace") && IsPointerOverUIObject() == false)
             {
                 shotingPart.transform.LookAt(hit.point);
+=======
+        if (Input.touchCount > 0)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+            if (Physics.Raycast(ray, out hit, 100f))
+            {
+                if (!hit.transform.gameObject.CompareTag("NonShootingPlace") && IsPointerOverUIObject() == false)
+                {
+                    shotingPart.transform.LookAt(hit.point);
+                }
+>>>>>>> parent of 7579da6 (altha -_-)
             }
         }
     }
@@ -134,6 +180,14 @@ public abstract class InstantiatedWeapon : MonoBehaviour
 
     private static bool IsPointerOverUIObject()
     {
+<<<<<<< HEAD
         return EventSystem.current.IsPointerOverGameObject();
+=======
+        PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
+        eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+        List<RaycastResult> results = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
+        return results.Count > 0;
+>>>>>>> parent of 7579da6 (altha -_-)
     }
 }
