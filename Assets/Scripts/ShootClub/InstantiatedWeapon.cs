@@ -54,7 +54,7 @@ public abstract class InstantiatedWeapon : MonoBehaviour
     {
         if (pastCooldown >= weapon.Cooldown && CurrentMissileCount > 0)
         {
-#if UNITY_EDITOR || UNITY_WEBGL
+#if UNITY_EDITOR
             if (Input.GetMouseButtonDown(0) && IsPointerOverUIObject() == false)
             {
                 OnClcicknputDown();
@@ -112,7 +112,7 @@ public abstract class InstantiatedWeapon : MonoBehaviour
     private void FixedUpdate()
     {
         Ray ray;
-#if UNITY_EDITOR || UNITY_WEBGL
+#if UNITY_EDITOR
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, 100f))
         {
@@ -180,7 +180,7 @@ public abstract class InstantiatedWeapon : MonoBehaviour
 
     private static bool IsPointerOverUIObject()
     {
-#if UNITY_EDITOR || UNITY_WEBGL
+#if UNITY_EDITOR
         return EventSystem.current.IsPointerOverGameObject();
 #else
         PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
