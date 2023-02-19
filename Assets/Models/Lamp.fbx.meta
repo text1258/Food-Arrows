@@ -7,18 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Lamp
-    second: {fileID: 2100000, guid: 541f8e35843fe9e4a94af555a417d251, type: 2}
+      name: LightBulb
+    second: {fileID: 2100000, guid: 6da95f39fef5e4e4a9caedcd71b0407d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: LampCell
-    second: {fileID: 2100000, guid: 7ddc94b0d9e66304e8b214e22dfb67a5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LampHolder
-    second: {fileID: 2100000, guid: 3c3578a940409f94a9745df553f3818e, type: 2}
+      name: Material
+    second: {fileID: 2100000, guid: 814dbe846d5c09c48be4174f6313fbf1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

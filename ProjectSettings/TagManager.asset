@@ -6,6 +6,7 @@ TagManager:
   tags:
   - NonShootingPlace
   - TargetCell
+  - Fluid
   layers:
   - Default
   - TransparentFX

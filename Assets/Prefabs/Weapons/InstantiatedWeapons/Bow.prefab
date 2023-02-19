@@ -84,7 +84,7 @@ MonoBehaviour:
   missilePrefab: {fileID: 4637337996052996593, guid: fc6e204d6fc0bea4998c4cca293df6b5, type: 3}
   shotingPart: {fileID: 743253568702675106}
   maxPullbackPosition: {x: 0, y: 0.015, z: 0}
-  pullbackForce: 600
+  pullbackForce: 700
   bowStringPullbackTime: 0.2
   bowStringReturnTime: 0.05
   bowStringOrigin: {fileID: 5918667273798742893}

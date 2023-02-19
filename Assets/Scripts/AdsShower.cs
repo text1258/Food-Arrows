@@ -25,18 +25,18 @@ public class AdsShower : MonoBehaviour
 #if UNITY_EDITOR || UNITY_ANDROID
                 Debug.Log("FullScreenAds");
 #else
-                ShowFullScreenAdv();
+                //ShowFullScreenAdv();
 #endif
                 StartCoroutine(MinuteAdsTimer());
             }
         }
     }
 
-    [DllImport("__Internal")]
-    private static extern void ShowFullScreenAdv();
+    //[DllImport("__Internal")]
+    //private static extern void ShowFullScreenAdv();
 
-    [DllImport("__Internal")]
-    private static extern void ShowRewardedVideo();
+    //[DllImport("__Internal")]
+    //private static extern void ShowRewardedVideo();
 
     public void GetReward()
     {
@@ -49,7 +49,7 @@ public class AdsShower : MonoBehaviour
         getReward.Invoke();
 #else
         this.getReward = getReward;
-        ShowRewardedVideo();
+        //ShowRewardedVideo();
 #endif
     }
 

@@ -27,7 +27,8 @@ public class VisitorSpawner : MonoBehaviour
         }
         else
         {
-            int currentVisitorIndex = Random.Range(0, visitors.Count);
+            int currentVisitorIndex;
+            currentVisitorIndex = Random.Range(0, visitors.Count);
             Player.Instance.CurrentVisitorIndex = currentVisitorIndex.ToString();
             currentVisitor = Instantiate(visitors[currentVisitorIndex]);
         }
@@ -39,7 +40,8 @@ public class VisitorSpawner : MonoBehaviour
         {
             if (currentVisitor == null)
             {
-                int currentVisitorIndex = Random.Range(0, visitors.Count);
+                int currentVisitorIndex;
+                currentVisitorIndex = Random.Range(0, visitors.Count);
                 Player.Instance.CurrentVisitorIndex = currentVisitorIndex.ToString();
                 currentVisitor = Instantiate(visitors[currentVisitorIndex]);
             }
@@ -48,7 +50,7 @@ public class VisitorSpawner : MonoBehaviour
                 currentVisitor.order = RandomAvailableFood();
                 Player.Instance.CurrentOrder = currentVisitor.order;
             }
-            currentVisitor.transform.position = new Vector3(spawnPosition.x, currentVisitor.GetComponent<MeshRenderer>().bounds.size.y / 2, spawnPosition.z);
+            currentVisitor.transform.position = new Vector3(spawnPosition.x, spawnPosition.y + (currentVisitor.GetComponent<MeshRenderer>().bounds.size.y / 2), spawnPosition.z);
             //Move visitor to center
             currentVisitor.StartMove();
             while (currentVisitor.transform.position.x >= 0)
