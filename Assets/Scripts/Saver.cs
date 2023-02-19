@@ -49,19 +49,6 @@ public class Saver : MonoBehaviour
     [ContextMenu("Load")]
     public void Load()
     {
-<<<<<<< Updated upstream
-        SavingData savingData = null;
-        try
-        {
-#if UNITY_EDITOR
-            savingData = JsonUtility.FromJson<SavingData>(File.ReadAllText("Assets/SavingData.json"));
-#else
-            savingData = JsonUtility.FromJson<SavingData>(PlayerPrefs.GetString("SavingData"));
-#endif
-        }
-        catch { }
-        Player.Instance.SetPlayerInfo(savingData);
-=======
 #if UNITY_EDITOR || UNITY_ANDROID
         string data = null;
         try
@@ -82,7 +69,6 @@ public class Saver : MonoBehaviour
     public void SetData(string data)
     {
         Player.Instance.SetPlayerInfo(JsonUtility.FromJson<SavingData>(data));
->>>>>>> Stashed changes
     }
 
     private static List<string> GetItemsIDes(List<Item> items)

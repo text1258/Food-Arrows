@@ -20,8 +20,11 @@ public class SelectWeapon : MonoBehaviour
             {
                 Destroy(currentWeapon);
             }
+            else
+            {
+                restoreRechargeToFullButton.gameObject.SetActive(true);
+            }
             currentWeapon = Instantiate(selectedWeapon.WeaponPrefab, selectedWeapon.WeaponPrefab.GetComponent<InstantiatedWeapon>().SpawnPosition, transform.rotation, parent: transform);
-            restoreRechargeToFullButton.gameObject.SetActive(true);
         }
     }
 

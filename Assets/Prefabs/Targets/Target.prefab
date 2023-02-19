@@ -1630,11 +1630,11 @@ MonoBehaviour:
   targetMaxSpawnZoneSize: {x: 1, y: 1.67, z: 6}
   targetMinSpawnZoneSize: {x: -1, y: 5.6, z: 14}
   maxTargetAngels: {x: 0, y: 30, z: 0}
-  isChangeVisibility: 0
+  isChangeVisibility: 1
   minInvisibilityTime: 0.2
-  maxInvisibilityTime: 1
+  maxInvisibilityTime: 1.2
   minVisibleTime: 1.2
-  maxVisibleTime: 3.11
+  maxVisibleTime: 4
   isMoving: 1
   speed: 1
   rewardMoney: 100

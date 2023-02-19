@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class Recharge : MonoBehaviour
+public class Recharger : MonoBehaviour
 {
-    public static Recharge Instance;
+    public static Recharger Instance;
 
     [SerializeField] private GridLayoutGroup missilesPanel;
     [SerializeField] private Image imagePrefab;
 
     private bool missilesPanelCreated = false;
+    public float SpeedUp { get; set; } = 1f;
 
     private void Awake()
     {
@@ -33,12 +34,6 @@ public class Recharge : MonoBehaviour
             }
         }
         missilesPanelCreated = true;
-    }
-
-    [ContextMenu("RestoreRechargeToFull")]
-    public void RestoreRechargeToFull()
-    {
-        InstantiatedWeapon.Instance.CurrentMissileCount = InstantiatedWeapon.Instance.weapon.MissileCount;
     }
 
     public void UpdateMissilesPanel()
