@@ -4,7 +4,7 @@
     {
         public override void ShowText()
         {
-            text.text = $"+ {Player.Instance.CurrentLevel.MoneyForAdvertising} денег (за рекламу)";
+            text.text = $"+{Player.Instance.CurrentLevel.MoneyForAdvertising} монет";
         }
     }
 }

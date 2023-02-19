@@ -1627,12 +1627,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4e83de47cca45dc90fc60e9c05f7e00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetMaxSpawnZoneSize: {x: 2, y: 1.67, z: 6}
-  targetMinSpawnZoneSize: {x: -2, y: 5.6, z: 14}
+  targetMaxSpawnZoneSize: {x: 1, y: 1.67, z: 6}
+  targetMinSpawnZoneSize: {x: -1, y: 5.6, z: 14}
   maxTargetAngels: {x: 0, y: 30, z: 0}
-  isChangeVisibility: 1
-  minInvisibilityTime: 1.2
-  maxInvisibilityTime: 2
+  isChangeVisibility: 0
+  minInvisibilityTime: 0.2
+  maxInvisibilityTime: 1
   minVisibleTime: 1.2
   maxVisibleTime: 3.11
   isMoving: 1

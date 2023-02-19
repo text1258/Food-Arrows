@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UI;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -6,6 +7,8 @@ using Random = UnityEngine.Random;
 public class TargetSpawner : MonoBehaviour
 {
     public static TargetSpawner Instance;
+
+    [SerializeField] private float timeBetweenSpawn;
 
     private List<Target> currentLevelTargets;
     private Target currentTarget;
@@ -16,12 +19,14 @@ public class TargetSpawner : MonoBehaviour
     {
         Instance = this;
         currentLevelTargets = Player.Instance.CurrentLevel.SpawnAtThisLevelTargets;
-        SpawnTarget();
+        StartCoroutine(SpawnTarget());
     }
 
-    public void SpawnTarget()
+    public IEnumerator SpawnTarget()
     {
+        yield return new WaitForSeconds(timeBetweenSpawn);
         currentTarget = Instantiate(currentLevelTargets[Random.Range(0, currentLevelTargets.Count - 1)]);
         PlayerStates.Instance.UpdateAllStatesUI();
+        yield break;
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -100,7 +99,7 @@ public class Target : MonoBehaviour
         {
             child.gameObject.SetActive(true);
         }
-        TargetSpawner.Instance.SpawnTarget();
+        StartCoroutine(TargetSpawner.Instance.SpawnTarget());
         Destroy(gameObject, timeBeforeDestroy);
     }
 
