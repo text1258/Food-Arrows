@@ -83,16 +83,9 @@ MonoBehaviour:
   SpawnPosition: {x: -0.1, y: 1.3, z: -0.6}
   missilePrefab: {fileID: 4637337996052996593, guid: fc6e204d6fc0bea4998c4cca293df6b5, type: 3}
   shotingPart: {fileID: 743253568702675106}
-<<<<<<< Updated upstream
   maxPullbackPosition: {x: 0, y: 0.007, z: 0}
   maxPullbackForce: 900
   bowStringPullbackTime: 0.5
-=======
-  missileRechargeTime: 4
-  maxPullbackPosition: {x: 0, y: 0.015, z: 0}
-  pullbackForce: 800
-  bowStringPullbackTime: 0.4
->>>>>>> Stashed changes
   bowStringReturnTime: 0.03
   bowStringOrigin: {fileID: 5918667273798742893}
 --- !u!1 &2235138964862205390
