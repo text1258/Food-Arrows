@@ -935,6 +935,7 @@ struct Animator_t8A52E42AE54F76681838FE9E632683EF3952E883;
 struct ArgInfo_tC2B1A084F7885C1949A23F102448DD50A085CE88;
 struct ArgumentCache_t30F5878E7190B37456E045E039655C33EB27FF1D;
 struct ArrayList_t7A8E5AF0C4378015B5731ABE2BED8F2782FEEF8A;
+struct Arrow_t7048A6830A9F76E0448BBD44FD9C3C00BC138DBF;
 struct AsnEncodedData_t9341C847F05FA5D9D579173CBB19B4448445C8A8;
 struct Assembly_t;
 struct AssemblyLoadEventArgs_tC10453F666334D5174ADF95106DF0DB73F4B863E;
@@ -6407,6 +6408,17 @@ struct ArrayListEnumeratorSimple_tB829A175318C37ED5427A14633AC85D5816CF2DA  : pu
 	RuntimeObject* ____currentElement_3;
 	bool ____isArrayList_4;
 };
+struct U3CU3Ec__DisplayClass3_0_t3CDD66E2B2F2E29AA9D88AD5B11AB93ED755A68B  : public RuntimeObject
+{
+	Target_t5E0C0864CEA07701AF639C0AFAC19928DB873FC5* ___collisionTarget_0;
+};
+struct U3CWaitingArrowDestroyU3Ed__3_t57AA31583B83C18BE6A73DC4A96909103363627C  : public RuntimeObject
+{
+	int32_t ___U3CU3E1__state_0;
+	RuntimeObject* ___U3CU3E2__current_1;
+	Target_t5E0C0864CEA07701AF639C0AFAC19928DB873FC5* ___collisionTarget_2;
+	Arrow_t7048A6830A9F76E0448BBD44FD9C3C00BC138DBF* ___U3CU3E4__this_3;
+};
 struct ResolveEventHolder_t3CB1550411277AD1F17B720A3C07C37973A99558  : public RuntimeObject
 {
 };
@@ -7285,13 +7297,6 @@ struct U3CU3Ec_t010C6DD1D6A4662B467F3C1BDE9A8352A3495F34  : public RuntimeObject
 };
 struct U3CU3Ec_tB391A89144AD9017CFBAC1E6A3F88D4E8B347A4D  : public RuntimeObject
 {
-};
-struct U3CChangeVisibilityU3Ed__18_t2E1ED52D783BA5466E66974B4221379A061ABFFA  : public RuntimeObject
-{
-	int32_t ___U3CU3E1__state_0;
-	RuntimeObject* ___U3CU3E2__current_1;
-	Target_t5E0C0864CEA07701AF639C0AFAC19928DB873FC5* ___U3CU3E4__this_2;
-	float ___U3CpastTimeU3E5__2_3;
 };
 struct U3CSpawnTargetU3Ed__7_t3C72BE0CC7E0D1C58BB7CEF3864391EFC57AEDE2  : public RuntimeObject
 {
@@ -21261,13 +21266,6 @@ struct LineSegment_t31E432A164E8EA041C4E2279C6C0F243636EC294
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___Point1_0;
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___Point2_1;
 };
-struct U3CMoveToRandomPointU3Ed__19_tEF1DE0229078B21A0F9474D18E15454C1BA73CC3  : public RuntimeObject
-{
-	int32_t ___U3CU3E1__state_0;
-	RuntimeObject* ___U3CU3E2__current_1;
-	Target_t5E0C0864CEA07701AF639C0AFAC19928DB873FC5* ___U3CU3E4__this_2;
-	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___U3CdirectionU3E5__2_3;
-};
 struct ContingentProperties_t3FA59480914505CEA917B1002EC675F29D0CB540  : public RuntimeObject
 {
 	ExecutionContext_t9D6EDFD92F0B2D391751963E2D77A8B03CB81710* ___m_capturedContext_0;
@@ -28610,6 +28608,8 @@ struct MinMaxSlider_t61CC3B1523FCBE362A1ECD7D7D96C9E27F7D22D4  : public BaseFiel
 };
 struct Missile_t90162A6942CD1312522BE2AD40697A397C004B4A  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
+	float ___timeBeforeDestroy_5;
+	int8_t ___stabilityDamage_6;
 };
 struct MissingFieldException_t251FB3C0B4F3D0C490A9A36B5BF2A1EF1A3D389C  : public MissingMemberException_tB9D7B25FF06EEBB52D036DA8B1BE67F67619D211
 {
@@ -28750,16 +28750,10 @@ struct Target_t5E0C0864CEA07701AF639C0AFAC19928DB873FC5  : public MonoBehaviour_
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___targetMaxSpawnZoneSize_5;
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___targetMinSpawnZoneSize_6;
 	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 ___maxTargetAngels_7;
-	bool ___isChangeVisibility_8;
-	float ___minInvisibilityTime_9;
-	float ___maxInvisibilityTime_10;
-	float ___minVisibleTime_11;
-	float ___maxVisibleTime_12;
-	bool ___isMoving_13;
-	float ___speed_14;
-	uint32_t ___rewardMoney_15;
-	float ___timeBeforeDestroy_16;
-	bool ___notHitByMissile_17;
+	uint32_t ___rewardMoney_8;
+	float ___timeBeforeDestroy_9;
+	bool ___notHitByMissile_10;
+	int8_t ___stability_11;
 };
 struct TargetSpawner_t5701DCB79AC9F5B1C796EF5F7E6155FE6D5D9F2D  : public MonoBehaviour_t532A11E69716D348D8AA7F854AFCBFCB8AD17F71
 {
@@ -29050,7 +29044,8 @@ struct AddMoneyForAdvertisingText_t45777C81CC24055FFCC47471FE4D7F9C26A2D9B9  : p
 };
 struct Arrow_t7048A6830A9F76E0448BBD44FD9C3C00BC138DBF  : public Missile_t90162A6942CD1312522BE2AD40697A397C004B4A
 {
-	float ___timeBeforeDestroy_5;
+	float ___jammingLength_7;
+	bool ___wasCollised_8;
 };
 struct AspectRatioFitter_tEA1004A8240374C9BE7623981F999AA9789CDD09  : public UIBehaviour_tB9D4295827BD2EEDEF0749200C6CA7090C742A9D
 {
@@ -29101,7 +29096,6 @@ struct Cannon_tB62D3B47A8038B8A44CB361EA87F458FB546CF33  : public InstantiatedWe
 };
 struct CannonMissile_tA52D277B7C47F0F8FE816ABFA5292E7F2EFD8DEA  : public Missile_t90162A6942CD1312522BE2AD40697A397C004B4A
 {
-	float ___timeBeforeDestroy_5;
 };
 struct CanvasScaler_t3BC095205EAD308CF3EAC27136A73387AC32FC3B  : public UIBehaviour_tB9D4295827BD2EEDEF0749200C6CA7090C742A9D
 {
@@ -41741,15 +41735,15 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize3693 = { sizeof(Instantiated
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3694;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize3694 = { sizeof(Missile_t90162A6942CD1312522BE2AD40697A397C004B4A), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3695;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize3695 = { sizeof(Arrow_t7048A6830A9F76E0448BBD44FD9C3C00BC138DBF), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize3695 = { sizeof(U3CU3Ec__DisplayClass3_0_t3CDD66E2B2F2E29AA9D88AD5B11AB93ED755A68B), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3696;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize3696 = { sizeof(CannonMissile_tA52D277B7C47F0F8FE816ABFA5292E7F2EFD8DEA), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize3696 = { sizeof(U3CWaitingArrowDestroyU3Ed__3_t57AA31583B83C18BE6A73DC4A96909103363627C), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3697;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize3697 = { sizeof(SelectWeapon_tD826CB791BA6798C648E5DFF1C800810F7029097), -1, sizeof(SelectWeapon_tD826CB791BA6798C648E5DFF1C800810F7029097_StaticFields), 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize3697 = { sizeof(Arrow_t7048A6830A9F76E0448BBD44FD9C3C00BC138DBF), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3698;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize3698 = { sizeof(U3CChangeVisibilityU3Ed__18_t2E1ED52D783BA5466E66974B4221379A061ABFFA), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize3698 = { sizeof(CannonMissile_tA52D277B7C47F0F8FE816ABFA5292E7F2EFD8DEA), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3699;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize3699 = { sizeof(U3CMoveToRandomPointU3Ed__19_tEF1DE0229078B21A0F9474D18E15454C1BA73CC3), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize3699 = { sizeof(SelectWeapon_tD826CB791BA6798C648E5DFF1C800810F7029097), -1, sizeof(SelectWeapon_tD826CB791BA6798C648E5DFF1C800810F7029097_StaticFields), 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3700;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize3700 = { sizeof(Target_t5E0C0864CEA07701AF639C0AFAC19928DB873FC5), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3701;

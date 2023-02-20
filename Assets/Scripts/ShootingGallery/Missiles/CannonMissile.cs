@@ -2,10 +2,12 @@
 
 public class CannonMissile : Missile
 {
-    [SerializeField] private float timeBeforeDestroy;
-
     private void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject, timeBeforeDestroy);
+        if (collision.gameObject.GetComponent<Target>() != null)
+        {
+            collision.gameObject.GetComponent<Target>().Stability -= stabilityDamage;
+        }
+        DestroyMissle();
     }
 }
