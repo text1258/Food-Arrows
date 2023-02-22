@@ -49,7 +49,6 @@ public class Saver : MonoBehaviour
     [ContextMenu("Load")]
     public void Load()
     {
-#if UNITY_EDITOR || UNITY_ANDROID
         string data = null;
         try
         {
@@ -61,15 +60,7 @@ public class Saver : MonoBehaviour
         }
         catch { }
         Player.instance.SetPlayerInfo(JsonUtility.FromJson<SavingData>(data));
-#else
-        LoadDataFromServer();
-#endif
         }
-
-    public void SetData(string data)
-    {
-        Player.instance.SetPlayerInfo(JsonUtility.FromJson<SavingData>(data));
-    }
 
     private static List<string> GetItemsIDes(List<Item> items)
     {

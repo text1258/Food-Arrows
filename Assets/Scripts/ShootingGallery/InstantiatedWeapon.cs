@@ -78,8 +78,7 @@ public abstract class InstantiatedWeapon : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Ray ray;
-        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, 100f))
         {
             if (!hit.transform.gameObject.CompareTag("NonShootingPlace") && IsPointerOverUIObject() == false)
