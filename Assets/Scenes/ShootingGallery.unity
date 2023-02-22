@@ -1171,6 +1171,7 @@ MonoBehaviour:
   notAvailableWeaponBarrierPrefab: {fileID: 8196123237161733868, guid: 9c2fbb74f462761429b749d30c5020b1, type: 3}
   selectWeapon: {fileID: 1066453241}
   allWeapons: {fileID: 11400000, guid: 3324ed56fa539334db9688bed0891f30, type: 2}
+  barrierSizeDelta: 0.01
 --- !u!224 &520531294
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1620,7 +1621,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599253027}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2, z: 0.818}
+  m_LocalPosition: {x: 0, y: 0.2, z: 0.775}
   m_LocalScale: {x: 5, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1924,7 +1925,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 520531293}
         m_TargetAssemblyTypeName: WeaponTable, Assembly-CSharp
-        m_MethodName: CreateItemsPanel
+        m_MethodName: CreateWeaponsPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2873,7 +2874,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 3
-  m_Spacing: 0.17
+  m_Spacing: 0.2
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0

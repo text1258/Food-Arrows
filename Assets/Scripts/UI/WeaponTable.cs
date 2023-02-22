@@ -9,8 +9,9 @@ public class WeaponTable : MonoBehaviour
     [SerializeField] private GameObject notAvailableWeaponBarrierPrefab;
     [SerializeField] private SelectWeapon selectWeapon;
     [SerializeField] private AllWeapons allWeapons;
+    [SerializeField] private float barrierSizeDelta;
 
-    public void CreateItemsPanel()
+    public void CreateWeaponsPanel()
     {
         foreach (Weapon weapon in allWeapons.Weapons)
         {
@@ -42,7 +43,7 @@ public class WeaponTable : MonoBehaviour
                 Barrier = Instantiate(notAvailableWeaponBarrierPrefab, parent: currentWeapon.transform);
             }
             Barrier.GetComponent<Weapon3DButton>().CellWeapon = weapon;
-            Barrier.transform.localScale = currentWeapon.GetComponent<BoxCollider>().size;
+            Barrier.transform.localScale = currentWeapon.GetComponent<BoxCollider>().size + Vector3.one * barrierSizeDelta;
             Barrier.transform.localPosition = currentWeapon.GetComponent<BoxCollider>().center;
         }
     }

@@ -5,8 +5,8 @@ public class Bow : InstantiatedWeapon
 {
     [SerializeField] private Vector3 maxPullbackPosition;
     [SerializeField] private float pullbackForce;
-    [SerializeField] private float bowStringPullbackTime;
-    [SerializeField] private float bowStringReturnTime;
+    [SerializeField] private float pullbackTime;
+    [SerializeField] private float returnTime;
     [SerializeField] private GameObject bowStringOrigin;
 
     private float pullback;
@@ -24,7 +24,7 @@ public class Bow : InstantiatedWeapon
     {
         if (pullback < 1)
         {
-            pullback += Time.deltaTime / bowStringPullbackTime;
+            pullback += Time.deltaTime / pullbackTime;
         }
         bowStringOrigin.transform.localPosition = Vector3.Lerp(startBowStringOriginPosition, maxPullbackPosition, pullback);
     }
@@ -54,7 +54,7 @@ public class Bow : InstantiatedWeapon
     {
         while (pullback < 1) 
         {
-            pullback += Time.deltaTime / bowStringReturnTime;
+            pullback += Time.deltaTime / returnTime;
             bowStringOrigin.transform.localPosition = Vector3.Lerp(startBowStringOriginPosition, maxPullbackPosition, 1 - pullback);
             yield return null;
         }

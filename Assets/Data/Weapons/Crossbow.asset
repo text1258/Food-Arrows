@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df52bc72ffa249dea01b2d72ddbb0d74, type: 3}
+  m_Name: Crossbow
+  m_EditorClassIdentifier: 
+  iD: 11
+  sprite: {fileID: 21300000, guid: 38f407724caac4242817cc558b32d6d0, type: 3}
+  itemPrefab: {fileID: 8494481909842703866, guid: 042f80c80c07a0d4db6a6b794c0b93c4, type: 3}
+  price: 300
+  weaponPrefab: {fileID: 7038623338267977018, guid: 19dd23169cca2cf42ac34fc43c4b52d2, type: 3}
+  missileCount: 5
+  missileSprite: {fileID: 21300000, guid: 685ecec59f6a14542977238e62138eb1, type: 3}
+  cooldown: 0
+  missileRechargeTime: 2
