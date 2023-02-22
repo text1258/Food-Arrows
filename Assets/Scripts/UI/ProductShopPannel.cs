@@ -7,13 +7,13 @@ public class ProductShopPannel : MonoBehaviour
 
     public void ShowProductShopPannel()
     {
-        ProductShop.Instance.UpdateAvailableToBuyProducts();
-        ItemsPannel.Instance.CreateItemsPanel("Продуктовый магазин");
-        foreach (Product product in ProductShop.Instance.AvailableToBuyProducts)
+        ProductShop.instance.UpdateAvailableToBuyProducts();
+        ItemsPannel.instance.CreateItemsPanel("Продуктовый магазин");
+        foreach (Product product in ProductShop.instance.AvailableToBuyProducts)
         {
             productShopCellPrefab.GetComponent<Image>().sprite = product.Sprite;
             productShopCellPrefab.cellProduct = product;
-            ItemsPannel.Instance.AddItemToPanel(productShopCellPrefab.gameObject);
+            ItemsPannel.instance.AddItemToPanel(productShopCellPrefab.gameObject);
         }
     }
 }

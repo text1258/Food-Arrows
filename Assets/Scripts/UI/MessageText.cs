@@ -4,7 +4,7 @@ using TMPro;
 
 public class MessageText : MonoBehaviour
 {
-    public static MessageText Instance;
+    public static MessageText instance;
 
     [SerializeField] private TMP_Text textMessage;
 
@@ -12,7 +12,7 @@ public class MessageText : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        instance = this;
     }
 
     private void Start()

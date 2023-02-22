@@ -7,12 +7,12 @@ public class ProductShopCell : ItemsPannelCell
 
     public override void OnItemCellClick()
     {
-        ConfirmPanel.Instance.CreateConfirmPanel($"Подтвердите покупку. Это будет стоить {cellProduct.Price}",
+        ConfirmPanel.instance.CreateConfirmPanel($"Подтвердите покупку. Это будет стоить {cellProduct.Price}",
             cellProduct.Sprite, onConfirm: BuyThisProduct);
     }
 
     private void BuyThisProduct()
     {
-        ProductShop.Instance.BuyProduct(cellProduct);
+        ProductShop.instance.BuyProduct(cellProduct);
     }
 }

@@ -2,6 +2,6 @@
 {
     public override void OnItemCellClick()
     {
-        SelectWeapon.Instance.SelectedWeapon = CellWeapon;
+        SelectWeapon.instance.SelectedWeapon = CellWeapon;
     }
 }

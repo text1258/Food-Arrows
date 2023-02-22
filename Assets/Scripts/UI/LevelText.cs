@@ -2,6 +2,6 @@
 {
     public override void ShowText()
     {
-        text.text = $"Уровень: {Player.Instance.CurrentLevel.Number}";
+        text.text = $"Уровень: {Player.instance.CurrentLevel.Number}";
     }
 }

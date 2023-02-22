@@ -4,22 +4,22 @@ public class Weapon3DButtonNotPurchased : Weapon3DButton
 {
     public override void OnItemCellClick()
     {
-        ConfirmPanel.Instance.CreateConfirmPanel($"Подтвердите покупку. Это будет стоить {CellWeapon.Price}",
+        ConfirmPanel.instance.CreateConfirmPanel($"Подтвердите покупку. Это будет стоить {CellWeapon.Price}",
             CellWeapon.Sprite, onConfirm: BuyThisWeapon);
     }
 
     private void BuyThisWeapon()
     {
-        if (Player.Instance.Money >= CellWeapon.Price)
+        if (Player.instance.Money >= CellWeapon.Price)
         {
-            Player.Instance.InventoryWeapons.Add(CellWeapon);
-            Player.Instance.Money -= CellWeapon.Price;
-            Saver.Instance.Save();
+            Player.instance.InventoryWeapons.Add(CellWeapon);
+            Player.instance.Money -= CellWeapon.Price;
+            Saver.instance.Save();
             Destroy(gameObject);
         }
         else
         {
-            MessageText.Instance.Message("У вас недостаточно денег(", 2f);
+            MessageText.instance.Message("У вас недостаточно денег(", 2f);
         }
     }
 }

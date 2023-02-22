@@ -21,20 +21,20 @@ public class VisitorSpawner : MonoBehaviour
 
     private IEnumerator Start()
     {
-        if (Player.Instance.CurrentVisitorIndex != "")
+        if (Player.instance.CurrentVisitorIndex != "")
         {
-            currentVisitor = Instantiate(visitors[Convert.ToInt32(Player.Instance.CurrentVisitorIndex)]);
+            currentVisitor = Instantiate(visitors[Convert.ToInt32(Player.instance.CurrentVisitorIndex)]);
         }
         else
         {
             int currentVisitorIndex;
             currentVisitorIndex = Random.Range(0, visitors.Count);
-            Player.Instance.CurrentVisitorIndex = currentVisitorIndex.ToString();
+            Player.instance.CurrentVisitorIndex = currentVisitorIndex.ToString();
             currentVisitor = Instantiate(visitors[currentVisitorIndex]);
         }
-        if (Player.Instance.CurrentOrder != null)
+        if (Player.instance.CurrentOrder != null)
         {
-            currentVisitor.order = Player.Instance.CurrentOrder;
+            currentVisitor.order = Player.instance.CurrentOrder;
         }
         while (true)
         {
@@ -42,13 +42,13 @@ public class VisitorSpawner : MonoBehaviour
             {
                 int currentVisitorIndex;
                 currentVisitorIndex = Random.Range(0, visitors.Count);
-                Player.Instance.CurrentVisitorIndex = currentVisitorIndex.ToString();
+                Player.instance.CurrentVisitorIndex = currentVisitorIndex.ToString();
                 currentVisitor = Instantiate(visitors[currentVisitorIndex]);
             }
             if (currentVisitor.order == null)
             {
                 currentVisitor.order = RandomAvailableFood();
-                Player.Instance.CurrentOrder = currentVisitor.order;
+                Player.instance.CurrentOrder = currentVisitor.order;
             }
             currentVisitor.transform.position = new Vector3(spawnPosition.x, spawnPosition.y + (currentVisitor.GetComponent<MeshRenderer>().bounds.size.y / 2), spawnPosition.z);
             //Move visitor to center
@@ -80,7 +80,7 @@ public class VisitorSpawner : MonoBehaviour
     private Food RandomAvailableFood()
     {
         List<Food> availableFood = new List<Food>();
-        for (int i = 0; i <= Player.Instance.CurrentLevel.Number - 1; i++)
+        for (int i = 0; i <= Player.instance.CurrentLevel.Number - 1; i++)
         {
             foreach (Food food in allLevels.Levels[i].OpenInThisLevelFoods)
             {

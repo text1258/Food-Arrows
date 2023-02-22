@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CookingPanel : MonoBehaviour
 {
-    public static CookingPanel Instance;
+    public static CookingPanel instance;
 
     [SerializeField] private CookingPanelCell cookingPanelCellPrefab;
     [SerializeField] private AllFoods allFoods;
@@ -14,18 +14,18 @@ public class CookingPanel : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        instance = this;
     }
 
     public void ShowCookingPanel()
     {
-        possibleToCookDishes = FindPossibleFoods(allFoods.Foods, Player.Instance.InventoryProducts);
-        ItemsPannel.Instance.CreateItemsPanel("Выберите, что хотите приготовить");
+        possibleToCookDishes = FindPossibleFoods(allFoods.Foods, Player.instance.InventoryProducts);
+        ItemsPannel.instance.CreateItemsPanel("Выберите, что хотите приготовить");
         foreach (Food food in possibleToCookDishes)
         {
             cookingPanelCellPrefab.GetComponent<Image>().sprite = food.Sprite;
             cookingPanelCellPrefab.GetComponent<CookingPanelCell>().cellFood = food;
-            ItemsPannel.Instance.AddItemToPanel(cookingPanelCellPrefab.gameObject);
+            ItemsPannel.instance.AddItemToPanel(cookingPanelCellPrefab.gameObject);
         }
     }
 
@@ -33,13 +33,13 @@ public class CookingPanel : MonoBehaviour
     {
         foreach (Product product in food.CookingProducts)
         {
-            Player.Instance.InventoryProducts.Remove(product);
-            Saver.Instance.Save();
+            Player.instance.InventoryProducts.Remove(product);
+            Saver.instance.Save();
         }
-        Player.Instance.InventoryFoods.Add(food);
-        Saver.Instance.Save();
-        CookingFoodAnimation.Instance.StartCookAnimation(food);
-        ItemsPannel.Instance.ClearItemsPanel();
+        Player.instance.InventoryFoods.Add(food);
+        Saver.instance.Save();
+        CookingFoodAnimation.instance.StartCookAnimation(food);
+        ItemsPannel.instance.ClearItemsPanel();
         ShowCookingPanel();
     }
 

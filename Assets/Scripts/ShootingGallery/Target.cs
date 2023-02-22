@@ -41,14 +41,14 @@ public class Target : MonoBehaviour
     public void DestroyTarget()
     {
         notHitByMissile = false;
-        Player.Instance.Money += rewardMoney;
+        Player.instance.Money += rewardMoney;
         GetComponent<Collider>().enabled = false;
         GetComponent<MeshRenderer>().enabled = false;
         foreach (Transform child in transform)
         {
             child.gameObject.SetActive(true);
         }
-        StartCoroutine(TargetSpawner.Instance.SpawnTarget());
+        StartCoroutine(TargetSpawner.instance.SpawnTarget());
         Destroy(gameObject, timeBeforeDestroy);
     }
 

@@ -2,6 +2,6 @@
 {
     public override void ShowText()
     {
-        text.text = $"Монеты: {Player.Instance.Money}";
+        text.text = $"Монеты: {Player.instance.Money}";
     }
 }

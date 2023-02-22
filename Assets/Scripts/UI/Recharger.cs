@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class Recharger : MonoBehaviour
 {
-    public static Recharger Instance;
+    public static Recharger instance;
 
     [SerializeField] private GridLayoutGroup missilesPanel;
     [SerializeField] private Image imagePrefab;
@@ -13,18 +13,18 @@ public class Recharger : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        instance = this;
     }
 
     public void CreateMissilesPanel()
     {
         ClearMissilesPanel();
-        for (int i = 0; i < InstantiatedWeapon.Instance.Weapon.MissileCount; i++)
+        for (int i = 0; i < InstantiatedWeapon.instance.Weapon.MissileCount; i++)
         {
             Image currentImage = Instantiate(imagePrefab, parent: missilesPanel.transform);
-            currentImage.sprite = InstantiatedWeapon.Instance.Weapon.MissileSprite;
-            currentImage.transform.GetChild(0).GetComponent<Image>().sprite = InstantiatedWeapon.Instance.Weapon.MissileSprite;
-            if (i <= InstantiatedWeapon.Instance.CurrentMissileCount)
+            currentImage.sprite = InstantiatedWeapon.instance.Weapon.MissileSprite;
+            currentImage.transform.GetChild(0).GetComponent<Image>().sprite = InstantiatedWeapon.instance.Weapon.MissileSprite;
+            if (i <= InstantiatedWeapon.instance.CurrentMissileCount)
             {
                 currentImage.transform.GetChild(0).GetComponent<Image>().fillAmount = 1f;
             }
@@ -43,13 +43,13 @@ public class Recharger : MonoBehaviour
             CreateMissilesPanel();
         }
         int j = 0;
-        for (; j < InstantiatedWeapon.Instance.CurrentMissileCount; j++)
+        for (; j < InstantiatedWeapon.instance.CurrentMissileCount; j++)
         {
             missilesPanel.transform.GetChild(j).GetChild(0).GetComponent<Image>().fillAmount = 1f;
         }
-        if (InstantiatedWeapon.Instance.CurrentMissileCount < InstantiatedWeapon.Instance.Weapon.MissileCount)
+        if (InstantiatedWeapon.instance.CurrentMissileCount < InstantiatedWeapon.instance.Weapon.MissileCount)
         {
-            missilesPanel.transform.GetChild(j).GetChild(0).GetComponent<Image>().fillAmount = InstantiatedWeapon.Instance.PastMissileRechargeTime / InstantiatedWeapon.Instance.Weapon.MissileRechargeTime;
+            missilesPanel.transform.GetChild(j).GetChild(0).GetComponent<Image>().fillAmount = InstantiatedWeapon.instance.PastMissileRechargeTime / InstantiatedWeapon.instance.Weapon.MissileRechargeTime;
             for (int i = j + 1; i < missilesPanel.transform.childCount; i++)
             {
                 missilesPanel.transform.GetChild(i).GetChild(0).GetComponent<Image>().fillAmount = 0f;

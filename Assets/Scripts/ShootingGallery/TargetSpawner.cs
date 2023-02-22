@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 public class TargetSpawner : MonoBehaviour
 {
-    public static TargetSpawner Instance;
+    public static TargetSpawner instance;
 
     [SerializeField] private float timeBetweenSpawn;
 
@@ -17,8 +17,8 @@ public class TargetSpawner : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
-        currentLevelTargets = Player.Instance.CurrentLevel.SpawnAtThisLevelTargets;
+        instance = this;
+        currentLevelTargets = Player.instance.CurrentLevel.SpawnAtThisLevelTargets;
         StartCoroutine(SpawnTarget());
     }
 
@@ -26,7 +26,7 @@ public class TargetSpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(timeBetweenSpawn);
         currentTarget = Instantiate(currentLevelTargets[Random.Range(0, currentLevelTargets.Count - 1)]);
-        PlayerStates.Instance.UpdateAllStatesUI();
+        PlayerStates.instance.UpdateAllStatesUI();
         yield break;
     }
 }

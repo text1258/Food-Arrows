@@ -19,7 +19,7 @@ public class SpeedUpRechatgeForAds : RewardAdsCaller
         speedUpButton.gameObject.SetActive(false);
         timer.gameObject.SetActive(true);
         timerBackground.gameObject.SetActive(true);
-        Recharger.Instance.SpeedUp = speedUp;
+        Recharger.instance.SpeedUp = speedUp;
         for (float i = 0; i < speedUpTime; i += Time.deltaTime)
         {
             timer.fillAmount = i / speedUpTime;
@@ -28,7 +28,7 @@ public class SpeedUpRechatgeForAds : RewardAdsCaller
         speedUpButton.gameObject.SetActive(true);
         timer.gameObject.SetActive(false);
         timerBackground.gameObject.SetActive(false);
-        Recharger.Instance.SpeedUp = 1f;
+        Recharger.instance.SpeedUp = 1f;
         yield break;
     }
 }

@@ -4,7 +4,7 @@
     {
         try
         {
-            text.text = $"Награда: {TargetSpawner.Instance.CurrentTarget.RewardMoney}";
+            text.text = $"Награда: {TargetSpawner.instance.CurrentTarget.RewardMoney}";
         }
         catch { }
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CookingFoodAnimation : MonoBehaviour
 {
-    public static CookingFoodAnimation Instance;
+    public static CookingFoodAnimation instance;
 
     [SerializeField] private Vector3 cookingPosition;
     [SerializeField] private float productsGatheringAnimationTime;
@@ -23,7 +23,7 @@ public class CookingFoodAnimation : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        instance = this;
     }
 
     public void StartCookAnimation(Food cookingFood)
@@ -64,10 +64,10 @@ public class CookingFoodAnimation : MonoBehaviour
         productsFromRecipe.ForEach(Destroy);
         GameObject instantiatedFood = Instantiate(cookingFood.ItemPrefab, cookingPosition, Quaternion.identity); 
         Vector3 startPosition = instantiatedFood.transform.position;
-        while (Vector3.Distance(instantiatedFood.transform.position, Player.Instance.transform.position) > 0.01f)
+        while (Vector3.Distance(instantiatedFood.transform.position, Player.instance.transform.position) > 0.01f)
         {
             traveledPath += Time.deltaTime / foodGoToPlayerAnimationTime;
-            instantiatedFood.transform.position = Vector3.Slerp(startPosition, Player.Instance.transform.position, traveledPath); 
+            instantiatedFood.transform.position = Vector3.Slerp(startPosition, Player.instance.transform.position, traveledPath); 
             yield return null;
         }
         Destroy(instantiatedFood.gameObject);

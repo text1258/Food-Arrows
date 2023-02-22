@@ -8,11 +8,11 @@ public class Inventory : MonoBehaviour
     
     public void ShowInventoryPanel()
     {
-        ItemsPannel.Instance.CreateItemsPanel("Инвентарь");
-        foreach (Item item in Player.Instance.InventoryFoods.Select(food => (Item)food).Concat(Player.Instance.InventoryProducts.Select(product => (Item)product)).Concat(Player.Instance.InventoryWeapons.Select(weapon => (Item)weapon)))
+        ItemsPannel.instance.CreateItemsPanel("Инвентарь");
+        foreach (Item item in Player.instance.InventoryFoods.Select(food => (Item)food).Concat(Player.instance.InventoryProducts.Select(product => (Item)product)).Concat(Player.instance.InventoryWeapons.Select(weapon => (Item)weapon)))
         {
             inventoryCellPrefab.sprite = item.Sprite;
-            ItemsPannel.Instance.AddItemToPanel(inventoryCellPrefab.gameObject);
+            ItemsPannel.instance.AddItemToPanel(inventoryCellPrefab.gameObject);
         }
     }
 }

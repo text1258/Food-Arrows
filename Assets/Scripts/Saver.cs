@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Saver : MonoBehaviour
 {
-    public static Saver Instance = null;
+    public static Saver instance = null;
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (instance != null && instance != this)
         {
             Destroy(gameObject);
         }
         else
         {
             DontDestroyOnLoad(gameObject);
-            Instance = this;
+            instance = this;
         }
     }
 
@@ -23,17 +23,17 @@ public class Saver : MonoBehaviour
     public void Save()
     {
         SavingData savingData;
-        if (Player.Instance.CurrentOrder == null)
+        if (Player.instance.CurrentOrder == null)
         {
-            savingData = new SavingData(Player.Instance.Money, Player.Instance.CurrentLevel.Number, Player.Instance.Experience,
-                GetItemsIDes(new List<Item>(Player.Instance.InventoryFoods)), GetItemsIDes(new List<Item>(Player.Instance.InventoryProducts)),
-                GetItemsIDes(new List<Item>(Player.Instance.InventoryWeapons)));
+            savingData = new SavingData(Player.instance.Money, Player.instance.CurrentLevel.Number, Player.instance.Experience,
+                GetItemsIDes(new List<Item>(Player.instance.InventoryFoods)), GetItemsIDes(new List<Item>(Player.instance.InventoryProducts)),
+                GetItemsIDes(new List<Item>(Player.instance.InventoryWeapons)));
         }
         else
         {
-            savingData = new SavingData(Player.Instance.Money, Player.Instance.CurrentLevel.Number, Player.Instance.Experience,
-                GetItemsIDes(new List<Item>(Player.Instance.InventoryFoods)), GetItemsIDes(new List<Item>(Player.Instance.InventoryProducts)),
-                GetItemsIDes(new List<Item>(Player.Instance.InventoryWeapons)), Player.Instance.CurrentOrder.ID, Player.Instance.CurrentVisitorIndex);
+            savingData = new SavingData(Player.instance.Money, Player.instance.CurrentLevel.Number, Player.instance.Experience,
+                GetItemsIDes(new List<Item>(Player.instance.InventoryFoods)), GetItemsIDes(new List<Item>(Player.instance.InventoryProducts)),
+                GetItemsIDes(new List<Item>(Player.instance.InventoryWeapons)), Player.instance.CurrentOrder.ID, Player.instance.CurrentVisitorIndex);
         }
 #if UNITY_EDITOR
         File.WriteAllText("Assets/SavingData.json", JsonUtility.ToJson(savingData));
@@ -60,7 +60,7 @@ public class Saver : MonoBehaviour
 #endif
         }
         catch { }
-        Player.Instance.SetPlayerInfo(JsonUtility.FromJson<SavingData>(data));
+        Player.instance.SetPlayerInfo(JsonUtility.FromJson<SavingData>(data));
 #else
         LoadDataFromServer();
 #endif
@@ -68,7 +68,7 @@ public class Saver : MonoBehaviour
 
     public void SetData(string data)
     {
-        Player.Instance.SetPlayerInfo(JsonUtility.FromJson<SavingData>(data));
+        Player.instance.SetPlayerInfo(JsonUtility.FromJson<SavingData>(data));
     }
 
     private static List<string> GetItemsIDes(List<Item> items)

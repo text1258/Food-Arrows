@@ -2,6 +2,6 @@
 {
     protected override void Reward()
     {
-        Player.Instance.AddMoneyForAdversiting();
+        Player.instance.AddMoneyForAdversiting();
     }
 }

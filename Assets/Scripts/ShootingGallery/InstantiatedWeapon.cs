@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 public abstract class InstantiatedWeapon : MonoBehaviour
 {
-    public static InstantiatedWeapon Instance;
+    public static InstantiatedWeapon instance;
 
     [SerializeField] public Weapon weapon;
     [SerializeField] public Vector3 SpawnPosition;
@@ -29,7 +29,7 @@ public abstract class InstantiatedWeapon : MonoBehaviour
             {
                 currentRestoreRecharge = StartCoroutine(RestoreRecharge());
             }
-            Recharger.Instance.UpdateMissilesPanel();
+            Recharger.instance.UpdateMissilesPanel();
         }
     }
     public Weapon Weapon => weapon;
@@ -42,9 +42,9 @@ public abstract class InstantiatedWeapon : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        instance = this;
         CurrentMissileCount = 0;
-        Recharger.Instance.CreateMissilesPanel();
+        Recharger.instance.CreateMissilesPanel();
     }
     private void Start()
     {
@@ -114,8 +114,8 @@ public abstract class InstantiatedWeapon : MonoBehaviour
                 {
                     break;
                 }
-                PastMissileRechargeTime += Time.deltaTime * Recharger.Instance.SpeedUp;
-                Recharger.Instance.UpdateMissilesPanel();
+                PastMissileRechargeTime += Time.deltaTime * Recharger.instance.SpeedUp;
+                Recharger.instance.UpdateMissilesPanel();
                 yield return null;
             }
             PastMissileRechargeTime = 0f;

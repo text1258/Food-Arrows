@@ -4,14 +4,14 @@ using UnityEngine.UI;
 
 public class ItemsPannel : MonoBehaviour
 {
-    public static ItemsPannel Instance;
+    public static ItemsPannel instance;
 
     [SerializeField] protected TMP_Text titleText;
     [SerializeField] protected ScrollRect itemsScrollRect;
 
     private void Awake()
     {
-        Instance = this;
+        instance = this;
     }
 
     public void CreateItemsPanel(string title) 

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class SelectWeapon : MonoBehaviour
 {
-    public static SelectWeapon Instance;
+    public static SelectWeapon instance;
 
     [SerializeField] private Button restoreRechargeToFullButton;
 
@@ -30,6 +30,6 @@ public class SelectWeapon : MonoBehaviour
 
     private void Awake()
     {
-        Instance = this;
+        instance = this;
     }
 }

@@ -7,7 +7,7 @@ using UI;
 
 public class Player : MonoBehaviour
 {
-    public static Player Instance;
+    public static Player instance;
 
     [Header("States")]
     [SerializeField] private uint money;
@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField] private List<Food> inventoryFoods;
     [SerializeField] private List<Product> inventoryProducts;
     [SerializeField] private List<Weapon> inventoryWeapons;
-    [SerializeField] private Level currentLevel;    
+    [SerializeField] private Level currentLevel;
     [Header("AllItems")]
     [SerializeField] private AllFoods allFoods;
     [SerializeField] private AllProducts allProducts;
@@ -33,8 +33,8 @@ public class Player : MonoBehaviour
         set
         {
             money = value;
-            Saver.Instance.Save();
-            PlayerStates.Instance.UpdateAllStatesUI();
+            Saver.instance.Save();
+            PlayerStates.instance.UpdateAllStatesUI();
         }
     }
     public uint Experience
@@ -43,15 +43,15 @@ public class Player : MonoBehaviour
         set
         {
             experience = value;
-            Saver.Instance.Save();
+            Saver.instance.Save();
             if (CurrentLevel is NormalLevel && Experience >= ((NormalLevel)CurrentLevel).ExperienceToNextLevel)
             {
                 //Indexing of levels is 1 more than indexing of lists
                 CurrentLevel = allLevels.Levels[(int)CurrentLevel.Number];
-                InfoPanel.Instance.ShowInfoPanel("Новый уровень! Вы открыли:", (CurrentLevel.OpenInThisLevelFoods.Select(x => x.Sprite).Concat(CurrentLevel.OpenInThisLevelProducts.Select(x => x.Sprite)).Concat(CurrentLevel.OpenInThisLevelWeapons.Select(x => x.Sprite))).ToArray());
+                InfoPanel.instance.ShowInfoPanel("Новый уровень! Вы открыли:", (CurrentLevel.OpenInThisLevelFoods.Select(x => x.Sprite).Concat(CurrentLevel.OpenInThisLevelProducts.Select(x => x.Sprite)).Concat(CurrentLevel.OpenInThisLevelWeapons.Select(x => x.Sprite))).ToArray());
                 Experience = 0;
             }
-            PlayerStates.Instance.UpdateAllStatesUI();
+            PlayerStates.instance.UpdateAllStatesUI();
         }
     }
     public List<Product> InventoryProducts => inventoryProducts;
@@ -64,9 +64,9 @@ public class Player : MonoBehaviour
         private set
         {
             currentLevel = value;
-            Saver.Instance.Save();
+            Saver.instance.Save();
             CheckAvailableWeapons();
-            PlayerStates.Instance.UpdateAllStatesUI();
+            PlayerStates.instance.UpdateAllStatesUI();
         }
     }
     public Food CurrentOrder
@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
         set
         {
             currentOrder = value;
-            Saver.Instance.Save();
+            Saver.instance.Save();
         }
     }
 
@@ -85,13 +85,13 @@ public class Player : MonoBehaviour
         set
         {
             currentVisitorIndex = value;
-            Saver.Instance.Save();
+            Saver.instance.Save();
         }
     }
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (instance != null && instance != this)
         {
             Destroy(gameObject);
             onLoad.Invoke();
@@ -99,15 +99,15 @@ public class Player : MonoBehaviour
         else
         {
             DontDestroyOnLoad(gameObject);
-            Instance = this;
+            instance = this;
             StartCoroutine(OnFirstAwake());
         }
     }
 
     private IEnumerator OnFirstAwake()
     {
-        yield return new WaitUntil(() => Saver.Instance != null);
-        Saver.Instance.Load();
+        yield return new WaitUntil(() => Saver.instance != null);
+        Saver.instance.Load();
         onLoad.Invoke();
     }
 
@@ -124,7 +124,7 @@ public class Player : MonoBehaviour
             currentOrder = (Food)FindItemByID(savingData.currentOrderID, new List<Item>(allFoods.Foods));
             currentVisitorIndex = savingData.currentVisitorIndex;
         }
-        PlayerStates.Instance.UpdateAllStatesUI();
+        PlayerStates.instance.UpdateAllStatesUI();
         CheckAvailableWeapons();
     }
 

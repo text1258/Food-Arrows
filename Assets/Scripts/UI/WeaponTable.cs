@@ -30,10 +30,10 @@ public class WeaponTable : MonoBehaviour
         currentWeapon.transform.localScale *= ratioChangedCurrentWeaponSizeToNotChanged;
         currentWeapon.GetComponent<RectTransform>().localPosition = Vector3.forward * -weaponSize / 2;
         weaponTable.content.GetComponent<HorizontalLayoutGroup>().SetLayoutHorizontal();
-        if (!Player.Instance.InventoryWeapons.Contains(weapon))
+        if (!Player.instance.InventoryWeapons.Contains(weapon))
         {
             GameObject Barrier;
-            if (Player.Instance.AvailableWeapons.Contains(weapon))
+            if (Player.instance.AvailableWeapons.Contains(weapon))
             {
                 Barrier = Instantiate(notPurchasedWeaponBarrierPrefab, parent: currentWeapon.transform);
             }

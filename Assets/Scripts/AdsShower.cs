@@ -5,21 +5,21 @@ using UnityEngine.Events;
 
 public class AdsShower : MonoBehaviour
 {
-    public static AdsShower Instance;
+    public static AdsShower instance;
 
     private bool isMinutePassed = true;
     private UnityAction getReward;
 
     private void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (instance != null && instance != this)
         {
             Destroy(gameObject);
         }
         else
         {
             DontDestroyOnLoad(gameObject);
-            Instance = this;
+            instance = this;
             if (isMinutePassed == true)
             {
 #if UNITY_EDITOR || UNITY_ANDROID

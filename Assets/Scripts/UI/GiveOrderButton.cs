@@ -15,24 +15,24 @@ public class GiveOrderButton : MonoBehaviour
 
     public void GiveOrder()
     {
-        if (Player.Instance.InventoryFoods.Contains(CurrentVisitor.order))
+        if (Player.instance.InventoryFoods.Contains(CurrentVisitor.order))
         {
-            Player.Instance.InventoryFoods.Remove(CurrentVisitor.order);
-            Player.Instance.Experience += 1;
-            Player.Instance.CurrentOrder = null;
-            Player.Instance.CurrentVisitorIndex = null;
+            Player.instance.InventoryFoods.Remove(CurrentVisitor.order);
+            Player.instance.Experience += 1;
+            Player.instance.CurrentOrder = null;
+            Player.instance.CurrentVisitorIndex = null;
             CurrentVisitor.isSatisfied = true;
-            Saver.Instance.Save();
+            Saver.instance.Save();
             this.gameObject.SetActive(false);
         }
         else
         {
-            MessageText.Instance.Message("Этой еды нет в инвентаре!", 3f);
+            MessageText.instance.Message("Этой еды нет в инвентаре!", 3f);
         }
     }
 
     public void ShowCurrentFoodInfo()
     {
-        InfoPanel.Instance.ShowInfoPanel("Продукты для приготовления этой еды:", CurrentVisitor.order.CookingProducts.Select(x => x.Sprite).ToArray());
+        InfoPanel.instance.ShowInfoPanel("Продукты для приготовления этой еды:", CurrentVisitor.order.CookingProducts.Select(x => x.Sprite).ToArray());
     }
 }

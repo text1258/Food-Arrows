@@ -5,12 +5,12 @@ namespace UI
 {
     public class PlayerStates : MonoBehaviour
     {
-        public static PlayerStates Instance;
+        public static PlayerStates instance;
         [SerializeField] private List<ResourceText> resourceTexts;
 
         private void Awake()
         {
-            Instance = this;
+            instance = this;
         }
 
         private void Start()

@@ -7,7 +7,7 @@ namespace UI
 {
     public class ConfirmPanel : MonoBehaviour
     {
-        public static ConfirmPanel Instance;
+        public static ConfirmPanel instance;
 
         [SerializeField] private TMP_Text titleText;
         [SerializeField] private Image illustration;
@@ -16,7 +16,7 @@ namespace UI
 
         private void Awake()
         {
-            Instance = this;
+            instance = this;
         }
 
         public void CreateConfirmPanel(string title, Sprite confirmImage, UnityAction onConfirm = null, UnityAction onDisConfirm = null)

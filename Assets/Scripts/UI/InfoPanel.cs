@@ -6,14 +6,14 @@ namespace UI
 {
     public class InfoPanel : MonoBehaviour
     {
-        public static InfoPanel Instance;
+        public static InfoPanel instance;
         [SerializeField] private ScrollRect InfoPanelScrollRect;
         [SerializeField] private Image imagePrefab;
         [SerializeField] private TMP_Text title;
 
         private void Awake()
         {
-            Instance = this;
+            instance = this;
         }
 
         public void ShowInfoPanel(string description, params Sprite[] itemsSprites)

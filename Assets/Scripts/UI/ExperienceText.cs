@@ -2,13 +2,13 @@
 {
     public override void ShowText()
     {
-        if (Player.Instance.CurrentLevel is not LastLevel)
+        if (Player.instance.CurrentLevel is not LastLevel)
         {
-            text.text = $"Опыт: {Player.Instance.Experience}/{((NormalLevel)Player.Instance.CurrentLevel).ExperienceToNextLevel}";
+            text.text = $"Опыт: {Player.instance.Experience}/{((NormalLevel)Player.instance.CurrentLevel).ExperienceToNextLevel}";
         }
         else
         {
-            text.text = $"Опыт: {Player.Instance.Experience}";
+            text.text = $"Опыт: {Player.instance.Experience}";
         }
     }
 }

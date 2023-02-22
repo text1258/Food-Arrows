@@ -7,12 +7,12 @@ public class CookingPanelCell : ItemsPannelCell
 
     public override void OnItemCellClick()
     {
-        ConfirmPanel.Instance.CreateConfirmPanel($"Вы хотите это приготовить?",
+        ConfirmPanel.instance.CreateConfirmPanel($"Вы хотите это приготовить?",
             cellFood.Sprite, onConfirm: CookThisFood);
     }
 
     private void CookThisFood()
     {
-        CookingPanel.Instance.Cook(cellFood);
+        CookingPanel.instance.Cook(cellFood);
     }
 }
