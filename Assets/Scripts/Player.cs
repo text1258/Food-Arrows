@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UI;
+using YG;
 
 public class Player : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour
     private Food currentOrder;
     private string currentVisitorIndex;
     public List<Weapon> AvailableWeapons { get; private set; }
+
     public uint Money
     {
         get => money;
@@ -37,6 +39,7 @@ public class Player : MonoBehaviour
             PlayerStates.instance.UpdateAllStatesUI();
         }
     }
+
     public uint Experience
     {
         get => experience;
@@ -54,8 +57,11 @@ public class Player : MonoBehaviour
             PlayerStates.instance.UpdateAllStatesUI();
         }
     }
+
     public List<Product> InventoryProducts => inventoryProducts;
+
     public List<Food> InventoryFoods => inventoryFoods;
+
     public List<Weapon> InventoryWeapons => inventoryWeapons;
 
     public Level CurrentLevel
@@ -69,6 +75,7 @@ public class Player : MonoBehaviour
             PlayerStates.instance.UpdateAllStatesUI();
         }
     }
+
     public Food CurrentOrder
     {
         get => currentOrder;
@@ -100,32 +107,22 @@ public class Player : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
             instance = this;
-            StartCoroutine(OnFirstAwake());
         }
     }
 
-    private IEnumerator OnFirstAwake()
+    public void SetPlayerInfo()
     {
-        yield return new WaitUntil(() => Saver.instance != null);
-        Saver.instance.Load();
-        onLoad.Invoke();
-    }
-
-    public void SetPlayerInfo(SavingData savingData)
-    {
-        if (savingData != null)
-        {
-            currentLevel = allLevels.Levels[(int)(savingData.levelNumber - 1)];
-            money = savingData.money;
-            experience = savingData.experience;
-            inventoryFoods = FindItemsByIDes(savingData.inventoryFoodsIDes, new List<Item>(allFoods.Foods)).ConvertAll(item => (Food)item);
-            inventoryProducts = FindItemsByIDes(savingData.inventoryProductsIDes, new List<Item>(allProducts.Products)).ConvertAll(item => (Product)item);
-            inventoryWeapons = FindItemsByIDes(savingData.inventoryWeaponsIDes, new List<Item>(allWeapons.Weapons)).ConvertAll(item => (Weapon)item);
-            currentOrder = (Food)FindItemByID(savingData.currentOrderID, new List<Item>(allFoods.Foods));
-            currentVisitorIndex = savingData.currentVisitorIndex;
-        }
+        currentLevel = allLevels.Levels[(int)(YandexGame.savesData.levelNumber - 1)];
+        money = YandexGame.savesData.money;
+        experience = YandexGame.savesData.experience;
+        inventoryFoods = FindItemsByIDes(YandexGame.savesData.inventoryFoodsIDes, new List<Item>(allFoods.Foods)).ConvertAll(item => (Food)item);
+        inventoryProducts = FindItemsByIDes(YandexGame.savesData.inventoryProductsIDes, new List<Item>(allProducts.Products)).ConvertAll(item => (Product)item);
+        inventoryWeapons = FindItemsByIDes(YandexGame.savesData.inventoryWeaponsIDes, new List<Item>(allWeapons.Weapons)).ConvertAll(item => (Weapon)item);
+        currentOrder = (Food)FindItemByID(YandexGame.savesData.currentOrderID, new List<Item>(allFoods.Foods));
+        currentVisitorIndex = YandexGame.savesData.currentVisitorIndex;
         PlayerStates.instance.UpdateAllStatesUI();
         CheckAvailableWeapons();
+        onLoad.Invoke();
     }
 
     public void AddMoneyForAdversiting()

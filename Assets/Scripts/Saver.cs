@@ -1,10 +1,15 @@
-﻿using System.Collections.Generic;
-using System.IO;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using YG;
 
 public class Saver : MonoBehaviour
 {
-    public static Saver instance = null;
+    public static Saver instance;
+
+    private void OnEnable() => YandexGame.GetDataEvent += Load;
+
+    private void OnDisable() => YandexGame.GetDataEvent -= Load;
 
     private void Awake()
     {
@@ -16,51 +21,46 @@ public class Saver : MonoBehaviour
         {
             DontDestroyOnLoad(gameObject);
             instance = this;
+            if (YandexGame.SDKEnabled == true)
+            {
+                Load();
+            }
         }
+        instance = this;
     }
 
     [ContextMenu("Save")]
     public void Save()
     {
-        SavingData savingData;
-        if (Player.instance.CurrentOrder == null)
+        YandexGame.savesData.money = Player.instance.Money;
+        YandexGame.savesData.levelNumber = Player.instance.CurrentLevel.Number;
+        YandexGame.savesData.experience = Player.instance.Experience;
+        YandexGame.savesData.inventoryFoodsIDes = GetItemsIDes(new List<Item>(Player.instance.InventoryFoods));
+        YandexGame.savesData.inventoryProductsIDes = GetItemsIDes(new List<Item>(Player.instance.InventoryProducts));
+        YandexGame.savesData.inventoryWeaponsIDes = GetItemsIDes(new List<Item>(Player.instance.InventoryWeapons));
+        if (Player.instance.CurrentOrder != null)
         {
-            savingData = new SavingData(Player.instance.Money, Player.instance.CurrentLevel.Number, Player.instance.Experience,
-                GetItemsIDes(new List<Item>(Player.instance.InventoryFoods)), GetItemsIDes(new List<Item>(Player.instance.InventoryProducts)),
-                GetItemsIDes(new List<Item>(Player.instance.InventoryWeapons)));
+            YandexGame.savesData.currentOrderID = Player.instance.CurrentOrder.ID;
         }
-        else
+        if (Player.instance.CurrentVisitorIndex != null & Player.instance.CurrentVisitorIndex != "")
         {
-            savingData = new SavingData(Player.instance.Money, Player.instance.CurrentLevel.Number, Player.instance.Experience,
-                GetItemsIDes(new List<Item>(Player.instance.InventoryFoods)), GetItemsIDes(new List<Item>(Player.instance.InventoryProducts)),
-                GetItemsIDes(new List<Item>(Player.instance.InventoryWeapons)), Player.instance.CurrentOrder.ID, Player.instance.CurrentVisitorIndex);
+            YandexGame.savesData.currentVisitorIndex = Player.instance.CurrentVisitorIndex;
         }
-#if UNITY_EDITOR
-        File.WriteAllText("Assets/SavingData.json", JsonUtility.ToJson(savingData));
-#elif UNITY_ANDROID
-        PlayerPrefs.SetString("SavingData", JsonUtility.ToJson(savingData));
-        PlayerPrefs.Save();
-#else
-        PlayerPrefs.SetString("SavingData", JsonUtility.ToJson(savingData));
-        PlayerPrefs.Save();
-#endif
+        YandexGame.SaveProgress();
     }
 
     [ContextMenu("Load")]
     public void Load()
     {
-        string data = null;
-        try
-        {
-#if UNITY_EDITOR
-            data = File.ReadAllText("Assets/SavingData.json");
-#elif UNITY_ANDROID
-            data = PlayerPrefs.GetString("SavingData");
-#endif
-        }
-        catch { }
-        Player.instance.SetPlayerInfo(JsonUtility.FromJson<SavingData>(data));
-        }
+        StartCoroutine(SetLoadingData());
+    }
+
+    private IEnumerator SetLoadingData()
+    {
+        yield return new WaitUntil(() => Player.instance != null);
+        Player.instance.SetPlayerInfo();
+        yield break;
+    }
 
     private static List<string> GetItemsIDes(List<Item> items)
     {
