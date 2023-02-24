@@ -14,8 +14,8 @@ namespace YG
         public uint money = 500;
         public uint levelNumber = 1;
         public uint experience = 0;
-        public List<string> inventoryFoodsIDes = new List<string>() { "11" };
-        public List<string> inventoryProductsIDes = new List<string>() { "3", "4", "7" };
+        public List<string> inventoryFoodsIDes = new List<string>() { "2" };
+        public List<string> inventoryProductsIDes = new List<string>() { "5", "6", "9" };
         public List<string> inventoryWeaponsIDes = new List<string> { "1" };
         public string currentOrderID = "";
         public string currentVisitorIndex = "";

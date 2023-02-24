@@ -18,8 +18,8 @@
 
 </head>
 <body class="dark">
-<div id="unity-container" class="unity-desktop">
-    <canvas id="unity-canvas"></canvas>
+<div id="unity-container" style="position: absolute; width: 100%; height: 100%; left: 0%; top: 0%; background-color: black;">
+    <canvas id="unity-canvas" style="position: absolute;"></canvas>
 </div>
 <div id="loading-cover" style="display:none;">
     <div id="unity-loading-bar">
@@ -71,9 +71,24 @@
         return false;
     }());
 
+    function resizeGame() {
+      if (window.innerWidth > 600) {
+        canvas.style.width = "500px";
+        canvas.style.height = "100%";
+        canvas.style.left = (window.innerWidth - canvas.getBoundingClientRect().width) / 2 + "px";
+      }
+      else {
+        canvas.style = "position: absolute; width: 100%; height: 100%;";
+      }
+    }
+    
     if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         container.className = "unity-mobile";
         //config.devicePixelRatio = 1;
+    }
+    else {
+      resizeGame();
+      window.addEventListener("resize", resizeGame);
     }
 
     //#if BACKGROUND_FILENAME
@@ -96,6 +111,7 @@
         createUnityInstance(canvas, config, (progress) => {
             spinner.style.display = "none";
             progressBarEmpty.style.display = "";
+            progressBarEmpty.style.width = canvas.getBoundingClientRect().width - 30 + "px";
             progressBarFull.style.width = `${100 * progress}%`;
         }).then((unityInstance) => {
             myGameInstance = unityInstance;
@@ -621,7 +637,6 @@
             console.error('CRASH Sticky Activity: ', e.message);
         }
     }
-
     document.body.appendChild(script);
 </script>
 </body>

@@ -354,7 +354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 11400000, guid: 0169dedc76b4978498a1fe7a0f3a7ea9, type: 2}
-  SpawnPosition: {x: 0, y: 1.24, z: 0.8}
+  SpawnPosition: {x: 0, y: 1, z: 0.7}
   missilePrefab: {fileID: 3143684826957263168, guid: 14a0c0692dc36ce4a9e578a4a81f553e, type: 3}
   shotingPart: {fileID: 7038623338267977018}
   maxPullbackPosition: {x: 0, y: 0.019, z: 0}

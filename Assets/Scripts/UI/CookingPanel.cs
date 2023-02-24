@@ -19,7 +19,7 @@ public class CookingPanel : MonoBehaviour
 
     public void ShowCookingPanel()
     {
-        possibleToCookDishes = FindPossibleFoods(allFoods.Foods, Player.instance.InventoryProducts);
+        possibleToCookDishes = FindPossibleFoods(allFoods.Foods, Player.instance.InventoryProducts.ToList());
         ItemsPannel.instance.CreateItemsPanel("Выберите, что хотите приготовить");
         foreach (Food food in possibleToCookDishes)
         {
