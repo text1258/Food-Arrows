@@ -9,7 +9,7 @@ public abstract class AdVideoRevarder : MonoBehaviour
     {
         yandexGameSDK.RewardVideoAd.AddListener(Reward);
         yandexGameSDK.ErrorVideoAd.AddListener(ClearReward);
-        YandexGame.RewVideoShow(1);
+        yandexGameSDK._RewardedShow(1);
     }
 
     private void Reward()

@@ -13,7 +13,7 @@ public class Bow : InstantiatedWeapon
     private Vector3 startBowStringOriginPosition;
     private GameObject arrow;
 
-    protected override void OnClcicknputDown()
+    protected override void OnClicknputDown()
     {
         startBowStringOriginPosition = bowStringOrigin.transform.localPosition;
         arrow = Instantiate(missilePrefab, parent: bowStringOrigin.transform);

@@ -57,7 +57,7 @@ public abstract class InstantiatedWeapon : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0) && IsPointerOverUIObject() == false)
             {
-                OnClcicknputDown();
+                OnClicknputDown();
                 clicked = true;
             }
             if (Input.GetMouseButton(0) && clicked == true)
@@ -90,7 +90,7 @@ public abstract class InstantiatedWeapon : MonoBehaviour
 
     protected virtual void OnClickInputUp() { }
 
-    protected virtual void OnClcicknputDown() { }
+    protected virtual void OnClicknputDown() { }
 
     protected virtual void OnClickInput() { }
 
@@ -137,6 +137,6 @@ public abstract class InstantiatedWeapon : MonoBehaviour
         eventDataCurrentPosition.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         List<RaycastResult> results = new List<RaycastResult>();
         EventSystem.current.RaycastAll(eventDataCurrentPosition, results);
-        return results.Count > 0;
+        return results.Count > 0 | EventSystem.current.IsPointerOverGameObject();
     }
 }

@@ -4,7 +4,7 @@
     {
         if (Player.instance.CurrentLevel is not LastLevel)
         {
-            text.text = $"Опыт: {Player.instance.Experience}/{((NormalLevel)Player.instance.CurrentLevel).ExperienceToNextLevel}";
+            text.text = $"Опыт: {Player.instance.Experience}/{((CommonLevel)Player.instance.CurrentLevel).ExperienceToNextLevel}";
         }
         else
         {

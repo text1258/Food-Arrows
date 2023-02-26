@@ -32,7 +32,6 @@ public class Arrow : Missile
         yield return new WaitUntil(() => collisionTarget.notHitByMissile == false);
         transform.SetParent(null);
         GetComponent<Rigidbody>().isKinematic = false;
-        GetComponent<Rigidbody>().useGravity = true;
         DestroyMissle();
     }
 }

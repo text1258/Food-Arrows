@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
@@ -47,7 +46,7 @@ public class Player : MonoBehaviour
         {
             experience = value;
             Saver.instance.Save();
-            if (CurrentLevel is NormalLevel && Experience >= ((NormalLevel)CurrentLevel).ExperienceToNextLevel)
+            if (CurrentLevel is CommonLevel && Experience >= ((CommonLevel)CurrentLevel).ExperienceToNextLevel)
             {
                 //Indexing of levels is 1 more than indexing of lists
                 CurrentLevel = allLevels.Levels[(int)CurrentLevel.Number];
@@ -73,6 +72,7 @@ public class Player : MonoBehaviour
             Saver.instance.Save();
             CheckAvailableWeapons();
             PlayerStates.instance.UpdateAllStatesUI();
+            YandexGame.ReviewShow(true);
         }
     }
 

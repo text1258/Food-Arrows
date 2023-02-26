@@ -20,11 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 415536425}
   m_IndirectSpecularColor: {r: 0.17166056, g: 0.20513836, b: 0.24377166, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
@@ -145,11 +145,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1947642875625926093, guid: f83da334585713742bf5a9f976dc72f0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.416
+      value: 1.4159982
       objectReference: {fileID: 0}
     - target: {fileID: 1947642875625926093, guid: f83da334585713742bf5a9f976dc72f0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 30.000004
       objectReference: {fileID: 0}
     - target: {fileID: 1947642875625926093, guid: f83da334585713742bf5a9f976dc72f0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1834,7 +1834,7 @@ MonoBehaviour:
   cookingPosition: {x: 0, y: 2.1, z: -2.4}
   productsGatheringAnimationTime: 1.2
   foodGoToPlayerAnimationTime: 0.8
-  onCookingParticleSystem: {fileID: 5251656771266460389, guid: 853593be52cff284eb7b99c2fc3f5f6d, type: 3}
+  onCookingParticleSystem: {fileID: 3961769529080427844, guid: 853593be52cff284eb7b99c2fc3f5f6d, type: 3}
   maxSpawnProductsPosition: {x: 0.22, y: 2.5, z: -2.1}
   minSpawnProductsPosition: {x: -0.22, y: 2, z: -2.57}
 --- !u!4 &891688597
@@ -3598,6 +3598,7 @@ GameObject:
   - component: {fileID: 1827511442}
   - component: {fileID: 1827511441}
   - component: {fileID: 1827511440}
+  - component: {fileID: 1827511443}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3659,7 +3660,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -3679,6 +3680,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1827511443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827511439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebedc4d1076d1dd46a83e784f3b1d766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  information: 
+  CurScale: 1
+  MinScale: 0.5
+  ScaleStep: 0.05
+  MinFPS: 40
+  MaxFPS: 55
+  Delay: 0
 --- !u!1 &1831776892
 GameObject:
   m_ObjectHideFlags: 0
