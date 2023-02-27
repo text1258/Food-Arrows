@@ -50,7 +50,10 @@ public class Player : MonoBehaviour
             {
                 //Indexing of levels is 1 more than indexing of lists
                 CurrentLevel = allLevels.Levels[(int)CurrentLevel.Number];
-                InfoPanel.instance.ShowInfoPanel("Новый уровень! Вы открыли:", (CurrentLevel.OpenInThisLevelFoods.Select(x => x.Sprite).Concat(CurrentLevel.OpenInThisLevelProducts.Select(x => x.Sprite)).Concat(CurrentLevel.OpenInThisLevelWeapons.Select(x => x.Sprite))).ToArray());
+                InfoPanel.instance.ShowInfoPanel("Новый уровень! Вы открыли:", 
+                (CurrentLevel.OpenInThisLevelFoods.Select(x => x.Sprite)
+                .Concat(CurrentLevel.OpenInThisLevelProducts.Select(x => x.Sprite))
+                .Concat(CurrentLevel.OpenInThisLevelWeapons.Select(x => x.Sprite))).ToArray());
                 Experience = 0;
             }
             PlayerStates.instance.UpdateAllStatesUI();
