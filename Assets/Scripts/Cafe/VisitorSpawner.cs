@@ -21,7 +21,7 @@ public class VisitorSpawner : MonoBehaviour
 
     private IEnumerator Start()
     {
-        if (Player.instance.CurrentVisitorIndex != "")
+        if (string.IsNullOrEmpty(Player.instance.CurrentVisitorIndex) == false)
         {
             currentVisitor = Instantiate(visitors[Convert.ToInt32(Player.instance.CurrentVisitorIndex)]);
         }

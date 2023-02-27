@@ -18,6 +18,7 @@ public class Bow : InstantiatedWeapon
         startBowStringOriginPosition = bowStringOrigin.transform.localPosition;
         arrow = Instantiate(missilePrefab, parent: bowStringOrigin.transform);
         arrow.GetComponent<Rigidbody>().useGravity = false;
+        arrow.GetComponent<Collider>().enabled = false;
     }
 
     protected override void OnClickInput()
@@ -43,6 +44,7 @@ public class Bow : InstantiatedWeapon
         else
         {
             arrow.transform.SetParent(null);
+            arrow.GetComponent<Collider>().enabled = true;
             arrow.GetComponent<Rigidbody>().AddForce(arrow.transform.forward * pullbackForce);
         }
         arrow = null;

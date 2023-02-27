@@ -1,15 +1,11 @@
 using UnityEngine;
-using YG;
 
 public abstract class AdVideoRevarder : MonoBehaviour
 {
-    [SerializeField] private YandexGame yandexGameSDK;
 
     public void ShowAdVideo()
     {
-        yandexGameSDK.RewardVideoAd.AddListener(Reward);
-        yandexGameSDK.ErrorVideoAd.AddListener(ClearReward);
-        yandexGameSDK._RewardedShow(1);
+        Reward();
     }
 
     private void Reward()
@@ -18,11 +14,7 @@ public abstract class AdVideoRevarder : MonoBehaviour
         ClearReward();
     }
 
-    private void ClearReward()
-    {
-        yandexGameSDK.RewardVideoAd.RemoveAllListeners();
-        yandexGameSDK.ErrorVideoAd.RemoveAllListeners();
-    }
+    private void ClearReward() { }
 
     protected virtual void GiveReward() { }
 }
