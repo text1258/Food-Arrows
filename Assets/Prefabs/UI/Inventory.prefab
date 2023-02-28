@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8678236512794243657}
   - component: {fileID: 8678236512794243659}
   - component: {fileID: 8678236512794243656}
+  - component: {fileID: 3027391839123974982}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -67,15 +68,30 @@ MonoBehaviour:
   m_Padding:
     m_Left: 30
     m_Right: 30
-    m_Top: 40
-    m_Bottom: 0
+    m_Top: 30
+    m_Bottom: 30
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 100, y: 100}
+  m_CellSize: {x: -30.407997, y: -30.407997}
   m_Spacing: {x: 10, y: 10}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!114 &3027391839123974982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8678236512794243662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6930a3bb50c9654eb470ac8fe93fa12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  elemensCount: 5
+  padding: 30
+  spacing: 10
 --- !u!1 &8678236512889245376
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,7 +699,7 @@ RectTransform:
   - {fileID: 8678236514115112629}
   - {fileID: 8678236512989246771}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

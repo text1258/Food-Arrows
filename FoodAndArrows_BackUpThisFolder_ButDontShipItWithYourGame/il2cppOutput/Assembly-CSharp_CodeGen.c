@@ -275,6 +275,12 @@ extern void ItemsPannel_ClearItemsPanel_m3907611E98C1696BD7A4CF91908D1D7593BD44C
 extern void ItemsPannel__ctor_m2919C35E36C2856AB5DE6B979A482B5FEC9E9EB3 (void);
 extern void ItemsPannelCell_OnItemCellClick_m51DD230D08954A4A132D8666B90ED786212953A7 (void);
 extern void ItemsPannelCell__ctor_m2C91440603BAC969A6D408F51830F2F128784D88 (void);
+extern void LayoutElementCostantCount_OnValidate_m1902B3DFE5F60211E3109F9E50B2397EA3FAB1B9 (void);
+extern void LayoutElementCostantCount_OnEnable_m5C657D407E071663E396F203A82AD7ABAA7EE705 (void);
+extern void LayoutElementCostantCount_Start_mEE3033A6DCC9EA0F0207EAB39EB88563707066F7 (void);
+extern void LayoutElementCostantCount_OnRectTransformDimensionsChange_m27FF8E575474F7E5E58FDA011D3D0D7E3DC371F2 (void);
+extern void LayoutElementCostantCount_ResizeLayoutElemets_m1B30D3348D700568D4615EBCC90597CCD5C6B2C4 (void);
+extern void LayoutElementCostantCount__ctor_mB49FDC5C41BD5CECB4567442A35F789598169194 (void);
 extern void LevelText_ShowText_m745F81B74291A95AEB3E2075DD64B530856EE16F (void);
 extern void LevelText__ctor_mB94B5B7862FFB3407A51BF055C5399620FB95247 (void);
 extern void MessageText_Awake_m7DBDE9DF3452115A8DDFE9C2D8A77D053A416C6F (void);
@@ -338,7 +344,7 @@ extern void PlayerStates_Awake_mD7F2D3B34E8939FDEDF487A6B6FDD7B5DC41F173 (void);
 extern void PlayerStates_Start_mF9939C2E2CD4B1C24EDA5E721FBA58D89D3762BF (void);
 extern void PlayerStates_UpdateAllStatesUI_mE6768D776069ECD425242D236CB3E449DB75712F (void);
 extern void PlayerStates__ctor_m7C1C791F1AE1A2F6163F33EC8CFE7B45F189FE44 (void);
-static Il2CppMethodPointer s_methodPointers[326] = 
+static Il2CppMethodPointer s_methodPointers[332] = 
 {
 	AddMoneyForAds_GiveReward_mB10133A596DE19DA71B9E9F96A7E535D3FD53C72,
 	AddMoneyForAds__ctor_m0941E615F3E45BA9877DDB6077E3F4D73AECF3CC,
@@ -603,6 +609,12 @@ static Il2CppMethodPointer s_methodPointers[326] =
 	ItemsPannel__ctor_m2919C35E36C2856AB5DE6B979A482B5FEC9E9EB3,
 	ItemsPannelCell_OnItemCellClick_m51DD230D08954A4A132D8666B90ED786212953A7,
 	ItemsPannelCell__ctor_m2C91440603BAC969A6D408F51830F2F128784D88,
+	LayoutElementCostantCount_OnValidate_m1902B3DFE5F60211E3109F9E50B2397EA3FAB1B9,
+	LayoutElementCostantCount_OnEnable_m5C657D407E071663E396F203A82AD7ABAA7EE705,
+	LayoutElementCostantCount_Start_mEE3033A6DCC9EA0F0207EAB39EB88563707066F7,
+	LayoutElementCostantCount_OnRectTransformDimensionsChange_m27FF8E575474F7E5E58FDA011D3D0D7E3DC371F2,
+	LayoutElementCostantCount_ResizeLayoutElemets_m1B30D3348D700568D4615EBCC90597CCD5C6B2C4,
+	LayoutElementCostantCount__ctor_mB49FDC5C41BD5CECB4567442A35F789598169194,
 	LevelText_ShowText_m745F81B74291A95AEB3E2075DD64B530856EE16F,
 	LevelText__ctor_mB94B5B7862FFB3407A51BF055C5399620FB95247,
 	MessageText_Awake_m7DBDE9DF3452115A8DDFE9C2D8A77D053A416C6F,
@@ -667,7 +679,7 @@ static Il2CppMethodPointer s_methodPointers[326] =
 	PlayerStates_UpdateAllStatesUI_mE6768D776069ECD425242D236CB3E449DB75712F,
 	PlayerStates__ctor_m7C1C791F1AE1A2F6163F33EC8CFE7B45F189FE44,
 };
-static const int32_t s_InvokerIndices[326] = 
+static const int32_t s_InvokerIndices[332] = 
 {
 	4419,
 	4419,
@@ -936,6 +948,12 @@ static const int32_t s_InvokerIndices[326] =
 	4419,
 	4419,
 	4419,
+	4419,
+	4419,
+	4419,
+	4419,
+	4419,
+	4419,
 	1911,
 	1459,
 	4419,
@@ -1000,7 +1018,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	326,
+	332,
 	s_methodPointers,
 	0,
 	NULL,
