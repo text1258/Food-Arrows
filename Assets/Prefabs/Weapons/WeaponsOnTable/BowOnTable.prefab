@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2550163484897574849}
   m_Layer: 0
   m_Name: BowOnTable
-  m_TagString: NonShootingPlace
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
