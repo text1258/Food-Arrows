@@ -81,7 +81,7 @@ public abstract class InstantiatedWeapon : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out hit, 100f))
         {
-            if (!hit.transform.gameObject.CompareTag("NonShootingPlace") && IsPointerOverUIObject() == false)
+            if (hit.transform.gameObject.CompareTag("NonShootingPlace") == false && IsPointerOverUIObject() == false && hit.transform.GetComponent<Weapon3DButton>() == null)
             {
                 shotingPart.transform.LookAt(hit.point);
             }
