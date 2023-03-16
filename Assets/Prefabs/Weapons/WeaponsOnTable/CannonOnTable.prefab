@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3848279871814245210}
   m_Layer: 5
   m_Name: CannonOnTable
-  m_TagString: NonShootingPlace
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,8 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d11dc101e284b4496e6453f15402a4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellWeapon: {fileID: 0}
-  selectWeapon: {fileID: 0}
+  CellWeapon: {fileID: 0}
 --- !u!65 &3848279871814245210
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -113,8 +112,16 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6486166019331308722}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Size: {x: 0.8353031, y: 0.95472896, z: 1.0516739}
   m_Center: {x: -0.00029054284, y: -0.1467948, z: 0.18197426}
